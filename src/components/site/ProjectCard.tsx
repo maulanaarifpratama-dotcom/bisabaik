@@ -16,15 +16,15 @@ const Row = ({ label, value }: { label: string; value: string }) => (
 const ProjectCard = ({ project, variant = "full" }: Props) => {
   if (variant === "compact") {
     return (
-      <article className="card-flat p-7 group h-full flex flex-col">
+      <article className="card-flat p-7 group h-full flex flex-col transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-foreground/30 hover:shadow-[0_18px_40px_-24px_hsl(var(--foreground)/0.18)] hover:bg-surface/40">
         <div className="flex items-start justify-between gap-4 mb-5">
           <div>
             {project.partner && (
-              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-3">{project.partner}</p>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-3 transition-colors duration-500 group-hover:text-secondary">{project.partner}</p>
             )}
             <h3 className="font-display text-[22px] leading-snug text-balance">{project.title}</h3>
           </div>
-          <ArrowUpRight className="w-4 h-4 text-muted-foreground mt-1 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          <ArrowUpRight className="w-4 h-4 text-muted-foreground mt-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
         </div>
         <p className="text-[14px] leading-relaxed text-muted-foreground flex-1">{project.context}</p>
         <p className="mt-5 pt-4 border-t border-border/60 text-[13px] text-foreground/80">
@@ -35,7 +35,7 @@ const ProjectCard = ({ project, variant = "full" }: Props) => {
   }
 
   return (
-    <article className="card-flat p-8 md:p-10">
+    <article className="card-flat p-8 md:p-10 group transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-foreground/30 hover:shadow-[0_22px_48px_-28px_hsl(var(--foreground)/0.18)]">
       <header className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b border-border/60">
         <div>
           {project.partner && (
