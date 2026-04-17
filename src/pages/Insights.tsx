@@ -1,6 +1,8 @@
 import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
 import { ArrowUpRight } from "lucide-react";
+import heroInsights from "@/assets/hero-insights.jpg";
+import insightField from "@/assets/photos/pdf-circle-discussion.jpg";
 
 const PIECES = [
   {
@@ -32,7 +34,33 @@ const Insights = () => (
       eyebrow="Insights"
       title="Practice notes from delivery and exit."
       intro="A growing library of frameworks, field notes and method briefs — written for institutional partners who want to think rigorously about what happens after the program ends."
+      image={heroInsights}
+      imageAlt="Researcher writing field notes overlooking Indonesian rice fields"
     />
+
+    {/* Practice-grounded image strip */}
+    <section className="border-b border-border/60">
+      <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+        <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-[460px]">
+          <img
+            src={insightField}
+            alt="Community circle discussion grounding insights in field practice"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div className="lg:col-span-5 p-10 md:p-14 lg:p-16 bg-surface/50 flex flex-col justify-center">
+          <p className="eyebrow">Practice-informed</p>
+          <h2 className="font-display text-[26px] md:text-[32px] leading-tight mt-4 text-balance">
+            Insights begin in the field — not in the deck.
+          </h2>
+          <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
+            Every framework we publish is sharpened by the rhythms of co-design,
+            risk reviews, and the discipline of accountable delivery.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section className="container-edge py-20 md:py-28">
       <div className="border-y border-border/60">

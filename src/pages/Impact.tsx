@@ -2,6 +2,8 @@ import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
 import SectionLabel from "@/components/site/SectionLabel";
 import { MapPin } from "lucide-react";
+import heroImpact from "@/assets/hero-impact.jpg";
+import livelihoodImg from "@/assets/pillar-msme.jpg";
 
 const PRESENCE = [
   { region: "Western Indonesia", places: ["Jakarta", "Banten", "West Java", "Lampung", "South Sumatra"] },
@@ -46,6 +48,8 @@ const Impact = () => (
       eyebrow="Impact"
       title="Presence across communities. Continuity across markets."
       intro="Our impact is read in the discipline of delivery, the integrity of exit, and the durability of livelihoods after we leave. Below: where we work, what we contribute to, and how we measure relevance."
+      image={heroImpact}
+      imageAlt="Aerial view of an Indonesian coastal village at dawn"
     />
 
     {/* Presence */}
@@ -64,6 +68,31 @@ const Impact = () => (
             </ul>
           </div>
         ))}
+      </div>
+    </section>
+
+    {/* Livelihood image — community context */}
+    <section className="border-b border-border/60">
+      <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+        <div className="lg:col-span-6 relative min-h-[360px] lg:min-h-[520px]">
+          <img
+            src={livelihoodImg}
+            alt="Indonesian MSME entrepreneur preparing premium coffee beans for market"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div className="lg:col-span-6 p-10 md:p-14 lg:p-20 bg-foreground text-background flex flex-col justify-center">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-background/60">Livelihoods, sustained</p>
+          <h2 className="font-display text-[28px] md:text-[36px] leading-tight mt-4 text-balance">
+            Impact endures when markets keep paying.
+          </h2>
+          <p className="mt-5 text-[15px] leading-relaxed text-background/80">
+            Behind every flagship is a network of MSME producers, cooperatives, and
+            community institutions earning income from the same systems we helped build.
+            That continuity is our operating definition of impact.
+          </p>
+        </div>
       </div>
     </section>
 
