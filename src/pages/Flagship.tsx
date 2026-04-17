@@ -15,6 +15,7 @@ const Flagship = () => {
     <Layout
       title="Flagship Initiatives — BisaBaik Foundation"
       description="Exit Forward Model, PasarBaik Impact Supply Aggregator, and the Circular Economy & Waste Management initiative — practical models proving exit can extend impact."
+      breadcrumbs={[{ name: "Flagship", path: "/flagship" }]}
     >
       <PageHeader
         eyebrow="Flagship initiatives"

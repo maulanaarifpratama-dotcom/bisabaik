@@ -43,6 +43,7 @@ const Impact = () => (
   <Layout
     title="Impact — BisaBaik Foundation"
     description="Our impact presence across communities in Indonesia and Türkiye, and contribution to SDG 8 and SDG 12 through post-program economic continuity and circular economy practices."
+    breadcrumbs={[{ name: "Impact", path: "/impact" }]}
   >
     <PageHeader
       eyebrow="Impact"
