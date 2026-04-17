@@ -2,9 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Layers, Compass, Recycle } from "lucide-react";
 import Layout from "@/components/site/Layout";
 import { PARTNERS, PROJECTS } from "@/data/site";
-import heroImg from "@/assets/hero-landscape.jpg";
-import workshopImg from "@/assets/photos/workshop.jpg";
-import marketImg from "@/assets/msme-market.jpg";
+import heroImg from "@/assets/hero-delivery.jpg";
+import workshopImg from "@/assets/photos/pdf-circle-discussion.jpg";
 
 const Index = () => {
   const flagships = PROJECTS.filter((p) => p.category === "flagship");
@@ -19,13 +18,13 @@ const Index = () => {
         <div className="absolute inset-0 -z-10">
           <img
             src={heroImg}
-            alt="Indonesian rural landscape at sunrise — terraced fields and distant volcano"
+            alt="Indonesian field coordinator at golden hour overlooking coastal village and rice terraces"
             className="w-full h-full object-cover"
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/45 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/35 to-transparent" />
         </div>
 
         <div className="container-edge pt-40 md:pt-56 pb-24 md:pb-40">

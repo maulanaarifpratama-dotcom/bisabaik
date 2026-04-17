@@ -1,8 +1,9 @@
 import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
 import SectionLabel from "@/components/site/SectionLabel";
-import teamImg from "@/assets/photos/expert-network.jpg";
-import fieldImg from "@/assets/photos/field-team.jpg";
+import heroAbout from "@/assets/photos/pdf-children-community.jpg";
+import teamImg from "@/assets/photos/pdf-produce-baskets.jpg";
+import fieldImg from "@/assets/hero-howework.jpg";
 
 const TEAM = [
   { name: "Dasril Guntara", role: "Managing Partner" },
@@ -32,6 +33,8 @@ const About = () => (
       eyebrow="About"
       title="An impact delivery partner — not a charity."
       intro="Bisa Baik Bersama is an end-to-end impact delivery partner focused on ensuring that development programs are not only well implemented, but responsibly transitioned and sustained beyond external support. We are the implementation arm of Immers Asia Corp."
+      image={heroAbout}
+      imageAlt="Indonesian community children — programs that put people first"
     />
 
     {/* Vision */}

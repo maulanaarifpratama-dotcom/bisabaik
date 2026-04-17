@@ -3,6 +3,8 @@ import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
 import { Mail, Phone, MapPin, ArrowRight, ArrowUpRight } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import heroContact from "@/assets/hero-contact.jpg";
+import sideImg from "@/assets/photos/pdf-uniformed-team.jpg";
 
 const Field = ({ label, children }: { label: string; children: React.ReactNode }) => (
   <label className="block">
@@ -41,6 +43,8 @@ const Contact = () => {
         eyebrow="Contact"
         title="Let's design your next program with exit in mind."
         intro="Tell us about the engagement you have in mind. We'll respond within two working days."
+        image={heroContact}
+        imageAlt="Two professionals greeting each other in a partnership meeting"
       />
 
       <section className="container-edge py-20 md:py-28">
@@ -140,6 +144,20 @@ const Contact = () => {
                   </a>
                 </li>
               </ul>
+            </div>
+
+            <div className="pt-2">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+                <img
+                  src={sideImg}
+                  alt="BisaBaik field team coordinating program delivery"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p className="mt-3 text-[12px] text-muted-foreground italic">
+                Field coordination — programs reviewed with partners and local teams.
+              </p>
             </div>
           </aside>
         </div>

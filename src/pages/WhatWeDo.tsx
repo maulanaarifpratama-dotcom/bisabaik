@@ -1,12 +1,18 @@
 import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
 import SectionLabel from "@/components/site/SectionLabel";
+import heroWhatWeDo from "@/assets/hero-whatwedo.jpg";
+import pillarDelivery from "@/assets/photos/pdf-uniformed-team.jpg";
+import pillarExit from "@/assets/photos/pdf-training-whiteboard.jpg";
+import pillarMarket from "@/assets/pillar-msme.jpg";
 
 const PILLARS = [
   {
     num: "01",
     title: "End-to-End Program Implementation",
     purpose: "To deliver programs as a planned transition process toward independence — not merely as a set of activities.",
+    image: pillarDelivery,
+    imageAlt: "BisaBaik field team coordinating program delivery with local partners",
     deliverables: [
       "Program implementation plan & field coordination framework",
       "On-the-ground delivery (direct or white-label)",
@@ -32,6 +38,8 @@ const PILLARS = [
     num: "02",
     title: "Strategic Partner for Philanthropic Exit Strategy",
     purpose: "To position responsible exit as a strategic phase within the impact cycle.",
+    image: pillarExit,
+    imageAlt: "Training and exit-readiness session with community participants",
     deliverables: [
       "Exit strategy and transition roadmap",
       "Exit readiness assessment",
@@ -57,6 +65,8 @@ const PILLARS = [
     num: "03",
     title: "MSME Aggregation & Market Expansion",
     purpose: "To use market access as an economic exit mechanism for philanthropic programs.",
+    image: pillarMarket,
+    imageAlt: "MSME entrepreneur preparing premium produce for aggregated market channels",
     deliverables: [
       "MSME aggregation through PasarBaik mechanism",
       "Demand-supply matching across domestic and export channels",
@@ -87,6 +97,15 @@ const PillarBlock = ({ p }: { p: typeof PILLARS[number] }) => (
         <p className="pillar-num">Pillar {p.num}</p>
         <h2 className="font-display text-[28px] md:text-[34px] leading-tight mt-4 text-balance">{p.title}</h2>
         <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground italic">{p.purpose}</p>
+
+        <div className="mt-8 relative aspect-[4/3] overflow-hidden rounded-sm">
+          <img
+            src={p.image}
+            alt={p.imageAlt}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </header>
 
       <div className="md:col-span-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -138,6 +157,8 @@ const WhatWeDo = () => (
       eyebrow="What we do"
       title="End-to-end impact delivery, with exit in mind."
       intro="We provide end-to-end implementation capacity for philanthropic and development partners — ensuring that exit and sustainability are integrated into program delivery, not treated as an afterthought."
+      image={heroWhatWeDo}
+      imageAlt="BisaBaik field operations team walking through an Indonesian village at golden hour"
     />
 
     <section className="container-edge py-20 md:py-28 border-b border-border/60">
