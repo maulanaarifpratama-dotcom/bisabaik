@@ -3,8 +3,10 @@ import PageHeader from "@/components/site/PageHeader";
 import ProjectCard from "@/components/site/ProjectCard";
 import { PROJECTS } from "@/data/site";
 import { ArrowUpRight } from "lucide-react";
-import marketImg from "@/assets/msme-market.jpg";
-import circImg from "@/assets/circular-economy.jpg";
+import heroFlagship from "@/assets/hero-whatwedo.jpg";
+import marketImg from "@/assets/pillar-msme.jpg";
+import circImg from "@/assets/pillar-circular.jpg";
+import exitForwardImg from "@/assets/photos/pdf-uniformed-team.jpg";
 
 const Flagship = () => {
   const flagships = PROJECTS.filter((p) => p.category === "flagship");
@@ -18,12 +20,22 @@ const Flagship = () => {
         eyebrow="Flagship initiatives"
         title="Practice platforms where exit becomes extension."
         intro="Our flagships are not pilots — they are operating models where method, partnership and post-program viability are continuously refined in the field."
+        image={heroFlagship}
+        imageAlt="BisaBaik field operations team walking through a rural village pathway"
       />
 
       {/* Exit Forward Model — feature */}
-      <section className="container-edge py-24 md:py-32 border-b border-border/60">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-5">
+      <section className="border-b border-border/60">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+          <div className="lg:col-span-6 relative min-h-[360px] lg:min-h-[640px]">
+            <img
+              src={exitForwardImg}
+              alt="BisaBaik field team reviewing exit and transition plans on the ground"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="lg:col-span-6 p-10 md:p-16 lg:p-20">
             <p className="pillar-num">01</p>
             <h2 className="font-display text-[34px] md:text-[44px] leading-tight mt-4 text-balance">
               Exit Forward Model
@@ -35,30 +47,30 @@ const Flagship = () => {
               through domestic and export market access for UMKM beneficiaries.
             </p>
           </div>
-
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
-              {[
-                { title: "Traditional program end", body: "Without a transition strategy, UMKMs revert to dependency.", tag: "Economically vulnerable" },
-                { title: "Exit Forward intervention", body: "Exit strategies designed since the beginning. Phased exit, local governance strengthening, post-program capacity development, time-bound mentoring.", tag: "PasarBaik aggregator" },
-                { title: "Sustainable independence", body: "Export-ready, stable & growing financials, local ownership.", tag: "Continuity through markets" },
-              ].map((b, i) => (
-                <div key={i} className="bg-background p-6">
-                  <p className="pillar-num">{String(i + 1).padStart(2, "0")}</p>
-                  <p className="font-display text-[18px] leading-tight mt-3">{b.title}</p>
-                  <p className="mt-4 text-[13.5px] leading-relaxed text-muted-foreground">{b.body}</p>
-                  <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-accent">{b.tag}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-[14px] text-foreground/70 italic">
-              With this approach, exit does not stop impact — it extends impact through markets.
-            </p>
-          </div>
         </div>
 
-        <div className="mt-16">
-          <ProjectCard project={flagships.find((p) => p.slug === "exit-forward-model")!} />
+        <div className="container-edge py-16 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+            {[
+              { title: "Traditional program end", body: "Without a transition strategy, UMKMs revert to dependency.", tag: "Economically vulnerable" },
+              { title: "Exit Forward intervention", body: "Exit strategies designed since the beginning. Phased exit, local governance strengthening, post-program capacity development, time-bound mentoring.", tag: "PasarBaik aggregator" },
+              { title: "Sustainable independence", body: "Export-ready, stable & growing financials, local ownership.", tag: "Continuity through markets" },
+            ].map((b, i) => (
+              <div key={i} className="bg-background p-7">
+                <p className="pillar-num">{String(i + 1).padStart(2, "0")}</p>
+                <p className="font-display text-[18px] leading-tight mt-3">{b.title}</p>
+                <p className="mt-4 text-[13.5px] leading-relaxed text-muted-foreground">{b.body}</p>
+                <p className="mt-6 text-[11px] uppercase tracking-[0.16em] text-accent">{b.tag}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-[14px] text-foreground/70 italic">
+            With this approach, exit does not stop impact — it extends impact through markets.
+          </p>
+
+          <div className="mt-12">
+            <ProjectCard project={flagships.find((p) => p.slug === "exit-forward-model")!} />
+          </div>
         </div>
       </section>
 
@@ -66,7 +78,7 @@ const Flagship = () => {
       <section className="border-b border-border/60">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
           <div className="lg:col-span-6 relative min-h-[360px] lg:min-h-[640px] order-2 lg:order-1">
-            <img src={marketImg} alt="MSME market produce — coffee, spices, woven baskets" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <img src={marketImg} alt="MSME entrepreneur preparing premium beans for export channels" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="lg:col-span-6 p-10 md:p-16 lg:p-20 order-1 lg:order-2">
             <p className="pillar-num">02</p>
@@ -142,7 +154,7 @@ const Flagship = () => {
             </div>
           </div>
           <div className="lg:col-span-6 relative min-h-[360px] lg:min-h-[640px]">
-            <img src={circImg} alt="Hands sorting recycled plastic granules in a circular-economy workshop" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <img src={circImg} alt="Community waste-bank field staff sorting recyclable plastics" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
         <div className="container-edge py-16">

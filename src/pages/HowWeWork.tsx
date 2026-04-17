@@ -1,6 +1,10 @@
 import Layout from "@/components/site/Layout";
 import PageHeader from "@/components/site/PageHeader";
 import SectionLabel from "@/components/site/SectionLabel";
+import heroHowWeWork from "@/assets/hero-howework.jpg";
+import phaseDesign from "@/assets/photos/pdf-circle-discussion.jpg";
+import phaseCreate from "@/assets/photos/pdf-group-circle.jpg";
+import phaseSustain from "@/assets/photos/pdf-training-whiteboard.jpg";
 import trainingImg from "@/assets/photos/training-session.jpg";
 
 const PHASES = [
@@ -8,6 +12,8 @@ const PHASES = [
     roman: "I",
     title: "Co-Design for Delivery & Exit",
     sub: "Designing programs that are implementable, accountable, and exit-aware.",
+    image: phaseDesign,
+    imageAlt: "Community circle dialogue grounding co-design in local realities",
     items: [
       "Alignment on program objectives and exit expectations",
       "Implementation planning and exit pathway design",
@@ -19,6 +25,8 @@ const PHASES = [
     roman: "II",
     title: "Co-Create through Accountable Delivery",
     sub: "Delivering programs with monitoring, learning and operational discipline.",
+    image: phaseCreate,
+    imageAlt: "Community participants and field staff co-creating a program in session",
     items: [
       "Adaptive program execution with clear milestones",
       "Monitoring, accountability and adaptive learning",
@@ -30,6 +38,8 @@ const PHASES = [
     roman: "III",
     title: "Co-Sustain with Responsible Exit",
     sub: "Extending impact beyond programs through systems, markets and partnerships.",
+    image: phaseSustain,
+    imageAlt: "Training session preparing local actors for ownership at exit",
     items: [
       "Exit readiness assessment with the Exit Forward Model",
       "Transition of roles and ownership to local actors",
@@ -55,6 +65,8 @@ const HowWeWork = () => (
       eyebrow="How we work"
       title="A delivery framework that treats exit as a phase — not an event."
       intro="Across every engagement we move through three reinforcing phases. Programs are designed for implementation, exit and sustainability — together."
+      image={heroHowWeWork}
+      imageAlt="Indonesian field team reviewing maps and program plans in a community hall"
     />
 
     {/* Journey */}
@@ -67,6 +79,14 @@ const HowWeWork = () => (
             <div className="md:col-span-3">
               <p className="font-display italic text-[64px] leading-none text-foreground/80">{p.roman}</p>
               <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground mt-3">Phase {p.roman}</p>
+              <div className="mt-6 relative aspect-[4/3] overflow-hidden rounded-sm">
+                <img
+                  src={p.image}
+                  alt={p.imageAlt}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <div className="md:col-span-9">
               <h3 className="font-display text-[26px] md:text-[30px] leading-tight text-balance">{p.title}</h3>
