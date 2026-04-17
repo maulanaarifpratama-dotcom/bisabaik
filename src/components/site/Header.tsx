@@ -41,17 +41,17 @@ const Header = () => {
           : "bg-transparent"
       )}
     >
-      <div className="container-edge flex items-center justify-between h-[72px]">
+      <div className="container-edge flex items-center justify-between gap-6 h-[72px]">
         <Logo />
 
-        <nav className="hidden lg:flex items-center gap-7" aria-label="Primary">
+        <nav className="hidden lg:flex items-center gap-x-5 xl:gap-x-7" aria-label="Primary">
           {NAV.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
                 cn(
-                  "text-[13px] tracking-[-0.005em] transition-colors",
+                  "whitespace-nowrap text-[13px] tracking-[-0.005em] transition-colors",
                   isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                 )
               }
@@ -61,7 +61,7 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-1.5 xl:gap-2 shrink-0">
           <TooltipProvider delayDuration={150}>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -69,9 +69,10 @@ const Header = () => {
                   href="https://pasarbaik.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground text-[12.5px] tracking-[0.01em] px-4 h-9 rounded-sm hover:bg-primary/90 transition-colors"
+                  className="group inline-flex items-center gap-1.5 xl:gap-2 whitespace-nowrap bg-primary text-primary-foreground text-[12px] xl:text-[12.5px] tracking-[0.01em] px-3 xl:px-4 h-9 rounded-sm hover:bg-primary/90 transition-colors"
                 >
-                  Impact Supply Aggregator
+                  <span className="hidden xl:inline">Impact Supply Aggregator</span>
+                  <span className="xl:hidden">Aggregator</span>
                   <ArrowUpRight className="w-3.5 h-3.5 -mr-0.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </TooltipTrigger>
@@ -85,7 +86,7 @@ const Header = () => {
             href="https://bisabaik.or.id"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[12.5px] text-muted-foreground hover:text-foreground transition-colors px-3 h-9 inline-flex items-center gap-1.5"
+            className="hidden xl:inline-flex whitespace-nowrap text-[12.5px] text-muted-foreground hover:text-foreground transition-colors px-3 h-9 items-center gap-1.5"
           >
             Support Our Work
             <ArrowUpRight className="w-3 h-3" />
