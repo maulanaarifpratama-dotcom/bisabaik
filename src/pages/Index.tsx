@@ -24,7 +24,8 @@ const Index = () => {
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/55 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/30 to-transparent" />
         </div>
 
         <div className="container-edge pt-40 md:pt-56 pb-24 md:pb-40">
