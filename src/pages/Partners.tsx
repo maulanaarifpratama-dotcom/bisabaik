@@ -19,6 +19,7 @@ const Partners = () => (
   <Layout
     title="Partners & Collaborations — BisaBaik Foundation"
     description="Philanthropic, corporate, government and development partners who choose BisaBaik for accountable delivery, responsible exit and post-program continuity."
+    breadcrumbs={[{ name: "Partners", path: "/partners" }]}
   >
     <PageHeader
       eyebrow="Partners & Collaborations"

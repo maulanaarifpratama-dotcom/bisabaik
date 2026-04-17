@@ -28,6 +28,7 @@ const About = () => (
   <Layout
     title="About — BisaBaik Foundation"
     description="Bisa Baik Bersama is the impact delivery arm of Immers Asia Corp — translating impact advisory and program design into accountable on-the-ground implementation."
+    breadcrumbs={[{ name: "About", path: "/about" }]}
   >
     <PageHeader
       eyebrow="About"

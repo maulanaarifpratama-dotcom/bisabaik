@@ -38,6 +38,7 @@ const Contact = () => {
     <Layout
       title="Contact — BisaBaik Foundation"
       description="Get in touch with Bisa Baik Bersama. We work with philanthropic, corporate, government and development partners across Indonesia."
+      breadcrumbs={[{ name: "Contact", path: "/contact" }]}
     >
       <PageHeader
         eyebrow="Contact"

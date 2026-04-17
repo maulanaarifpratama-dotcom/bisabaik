@@ -60,6 +60,7 @@ const HowWeWork = () => (
   <Layout
     title="How We Work — BisaBaik Foundation"
     description="Our Impact Journey Model and risk-aware approach: co-design, co-create, and co-sustain — with exit considered from the outset."
+    breadcrumbs={[{ name: "How We Work", path: "/how-we-work" }]}
   >
     <PageHeader
       eyebrow="How we work"

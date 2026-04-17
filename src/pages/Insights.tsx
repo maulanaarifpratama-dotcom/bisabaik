@@ -29,6 +29,7 @@ const Insights = () => (
   <Layout
     title="Insights — BisaBaik Foundation"
     description="Frameworks, field notes and method briefs from BisaBaik on impact delivery, responsible exit and post-program economic continuity."
+    breadcrumbs={[{ name: "Insights", path: "/insights" }]}
   >
     <PageHeader
       eyebrow="Insights"

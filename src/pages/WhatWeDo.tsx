@@ -152,6 +152,7 @@ const WhatWeDo = () => (
   <Layout
     title="What We Do — BisaBaik Foundation"
     description="Three strategic pillars of impact delivery: end-to-end implementation, philanthropic exit strategy, and MSME aggregation through PasarBaik."
+    breadcrumbs={[{ name: "What We Do", path: "/what-we-do" }]}
   >
     <PageHeader
       eyebrow="What we do"
