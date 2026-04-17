@@ -9,7 +9,7 @@ interface PageHeaderProps {
 const PageHeader = ({ eyebrow, title, intro, image, imageAlt }: PageHeaderProps) => {
   if (image) {
     return (
-      <section className="relative overflow-hidden border-b border-border/60">
+      <section className="relative overflow-hidden isolate border-b border-border/60">
         <div className="absolute inset-0 -z-10">
           <img
             src={image}
