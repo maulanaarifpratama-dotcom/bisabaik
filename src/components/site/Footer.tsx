@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { NAV } from "@/data/site";
+import logoOfficial from "@/assets/logo-bisabaik-official.png";
 
 const Footer = () => {
   return (
@@ -8,8 +9,12 @@ const Footer = () => {
       <div className="container-edge py-20 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <p className="eyebrow">Bisa Baik Bersama</p>
-            <h2 className="display-md mt-5 max-w-md text-balance">
+            <img
+              src={logoOfficial}
+              alt="Bisa Baik Bersama — Rumah Pembangunan Berkelanjutan"
+              className="h-14 w-auto object-contain mb-8"
+            />
+            <h2 className="display-md mt-2 max-w-md text-balance">
               Deliver well, exit responsibly, sustain impact.
             </h2>
             <p className="mt-6 text-muted-foreground text-[14.5px] leading-relaxed max-w-md">
