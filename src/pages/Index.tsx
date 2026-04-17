@@ -14,7 +14,7 @@ const Index = () => {
       description="Indonesia-based impact delivery partner. Disciplined execution, responsible exit, and post-program sustainability through MSME market continuity."
     >
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden isolate">
         <div className="absolute inset-0 -z-10">
           <img
             src={heroImg}
