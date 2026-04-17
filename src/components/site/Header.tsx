@@ -5,16 +5,17 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { NAV } from "@/data/site";
 import { cn } from "@/lib/utils";
 
+import logoOfficial from "@/assets/logo-bisabaik-official.png";
+
 const Logo = () => (
-  <Link to="/" className="flex items-center gap-3 group" aria-label="BisaBaik home">
-    <svg width="28" height="28" viewBox="0 0 28 28" className="text-foreground" aria-hidden>
-      <path d="M3 22 C 3 10, 25 10, 25 22" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <path d="M7 22 C 7 14, 21 14, 21 22" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <path d="M11 22 C 11 18, 17 18, 17 22" stroke="currentColor" strokeWidth="1.4" fill="none" />
-    </svg>
-    <span className="font-display text-[17px] tracking-tight leading-none">
-      Bisa Baik <span className="text-muted-foreground font-light">Foundation</span>
-    </span>
+  <Link to="/" className="flex items-center gap-2.5 group" aria-label="Bisa Baik Bersama home">
+    <img
+      src={logoOfficial}
+      alt="Bisa Baik Bersama"
+      className="h-9 md:h-10 w-auto object-contain"
+      width={200}
+      height={64}
+    />
   </Link>
 );
 
@@ -69,7 +70,7 @@ const Header = () => {
                   href="https://pasarbaik.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 xl:gap-2 whitespace-nowrap bg-primary text-primary-foreground text-[12px] xl:text-[12.5px] tracking-[0.01em] px-3 xl:px-4 h-9 rounded-sm hover:bg-primary/90 transition-colors"
+                  className="group inline-flex items-center gap-1.5 xl:gap-2 whitespace-nowrap bg-primary text-primary-foreground text-[12px] xl:text-[12.5px] font-medium tracking-[0.01em] px-3.5 xl:px-4 h-9 rounded-sm hover:bg-primary/90 transition-colors shadow-sm"
                 >
                   <span className="hidden xl:inline">Impact Supply Aggregator</span>
                   <span className="xl:hidden">Aggregator</span>
@@ -86,7 +87,7 @@ const Header = () => {
             href="https://bisabaik.or.id"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden xl:inline-flex whitespace-nowrap text-[12.5px] text-muted-foreground hover:text-foreground transition-colors px-3 h-9 items-center gap-1.5"
+            className="hidden xl:inline-flex whitespace-nowrap text-[12.5px] text-secondary hover:text-secondary-foreground hover:bg-secondary border border-secondary/60 transition-colors px-3.5 h-9 rounded-sm items-center gap-1.5"
           >
             Support Our Work
             <ArrowUpRight className="w-3 h-3" />
@@ -133,7 +134,7 @@ const Header = () => {
               href="https://pasarbaik.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-between bg-primary text-primary-foreground text-[13px] px-4 h-11 rounded-sm"
+              className="inline-flex items-center justify-between bg-primary text-primary-foreground font-medium text-[13px] px-4 h-11 rounded-sm"
             >
               Impact Supply Aggregator
               <ArrowUpRight className="w-4 h-4" />
@@ -142,7 +143,7 @@ const Header = () => {
               href="https://bisabaik.or.id"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-between border border-border text-[13px] px-4 h-11 rounded-sm text-foreground"
+              className="inline-flex items-center justify-between border border-secondary/70 text-secondary text-[13px] px-4 h-11 rounded-sm"
             >
               Support Our Work
               <ArrowUpRight className="w-4 h-4" />

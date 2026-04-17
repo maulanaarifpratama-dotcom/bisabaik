@@ -9,52 +9,52 @@
 
 @layer base {
   :root {
-    /* Brand surfaces */
-    --background: 42 30% 97%;          /* warm bone */
-    --foreground: 156 35% 11%;         /* deep forest ink */
+    /* Brand surfaces — warm institutional paper */
+    --background: 36 22% 96%;          /* warm off-white */
+    --foreground: 215 35% 16%;         /* deep ink (logo dark) */
 
-    --surface: 40 28% 94%;             /* card warm */
-    --surface-elevated: 40 32% 98%;
+    --surface: 36 22% 93%;             /* card warm */
+    --surface-elevated: 36 28% 98%;
 
-    --card: 40 32% 98%;
-    --card-foreground: 156 35% 11%;
+    --card: 36 28% 98%;
+    --card-foreground: 215 35% 16%;
 
-    --popover: 40 32% 98%;
-    --popover-foreground: 156 35% 11%;
+    --popover: 36 28% 98%;
+    --popover-foreground: 215 35% 16%;
 
-    /* Primary: deep forest */
-    --primary: 156 38% 14%;
-    --primary-foreground: 42 30% 97%;
+    /* Primary: deep ink blue-grey (from logo) */
+    --primary: 215 38% 18%;
+    --primary-foreground: 36 28% 97%;
 
-    /* Secondary: muted sage */
-    --secondary: 145 14% 88%;
-    --secondary-foreground: 156 35% 14%;
+    /* Secondary: warm gold / bronze (from logo) */
+    --secondary: 35 38% 45%;
+    --secondary-foreground: 36 28% 97%;
 
     /* Muted */
-    --muted: 40 18% 90%;
-    --muted-foreground: 156 12% 36%;
+    --muted: 36 14% 88%;
+    --muted-foreground: 215 14% 38%;
 
-    /* Accent: terracotta — used very sparingly */
-    --accent: 14 55% 52%;
-    --accent-foreground: 42 30% 97%;
+    /* Accent: warm gold — brand expression */
+    --accent: 35 42% 48%;
+    --accent-foreground: 36 28% 97%;
 
-    /* Sage utility */
-    --sage: 145 18% 42%;
-    --sage-foreground: 42 30% 97%;
+    /* Gold utility (renamed conceptually but kept as 'sage' token name for stability) */
+    --sage: 35 42% 48%;
+    --sage-foreground: 36 28% 97%;
 
     /* Lines */
     --destructive: 0 65% 45%;
-    --destructive-foreground: 42 30% 97%;
+    --destructive-foreground: 36 28% 97%;
 
-    --border: 156 12% 86%;
-    --input: 156 12% 86%;
-    --ring: 156 38% 24%;
+    --border: 215 14% 84%;
+    --input: 215 14% 84%;
+    --ring: 215 38% 28%;
 
     --radius: 0.25rem;
 
     /* Editorial accents */
-    --rule: 156 18% 78%;
-    --hairline: 156 14% 82%;
+    --rule: 35 28% 70%;
+    --hairline: 215 14% 82%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -67,23 +67,23 @@
   }
 
   .dark {
-    --background: 156 30% 8%;
-    --foreground: 42 30% 95%;
-    --card: 156 30% 10%;
-    --card-foreground: 42 30% 95%;
-    --popover: 156 30% 10%;
-    --popover-foreground: 42 30% 95%;
-    --primary: 42 30% 95%;
-    --primary-foreground: 156 38% 14%;
-    --secondary: 156 18% 18%;
-    --secondary-foreground: 42 30% 95%;
-    --muted: 156 14% 16%;
-    --muted-foreground: 42 14% 70%;
-    --accent: 14 55% 58%;
-    --accent-foreground: 42 30% 95%;
-    --border: 156 14% 20%;
-    --input: 156 14% 20%;
-    --ring: 42 30% 80%;
+    --background: 215 35% 9%;
+    --foreground: 36 22% 95%;
+    --card: 215 32% 12%;
+    --card-foreground: 36 22% 95%;
+    --popover: 215 32% 12%;
+    --popover-foreground: 36 22% 95%;
+    --primary: 35 42% 58%;
+    --primary-foreground: 215 38% 12%;
+    --secondary: 215 22% 20%;
+    --secondary-foreground: 36 22% 95%;
+    --muted: 215 18% 18%;
+    --muted-foreground: 36 14% 70%;
+    --accent: 35 42% 58%;
+    --accent-foreground: 215 38% 12%;
+    --border: 215 18% 22%;
+    --input: 215 18% 22%;
+    --ring: 35 42% 60%;
   }
 }
 
