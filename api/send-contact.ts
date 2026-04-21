@@ -32,16 +32,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const SMTP_USER = process.env.SMTP_USER;
-  const SMTP_PASS = process.env.SMTP_PASS;
   const TO_ADDRESS = process.env.CONTACT_TO || "info@bisabaik.or.id";
-
-  if (!SMTP_USER || !SMTP_PASS) {
-    console.error("Missing SMTP_USER or SMTP_PASS environment variables");
-    return res
-      .status(500)
-      .json({ error: "Email service is not configured. Please contact the site administrator." });
-  }
+  const FROM_ADDRESS = process.env.CONTACT_FROM || "info@bisabaik.or.id";
 
   try {
     const body = (typeof req.body === "string" ? JSON.parse(req.body) : req.body) ?? {};
