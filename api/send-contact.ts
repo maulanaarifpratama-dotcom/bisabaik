@@ -2,9 +2,10 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 
 /**
- * Contact form email sender
- * Uses Google Workspace SMTP Relay (IP-based, no auth)
- * Relay must allow Vercel IP ranges
+ * Contact form handler
+ * - Compatible with Lovable form field names
+ * - Uses Google Workspace SMTP Relay (IP-based, no auth)
+ * - Safe for Vercel
  */
 
 const isEmail = (value: string) =>
@@ -36,22 +37,34 @@ export default async function handler(
     const body =
       typeof req.body === "string" ? JSON.parse(req.body) : req.body ?? {};
 
+    // ✅ FIELD MAPPING (frontend → backend)
     const name = clean(body.name, 200);
     const email = clean(body.email, 254);
-    const organization = clean(body.org, 200);
+
+    const organization =
+      clean(body.organization, 200) || clean(body.org, 200);
+
     const role = clean(body.role, 200);
-    const interest = clean(body.interest, 100);
+
+    const interest =
+      clean(body.interest, 100) ||
+      clean(body.focus, 100) ||
+      clean(body.topic, 100);
+
     const message = clean(body.message, 5000);
 
+    // ✅ Validation (robust)
     if (!name || !email || !organization || !interest || !message) {
-      return res.status(400).json({ error: "Missing required fields." });
+      return res.status(400).json({
+        error: "Please complete all required fields.",
+      });
     }
 
     if (!isEmail(email)) {
-      return res.status(400).json({ error: "Invalid email address." });
+      return res.status(400).json({
+        error: "Invalid email address.",
+      });
     }
-
-    const subject = `[Bisabaik.org – Program Inquiry] ${organization}`;
 
     const interestLabels: Record<string, string> = {
       "program-delivery": "Program delivery partnership",
@@ -63,6 +76,8 @@ export default async function handler(
     };
 
     const interestLabel = interestLabels[interest] || interest;
+
+    const subject = `[Bisabaik.org – Program Inquiry] ${organization}`;
 
     const text = `
 New inquiry via bisabaik.org
@@ -92,7 +107,7 @@ ${message}
           )}</td></tr>
         </table>
         <h3>Message</h3>
-        <pre>${escapeHtml(message)}</pre>
+        <pre style="white-space:pre-wrap">${escapeHtml(message)}</pre>
       </div>
     `;
 
@@ -101,11 +116,11 @@ ${message}
       host: "smtp-relay.gmail.com",
       port: 587,
       secure: false,
-      name: "bisabaik.or.id", // ✅ EHLO domain MUST match Workspace domain
+      name: "bisabaik.or.id", // EHLO must match Workspace domain
     });
 
     await transporter.sendMail({
-      from: "BisaBaik Foundation <info@bisabaik.or.id>", // ✅ MAIL FROM domain match
+      from: "BisaBaik Foundation <info@bisabaik.or.id>",
       to: "info@bisabaik.or.id",
       replyTo: `"${name}" <${email}>`,
       subject,
@@ -117,8 +132,8 @@ ${message}
   } catch (err) {
     console.error("send-contact error:", err);
     return res.status(500).json({
-      error: "Failed to send your inquiry. Please contact info@bisabaik.or.id.",
+      error:
+        "Failed to send your inquiry. Please contact info@bisabaik.or.id.",
     });
   }
 }
-``
