@@ -1,13 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 
-// Vercel serverless function: sends contact form submissions via Gmail SMTP.
-// Requires the following environment variables to be set in the Vercel project:
-//   SMTP_USER  -> info@bisabaik.or.id (the authenticated Gmail/Workspace account)
-//   SMTP_PASS  -> 16-char Google App Password generated for "Mail"
+// Vercel serverless function: sends contact form submissions via
+// Google Workspace SMTP Relay (smtp-relay.gmail.com:587, no auth).
+// The Workspace SMTP Relay service must be configured to accept mail
+// from Vercel's IP ranges, with "Require SMTP Authentication" disabled.
 //
 // Optional override:
 //   CONTACT_TO -> recipient address (defaults to info@bisabaik.or.id)
+//   CONTACT_FROM -> sender address (defaults to info@bisabaik.or.id)
 
 const escapeHtml = (str: string) =>
   str
@@ -31,16 +32,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const SMTP_USER = process.env.SMTP_USER;
-  const SMTP_PASS = process.env.SMTP_PASS;
   const TO_ADDRESS = process.env.CONTACT_TO || "info@bisabaik.or.id";
-
-  if (!SMTP_USER || !SMTP_PASS) {
-    console.error("Missing SMTP_USER or SMTP_PASS environment variables");
-    return res
-      .status(500)
-      .json({ error: "Email service is not configured. Please contact the site administrator." });
-  }
+  const FROM_ADDRESS = process.env.CONTACT_FROM || "info@bisabaik.or.id";
 
   try {
     const body = (typeof req.body === "string" ? JSON.parse(req.body) : req.body) ?? {};
@@ -100,14 +93,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     `;
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: { user: SMTP_USER, pass: SMTP_PASS },
+      host: "smtp-relay.gmail.com",
+      port: 587,
+      secure: false,
     });
 
     await transporter.sendMail({
-      from: `"BisaBaik Website" <${SMTP_USER}>`,
+      from: `"BisaBaik Website" <${FROM_ADDRESS}>`,
       to: TO_ADDRESS,
       replyTo: `"${name}" <${email}>`,
       subject,
