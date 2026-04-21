@@ -1,14 +1,19 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 
-// Vercel serverless function: sends contact form submissions via
-// Google Workspace SMTP Relay (smtp-relay.gmail.com:587, no auth).
-// The Workspace SMTP Relay service must be configured to accept mail
-// from Vercel's IP ranges, with "Require SMTP Authentication" disabled.
-//
-// Optional override:
-//   CONTACT_TO -> recipient address (defaults to info@bisabaik.or.id)
-//   CONTACT_FROM -> sender address (defaults to info@bisabaik.or.id)
+/**
+ * Contact form email sender
+ * Uses Google Workspace SMTP Relay (IP-based, no auth)
+ * Relay must allow Vercel IP ranges
+ */
+
+const isEmail = (value: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && value.length <= 254;
+
+const clean = (value: unknown, max = 2000): string => {
+  if (typeof value !== "string") return "";
+  return value.trim().slice(0, max);
+};
 
 const escapeHtml = (str: string) =>
   str
@@ -18,90 +23,90 @@ const escapeHtml = (str: string) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
-const isEmail = (value: string) =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && value.length <= 254;
-
-const str = (value: unknown, max = 2000): string => {
-  if (typeof value !== "string") return "";
-  return value.trim().slice(0, max);
-};
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse
+) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const TO_ADDRESS = process.env.CONTACT_TO || "info@bisabaik.or.id";
-  const FROM_ADDRESS = process.env.CONTACT_FROM || "info@bisabaik.or.id";
-
   try {
-    const body = (typeof req.body === "string" ? JSON.parse(req.body) : req.body) ?? {};
+    const body =
+      typeof req.body === "string" ? JSON.parse(req.body) : req.body ?? {};
 
-    const name = str(body.name, 200);
-    const email = str(body.email, 254);
-    const org = str(body.org, 200);
-    const role = str(body.role, 200);
-    const interest = str(body.interest, 100);
-    const message = str(body.message, 5000);
+    const name = clean(body.name, 200);
+    const email = clean(body.email, 254);
+    const organization = clean(body.org, 200);
+    const role = clean(body.role, 200);
+    const interest = clean(body.interest, 100);
+    const message = clean(body.message, 5000);
 
-    if (!name || !email || !org || !interest || !message) {
+    if (!name || !email || !organization || !interest || !message) {
       return res.status(400).json({ error: "Missing required fields." });
     }
+
     if (!isEmail(email)) {
-      return res.status(400).json({ error: "Please provide a valid email address." });
+      return res.status(400).json({ error: "Invalid email address." });
     }
 
-    const subject = `[Bisabaik.org – Program Inquiry] ${org}`;
+    const subject = `[Bisabaik.org – Program Inquiry] ${organization}`;
 
     const interestLabels: Record<string, string> = {
       "program-delivery": "Program delivery partnership",
       "exit-strategy": "Exit strategy & transition",
       "msme-aggregation": "MSME aggregation via PasarBaik",
       "circular-economy": "Circular economy & waste management",
-      briefing: "Insights briefing for our team",
+      briefing: "Insights briefing",
       other: "Other",
     };
+
     const interestLabel = interestLabels[interest] || interest;
 
-    const text = [
-      `New inquiry from the BisaBaik website`,
-      ``,
-      `Name:         ${name}`,
-      `Email:        ${email}`,
-      `Organization: ${org}`,
-      `Role:         ${role || "—"}`,
-      `Interest:     ${interestLabel}`,
-      ``,
-      `Message:`,
-      message,
-    ].join("\n");
+    const text = `
+New inquiry via bisabaik.org
+
+Name: ${name}
+Email: ${email}
+Organization: ${organization}
+Role: ${role || "-"}
+Interest: ${interestLabel}
+
+Message:
+${message}
+    `.trim();
 
     const html = `
-      <div style="font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color:#111; max-width:640px;">
-        <h2 style="margin:0 0 16px;font-size:18px;">New inquiry from the BisaBaik website</h2>
-        <table style="border-collapse:collapse;font-size:14px;line-height:1.6;">
-          <tr><td style="padding:4px 12px 4px 0;color:#666;">Name</td><td>${escapeHtml(name)}</td></tr>
-          <tr><td style="padding:4px 12px 4px 0;color:#666;">Email</td><td><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
-          <tr><td style="padding:4px 12px 4px 0;color:#666;">Organization</td><td>${escapeHtml(org)}</td></tr>
-          <tr><td style="padding:4px 12px 4px 0;color:#666;">Role</td><td>${escapeHtml(role || "—")}</td></tr>
-          <tr><td style="padding:4px 12px 4px 0;color:#666;">Interest</td><td>${escapeHtml(interestLabel)}</td></tr>
+      <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; color:#111; max-width:640px">
+        <h2>New inquiry via bisabaik.org</h2>
+        <table style="font-size:14px;line-height:1.6">
+          <tr><td><strong>Name</strong></td><td>${escapeHtml(name)}</td></tr>
+          <tr><td><strong>Email</strong></td><td>${escapeHtml(email)}</td></tr>
+          <tr><td><strong>Organization</strong></td><td>${escapeHtml(
+            organization
+          )}</td></tr>
+          <tr><td><strong>Role</strong></td><td>${escapeHtml(role || "-")}</td></tr>
+          <tr><td><strong>Interest</strong></td><td>${escapeHtml(
+            interestLabel
+          )}</td></tr>
         </table>
-        <h3 style="margin:24px 0 8px;font-size:14px;color:#666;text-transform:uppercase;letter-spacing:0.08em;">Message</h3>
-        <div style="white-space:pre-wrap;font-size:14px;line-height:1.6;">${escapeHtml(message)}</div>
+        <h3>Message</h3>
+        <pre>${escapeHtml(message)}</pre>
       </div>
     `;
 
+    // ✅ SMTP Relay with EHLO domain alignment (CRITICAL)
     const transporter = nodemailer.createTransport({
       host: "smtp-relay.gmail.com",
       port: 587,
       secure: false,
-      name: "bisabaik.or.id",
+      name: "bisabaik.or.id", // ✅ EHLO domain MUST match Workspace domain
     });
 
     await transporter.sendMail({
-      from: `"BisaBaik Foundation" <${FROM_ADDRESS}>`,
-      to: TO_ADDRESS,
+      from: "BisaBaik Foundation <info@bisabaik.or.id>", // ✅ MAIL FROM domain match
+      to: "info@bisabaik.or.id",
       replyTo: `"${name}" <${email}>`,
       subject,
       text,
@@ -111,8 +116,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error("send-contact error:", err);
-    return res
-      .status(500)
-      .json({ error: "Failed to send your inquiry. Please email info@bisabaik.or.id directly." });
+    return res.status(500).json({
+      error: "Failed to send your inquiry. Please contact info@bisabaik.or.id.",
+    });
   }
 }
+``
