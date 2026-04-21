@@ -96,10 +96,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       host: "smtp-relay.gmail.com",
       port: 587,
       secure: false,
+      name: "bisabaik.or.id",
     });
 
     await transporter.sendMail({
-      from: `"BisaBaik Website" <${FROM_ADDRESS}>`,
+      from: `"BisaBaik Foundation" <${FROM_ADDRESS}>`,
       to: TO_ADDRESS,
       replyTo: `"${name}" <${email}>`,
       subject,
