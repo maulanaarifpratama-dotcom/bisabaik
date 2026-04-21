@@ -93,14 +93,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     `;
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: { user: SMTP_USER, pass: SMTP_PASS },
+      host: "smtp-relay.gmail.com",
+      port: 587,
+      secure: false,
     });
 
     await transporter.sendMail({
-      from: `"BisaBaik Website" <${SMTP_USER}>`,
+      from: `"BisaBaik Website" <${FROM_ADDRESS}>`,
       to: TO_ADDRESS,
       replyTo: `"${name}" <${email}>`,
       subject,
