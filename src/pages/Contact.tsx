@@ -21,17 +21,48 @@ const Contact = () => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submitting) return;
     setSubmitting(true);
-    // Front-end only — content is mailto-style.
-    const form = new FormData(e.currentTarget);
-    const subject = `Inquiry from ${form.get("name") || "BisaBaik website"}`;
-    const body = `Organization: ${form.get("org")}\nRole: ${form.get("role")}\nInterest: ${form.get("interest")}\n\n${form.get("message")}`;
-    const mailto = `mailto:info@bisabaik.or.id?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setTimeout(() => {
+
+    const formEl = e.currentTarget;
+    const form = new FormData(formEl);
+    const payload = {
+      name: String(form.get("name") || ""),
+      email: String(form.get("email") || ""),
+      org: String(form.get("org") || ""),
+      role: String(form.get("role") || ""),
+      interest: String(form.get("interest") || ""),
+      message: String(form.get("message") || ""),
+    };
+
+    try {
+      const res = await fetch("/api/send-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error || "Something went wrong while sending your inquiry.");
+      }
+
+      toast({
+        title: "Inquiry sent",
+        description: "Thank you — our team will respond within two working days.",
+      });
+      formEl.reset();
+    } catch (err) {
+      toast({
+        title: "Could not send your inquiry",
+        description:
+          err instanceof Error
+            ? err.message
+            : "Please try again, or write to info@bisabaik.or.id directly.",
+      });
+    } finally {
       setSubmitting(false);
-      toast({ title: "Opening your email client", description: "If nothing happened, please write to info@bisabaik.or.id." });
-    }, 500);
+    }
   };
 
   return (
