@@ -1,0 +1,92 @@
+meta:
+  title: "Flagship initiatives: Exit Forward, PasarBaik, circular economy"
+  description: >-
+    The Exit Forward Model, the PasarBaik impact supply aggregator, and our
+    circular economy and waste management initiative. Three practical models
+    proving that exit can extend impact.
+
+header:
+  title: Practice platforms where exit becomes extension.
+  intro: >-
+    Our flagships are not pilots. They are operating models where method,
+    partnership and post-program viability keep being refined against real
+    conditions.
+  imageAlt: >-
+    BisaBaik field operations team walking a rural village pathway.
+
+labels:
+  context: Context
+  role: Our role
+  scope: Delivery scope
+  exit: Exit and sustainability
+  signal: Impact signal
+  flagship: Flagship initiative
+  engagement: Engagement
+
+exitForward:
+  title: Exit Forward Model
+  subtitle: A responsible exit and transition model.
+  body: >-
+    Our signature model, supporting philanthropic institutions to design and
+    then actually run a responsible exit. It covers the transition of local
+    ownership and the extension of impact through domestic and export market
+    access for UMKM beneficiaries.
+  imageAlt: >-
+    BisaBaik field team reviewing exit and transition plans on site.
+  stages:
+    - title: Traditional program end
+      body: >-
+        Without a transition strategy, UMKMs revert to dependency once support
+        is withdrawn.
+      tag: Economically vulnerable
+    - title: Exit Forward intervention
+      body: >-
+        Exit designed from the beginning. Phased withdrawal, local governance
+        strengthening, post-program capacity development, and time-bound
+        mentoring.
+      tag: PasarBaik aggregator
+    - title: Sustainable independence
+      body: >-
+        Export-ready producers, stable and growing finances, and ownership
+        that sits locally.
+      tag: Continuity through markets
+  note: >-
+    With this approach exit does not stop impact. It carries impact into
+    markets that keep paying.
+
+pasarbaik:
+  title: PasarBaik
+  subtitle: Impact supply aggregator.
+  body: >-
+    PasarBaik aggregates philanthropic UMKM supply and matches it to domestic
+    and export demand. It was built as a market mechanism, which is why
+    sustainability is its operating model rather than a closing paragraph.
+  imageAlt: >-
+    UMKM entrepreneur preparing premium beans for export channels.
+  facts:
+    - { key: Function, value: Demand and supply matching }
+    - { key: Reach, value: Domestic and export channels }
+    - { key: Anchor, value: Aid for Trade pathway }
+  cta:
+    label: Visit PasarBaik
+    href: https://pasarbaik.com
+
+circular:
+  title: Circular economy and waste management
+  subtitle: A demonstration model for environmental program viability.
+  body: >-
+    A financially viable model that shows end-to-end delivery capacity with a
+    clear pathway to independent local management.
+  imageAlt: >-
+    Community waste-bank staff sorting recyclable plastics.
+  rolesHeading: Our triple role
+  roles:
+    - Program implementer
+    - Waste management operator
+    - Off-taker of processed material
+  rolesNote: >-
+    Holding all three roles is what keeps the risk off the partner.
+  relevanceLabel: Strategic relevance
+  relevance: >-
+    A demonstration model proving that environmental programs can be
+    operational, economically viable and responsibly exited.

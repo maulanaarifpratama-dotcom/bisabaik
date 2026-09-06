@@ -1,0 +1,416 @@
+@import "tailwindcss";
+
+/* Self-hosted, no external font requests. Newsreader carries an optical-size axis,
+   which is why it holds up at both 68px display and 15px pull-quote sizes. */
+@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/newsreader/opsz-italic.css";
+@import "@fontsource-variable/inter-tight/wght.css";
+
+/* Theme is always written to <html data-theme> by an inline script before paint,
+   so the variant is attribute-driven and never disagrees with the painted colours. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------------------------------------------------------------------------
+   Palette.
+   Both hues are sampled from the Bisa Baik Bersama wordmark: the slab serif is
+   ink navy, "Bersama" is bronze. Bronze is the single accent for the whole site.
+   The ground is a desaturated document stock, not a cream, so the bronze reads
+   as brand rather than as decoration.
+   --------------------------------------------------------------------------- */
+:root {
+  --paper: #f7f6f2;
+  --surface: #f0eee8;
+  --surface-2: #fcfbf9;
+  --ink: #232e38;
+  --ink-soft: #4c5765;
+  --line: #dcd8cf;
+  --hairline: #e6e3dc;
+  --bronze: #8c734b;
+  --bronze-strong: #715b36;
+  --on-accent: #fcfbf9;
+  --on-ink: #f4f2ee;
+  --danger: #9d2f2a;
+  --shadow-tint: 35 46 56;
+
+  color-scheme: light;
+}
+
+/* No-JS fallback: honour the system preference when nothing set data-theme. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --paper: #15191e;
+    --surface: #1c2128;
+    --surface-2: #1f252d;
+    --ink: #e9e7e1;
+    --ink-soft: #a7aeb9;
+    --line: #2c333c;
+    --hairline: #242a32;
+    --bronze: #c6a46b;
+    --bronze-strong: #c6a46b;
+    --on-accent: #15191e;
+    --on-ink: #15191e;
+    --danger: #e08b84;
+    --shadow-tint: 0 0 0;
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #15191e;
+  --surface: #1c2128;
+  --surface-2: #1f252d;
+  --ink: #e9e7e1;
+  --ink-soft: #a7aeb9;
+  --line: #2c333c;
+  --hairline: #242a32;
+  --bronze: #c6a46b;
+  --bronze-strong: #c6a46b;
+  --on-accent: #15191e;
+  --on-ink: #15191e;
+  --danger: #e08b84;
+  --shadow-tint: 0 0 0;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-hairline: var(--hairline);
+  --color-bronze: var(--bronze);
+  --color-bronze-strong: var(--bronze-strong);
+  --color-on-accent: var(--on-accent);
+  --color-on-ink: var(--on-ink);
+  --color-danger: var(--danger);
+
+  --font-display: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter Tight Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* One radius for the whole site. Documents have corners, not pills. */
+  --radius-brand: 2px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    /* The header is 68px tall and fixed; anchors must clear it. */
+    scroll-padding-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.006em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  /* Browser surfaces belong to the design system too. */
+  ::selection {
+    background: color-mix(in srgb, var(--bronze) 30%, transparent);
+    color: var(--ink);
+  }
+
+  :root {
+    caret-color: var(--bronze-strong);
+    scrollbar-color: color-mix(in srgb, var(--ink) 28%, var(--paper)) var(--paper);
+    scrollbar-width: thin;
+    accent-color: var(--bronze-strong);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--bronze-strong);
+    outline-offset: 2px;
+    border-radius: 1px;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: from-font;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Typographic detail: italics in display type need descender room. */
+  em,
+  i {
+    font-style: italic;
+    line-height: 1.14;
+  }
+}
+
+@layer components {
+  .edge {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 84rem;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .edge {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .edge {
+      padding-inline: 3.5rem;
+    }
+  }
+
+  .display-1 {
+    font-size: clamp(2.35rem, 5.2vw, 4.25rem);
+    line-height: 1.04;
+    font-weight: 380;
+  }
+
+  .display-2 {
+    font-size: clamp(1.85rem, 3.5vw, 2.9rem);
+    line-height: 1.1;
+    font-weight: 400;
+  }
+
+  .display-3 {
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    line-height: 1.22;
+    font-weight: 450;
+  }
+
+  .prose-measure {
+    max-width: 68ch;
+  }
+
+  /* Link that reveals its rule from the left instead of blinking on. */
+  .link-rule {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ink);
+  }
+
+  .link-rule::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -0.2em;
+    height: 1px;
+    background: color-mix(in srgb, var(--ink) 45%, transparent);
+    transform-origin: right;
+    transform: scaleX(1);
+    transition: transform 260ms var(--ease-out);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .link-rule:hover::after {
+      transform-origin: left;
+      transform: scaleX(0);
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: var(--radius-brand);
+    padding-inline: 1.15rem;
+    height: 2.75rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.004em;
+    font-weight: 500;
+    transition:
+      background-color 180ms var(--ease-out),
+      border-color 180ms var(--ease-out),
+      color 180ms var(--ease-out),
+      transform 140ms var(--ease-out);
+  }
+
+  .btn:active {
+    transform: scale(0.975);
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--on-ink);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover {
+      background: color-mix(in srgb, var(--ink) 88%, var(--bronze));
+    }
+  }
+
+  .btn-quiet {
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-quiet:hover {
+      border-color: var(--ink);
+    }
+  }
+
+  .rule {
+    height: 1px;
+    width: 100%;
+    background: var(--hairline);
+  }
+
+  /* Long-form legal prose. Written here rather than pulled from a plugin so the
+     rhythm matches the rest of the type scale. */
+  .prose-legal {
+    max-width: 68ch;
+    font-size: 15.5px;
+    line-height: 1.72;
+    color: var(--ink);
+  }
+
+  .prose-legal > * + * {
+    margin-block-start: 1.15em;
+  }
+
+  .prose-legal h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-block-start: 2.6em;
+    margin-block-end: 0.7em;
+    padding-block-start: 1.4rem;
+    border-block-start: 1px solid var(--hairline);
+  }
+
+  .prose-legal > h2:first-child {
+    margin-block-start: 0;
+    padding-block-start: 0;
+    border-block-start: 0;
+  }
+
+  .prose-legal h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    margin-block-start: 2em;
+    margin-block-end: 0.5em;
+  }
+
+  .prose-legal p {
+    color: color-mix(in srgb, var(--ink) 92%, transparent);
+  }
+
+  .prose-legal ul,
+  .prose-legal ol {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  .prose-legal li {
+    position: relative;
+    padding-inline-start: 1.4rem;
+    margin-block-start: 0.55em;
+  }
+
+  .prose-legal ul > li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.82em;
+    width: 0.65rem;
+    height: 1px;
+    background: var(--bronze);
+  }
+
+  .prose-legal ol {
+    counter-reset: legal;
+  }
+
+  .prose-legal ol > li {
+    counter-increment: legal;
+  }
+
+  .prose-legal ol > li::before {
+    content: counter(legal, decimal-leading-zero);
+    position: absolute;
+    inset-inline-start: 0;
+    font-family: var(--font-display);
+    font-size: 0.85em;
+    color: var(--ink-soft);
+  }
+
+  .prose-legal strong {
+    font-weight: 600;
+  }
+
+  .prose-legal a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--bronze) 70%, transparent);
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 200ms var(--ease-out);
+  }
+
+  .prose-legal a:hover {
+    text-decoration-color: var(--bronze);
+  }
+
+  /* Scroll reveal. Default state is visible, so no-JS and reduced-motion users
+     never lose content; the script opts elements into the hidden start. */
+  [data-reveal] {
+    opacity: 1;
+  }
+
+  [data-reveal][data-reveal-armed] {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  [data-reveal][data-reveal-shown] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 620ms var(--ease-out),
+      transform 620ms var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal][data-reveal-armed] {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

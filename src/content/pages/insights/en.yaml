@@ -1,0 +1,34 @@
+meta:
+  title: "Insights: practice notes on delivery and exit"
+  description: >-
+    Frameworks, field notes and method briefs from BisaBaik on impact delivery,
+    responsible exit and post-program economic continuity.
+
+header:
+  title: Practice notes from delivery and exit.
+  intro: >-
+    A growing library of frameworks, field notes and method briefs, written for
+    institutional partners who want to think rigorously about what happens
+    after a program ends.
+  imageAlt: >-
+    Researcher writing field notes overlooking Indonesian rice fields.
+
+practice:
+  heading: Insights begin in the field, not in the deck.
+  body: >-
+    Every framework we publish has been through co-design sessions, risk
+    reviews and the ordinary friction of accountable delivery first.
+  imageAlt: >-
+    Community circle discussion that grounds our published insights in
+    practice.
+
+forthcoming: Forthcoming
+
+briefing:
+  heading: Request a tailored briefing for your team.
+  body: >-
+    We run private briefings on Exit Forward, MSME aggregation and risk-aware
+    delivery for philanthropic, corporate and development partners.
+  cta:
+    label: Request a briefing
+    href: "mailto:info@bisabaik.or.id?subject=Insights%20Briefing%20Request"

@@ -1,0 +1,110 @@
+meta:
+  title: "What we do: implementation, exit strategy and market continuity"
+  description: >-
+    Three pillars of impact delivery: end-to-end implementation, philanthropic
+    exit strategy, and MSME aggregation through PasarBaik.
+
+header:
+  title: End-to-end delivery, with exit in mind.
+  intro: >-
+    We provide implementation capacity for philanthropic and development
+    partners, with exit and sustainability written into the delivery plan
+    rather than added once the money runs out.
+  imageAlt: >-
+    BisaBaik field operations team walking through an Indonesian village at
+    golden hour.
+
+role:
+  heading: What our role usually covers
+  items:
+    - Implementation planning and field coordination
+    - Direct or white-label execution, aligned to partner needs
+    - Risk management, accountability and results reporting
+    - Local capacity strengthening and transition readiness
+    - Exit support and post-program continuity
+    - Aggregation and market continuity via PasarBaik
+
+labels:
+  pillar: Pillar
+  deliverables: Key deliverables
+  value: Value for partners
+  workflow: Delivery workflow
+
+pillars:
+  - key: delivery
+    title: End-to-end program implementation
+    purpose: >-
+      To deliver a program as a planned transition toward independence, not as
+      a set of activities that stop when the budget does.
+    imageAlt: >-
+      BisaBaik field team in uniform coordinating program delivery with local
+      partners.
+    deliverables:
+      - Implementation plan and field coordination framework
+      - On-the-ground delivery, direct or white-label
+      - Risk register and mitigation actions
+      - Monitoring, accountability and results-based reporting
+      - Exit pathway integrated into program delivery
+    value:
+      - Consistent and accountable execution quality
+      - Implementation and reputational risks managed early
+      - Partners keep strategic ownership and program visibility
+      - Programs prepared for transition rather than dependency
+    workflow:
+      - Implementation scoping and partner alignment
+      - Field mobilisation and local coordination
+      - Adaptive, iterative program delivery
+      - Monitoring, reporting and learning
+      - Transition preparation toward exit
+
+  - key: exit
+    title: Strategic partner for philanthropic exit strategy
+    purpose: >-
+      To treat responsible exit as a phase of the impact cycle that gets
+      designed, resourced and measured like any other.
+    imageAlt: >-
+      Training and exit-readiness session with community participants around a
+      whiteboard.
+    deliverables:
+      - Exit strategy and transition roadmap
+      - Exit readiness assessment
+      - Local institutional and leadership strengthening plan
+      - Governance and role transfer framework
+      - Post-exit monitoring and learning brief
+    value:
+      - Exit that is measured, phased and accountable
+      - Lower risk of post-program failure
+      - Benefits sustained through clear local ownership
+      - Exit that strengthens partner reputation instead of straining it
+    workflow:
+      - Exit intent alignment and risk assessment
+      - Exit design and readiness mapping
+      - Capacity transfer and governance transition
+      - Phased withdrawal and ownership handover
+      - Post-exit check-in and learning capture
+
+  - key: market
+    title: MSME aggregation and market expansion
+    purpose: >-
+      To use market access as the economic exit mechanism for philanthropic
+      programs, so income continues without another round of assistance.
+    imageAlt: >-
+      An UMKM entrepreneur preparing premium produce for aggregated market
+      channels.
+    deliverables:
+      - MSME aggregation through the PasarBaik mechanism
+      - Demand and supply matching across domestic and export channels
+      - Quality, compliance and packaging readiness
+      - Off-take coordination with industrial and retail buyers
+      - Time-bound mentoring through the transition
+    value:
+      - Economic impact that continues past the grant period
+      - Less dependency on follow-up assistance
+      - Sustainability pathways that are concrete, not aspirational
+      - Long-term impact that is easier to report and defend
+    workflow:
+      - MSME readiness diagnostic
+      - Aggregation onboarding via PasarBaik
+      - Buyer matching and order facilitation
+      - Quality and compliance support
+      - Time-bound mentoring and graduation

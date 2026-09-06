@@ -1,0 +1,134 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { getEntry } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/components/site/PageHeader.astro";
+import SectionHead from "@/components/site/SectionHead.astro";
+import { image } from "@/lib/images";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry("impact", locale);
+if (!entry) throw new Error(`Missing impact copy for locale "${locale}"`);
+const t = entry.data;
+---
+
+<Base
+  locale={locale}
+  path="/impact"
+  title={t.meta.title}
+  description={t.meta.description}
+  breadcrumbs={[{ name: t.header.title, path: "/impact" }]}
+>
+  <PageHeader
+    title={t.header.title}
+    intro={t.header.intro}
+    imageKey="hero-impact"
+    imageAlt={t.header.imageAlt}
+  />
+
+  <section class="edge border-b border-line py-20 md:py-28">
+    <SectionHead heading={t.presence.heading} />
+    <div class="mt-12 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
+      {
+        t.presence.regions.map((region, i) => (
+          <div data-reveal style={`--reveal-delay:${i * 55}ms`} class="bg-paper p-7">
+            <div class="mb-5 flex items-center gap-2 text-ink-soft">
+              <Icon name="ph:map-pin" class="h-4 w-4" />
+              <p class="text-[11.5px] tracking-[0.1em] uppercase">
+                {region.region}
+              </p>
+            </div>
+            <ul class="space-y-2 text-[14px]">
+              {region.places.map((place) => (
+                <li>{place}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="grid border-b border-line lg:grid-cols-12">
+    <div class="relative min-h-[20rem] lg:col-span-6 lg:min-h-[32rem]">
+      <Image
+        src={image("pillar-msme")}
+        alt={t.livelihood.imageAlt}
+        widths={[640, 1024]}
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        loading="lazy"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+    <div
+      class="flex flex-col justify-center bg-ink p-10 text-on-ink md:p-14 lg:col-span-6 lg:p-20"
+    >
+      <h2 data-reveal class="font-display text-[27px] leading-tight text-balance md:text-[35px]">
+        {t.livelihood.heading}
+      </h2>
+      <p data-reveal style="--reveal-delay:70ms" class="mt-5 text-[15px] leading-relaxed text-on-ink/80">
+        {t.livelihood.body}
+      </p>
+    </div>
+  </section>
+
+  <section class="edge border-b border-line py-20 md:py-28">
+    <SectionHead heading={t.sdg.heading} body={t.sdg.intro} />
+    <div class="mt-12 grid gap-6 lg:grid-cols-2">
+      {
+        t.sdg.items.map((sdg, i) => (
+          <article
+            data-reveal
+            style={`--reveal-delay:${i * 70}ms`}
+            class="rounded-[2px] border border-line bg-surface-2 p-8 md:p-10"
+          >
+            <header class="flex items-baseline gap-4 border-b border-hairline pb-6">
+              <span class="font-display text-[40px] leading-none text-bronze">
+                {sdg.number}
+              </span>
+              <div>
+                <p class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
+                  {sdg.code}
+                </p>
+                <h3 class="mt-1 font-display text-[21px] leading-snug">
+                  {sdg.title}
+                </h3>
+              </div>
+            </header>
+            <p class="mt-6 text-[14.5px] leading-relaxed text-ink/90 italic">
+              {sdg.focus}
+            </p>
+            <ul class="mt-6 space-y-3 text-[13.5px] leading-relaxed text-ink-soft">
+              {sdg.targets.map((target) => (
+                <li>{target}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="edge py-20 md:py-28">
+    <SectionHead heading={t.reading.heading} />
+    <div class="mt-12 grid gap-px bg-line md:grid-cols-3">
+      {
+        t.reading.items.map((item, i) => (
+          <div data-reveal style={`--reveal-delay:${i * 60}ms`} class="bg-paper p-9">
+            <h3 class="font-display text-[21px] leading-snug">{item.title}</h3>
+            <p class="mt-4 text-[14.5px] leading-relaxed text-ink-soft">
+              {item.body}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Base>

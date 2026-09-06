@@ -1,0 +1,37 @@
+meta:
+  title: "Proyek dan penugasan"
+  description: >-
+    Potret terstandar dari program unggulan dan penugasan mitra kami: konteks,
+    peran, lingkup pelaksanaan, mekanisme exit, dan sinyal dampaknya.
+
+header:
+  title: Satu lensa yang sama untuk setiap penugasan.
+  intro: >-
+    Tiap proyek dijelaskan lewat lima pertanyaan yang sama: apa konteksnya, apa
+    peran kami, apa yang kami kerjakan, bagaimana berakhirnya, dan sinyal apa
+    yang ditinggalkannya.
+  imageAlt: >-
+    Pelaku UMKM menyiapkan produk untuk akses pasar yang berkelanjutan.
+
+flagship:
+  heading: Model yang diuji dan diasah lewat pelaksanaan.
+  body: >-
+    Ini bukan uji coba. Ini sistem yang beroperasi, tempat metode, kemitraan,
+    dan kelayakan pascaprogram terus diasah di lapangan.
+  imageAlt: >-
+    Koordinator lapangan BisaBaik meninjau wilayah program di pesisir.
+
+engagements:
+  heading: Penugasan mitra
+  body: >-
+    Pekerjaan berdurasi lebih pendek, dijelaskan lewat lima pertanyaan yang
+    sama.
+
+labels:
+  context: Konteks
+  role: Peran kami
+  scope: Lingkup pelaksanaan
+  exit: Exit dan keberlanjutan
+  signal: Sinyal dampak
+  flagship: Program unggulan
+  engagement: Penugasan

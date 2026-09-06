@@ -1,0 +1,37 @@
+meta:
+  title: "Projects and engagements"
+  description: >-
+    A standardised snapshot of our flagship initiatives and partner
+    engagements: context, role, delivery scope, exit mechanism and impact
+    signal.
+
+header:
+  title: One lens applied to every engagement.
+  intro: >-
+    Each project is described through the same five questions: what the context
+    was, what our role was, what we delivered, how it ended, and what signal
+    the work left behind.
+  imageAlt: >-
+    UMKM entrepreneur preparing produce for continued market access.
+
+flagship:
+  heading: Models tested and refined in delivery.
+  body: >-
+    These are not pilots. They are operating systems where method, partnership
+    and post-program viability keep getting refined in the field.
+  imageAlt: >-
+    BisaBaik field coordinator surveying a coastal program area.
+
+engagements:
+  heading: Partner engagements
+  body: >-
+    Shorter pieces of work, described with the same five questions.
+
+labels:
+  context: Context
+  role: Our role
+  scope: Delivery scope
+  exit: Exit and sustainability
+  signal: Impact signal
+  flagship: Flagship initiative
+  engagement: Engagement

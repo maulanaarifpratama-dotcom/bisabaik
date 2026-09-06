@@ -1,0 +1,34 @@
+order: 10
+category: engagement
+
+en:
+  title: "Human Initiative Behavioural Impact Study"
+  partner: "Human Initiative"
+  context: >-
+    Programs needed behavioural evidence before decisions about refinement and
+    sustainability could be made with confidence.
+  role: >-
+    Impact assessment and learning partner.
+  scope: >-
+    Behavioural measurement, qualitative learning capture, and program
+    reflection.
+  exit: >-
+    Findings handed over to inform internal program iteration.
+  signal: >-
+    A behavioural evidence base supporting program sustainability.
+
+id:
+  title: "Studi Dampak Perilaku Human Initiative"
+  partner: "Human Initiative"
+  context: >-
+    Program membutuhkan bukti perubahan perilaku sebelum keputusan
+    penyempurnaan dan keberlanjutan bisa diambil dengan yakin.
+  role: >-
+    Mitra asesmen dampak dan pembelajaran.
+  scope: >-
+    Pengukuran perilaku, penangkapan pembelajaran kualitatif, dan refleksi
+    program.
+  exit: >-
+    Temuan diserahkan sebagai masukan iterasi program internal.
+  signal: >-
+    Basis bukti perilaku yang menopang keberlanjutan program.

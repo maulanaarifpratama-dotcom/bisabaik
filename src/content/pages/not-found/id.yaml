@@ -1,0 +1,11 @@
+meta:
+  title: "Halaman tidak ditemukan"
+  description: Halaman yang Anda cari tidak ada di sini.
+code: "404"
+title: Halaman ini tidak ada di sini.
+body: >-
+  Tautannya mungkin sudah kedaluwarsa, atau halamannya sudah dipindahkan.
+  Semua bagian utama situs bisa dijangkau lewat navigasi di atas.
+cta:
+  label: Kembali ke beranda
+  href: /

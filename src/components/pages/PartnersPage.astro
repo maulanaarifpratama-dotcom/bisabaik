@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, getEntry } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/components/site/PageHeader.astro";
+import PartnerRow from "@/components/site/PartnerRow.astro";
+import { image, type ImageKey } from "@/lib/images";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry("partnersPage", locale);
+if (!entry) throw new Error(`Missing partners copy for locale "${locale}"`);
+const t = entry.data;
+
+const partners = (await getCollection("partners")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const GROUP_IMAGE: Record<string, ImageKey> = {
+  philanthropic: "children-community",
+  corporate: "uniformed-team",
+  development: "circle-discussion",
+  government: "produce-baskets",
+};
+---
+
+<Base
+  locale={locale}
+  path="/partners"
+  title={t.meta.title}
+  description={t.meta.description}
+  breadcrumbs={[{ name: t.header.title, path: "/partners" }]}
+>
+  <PageHeader
+    title={t.header.title}
+    intro={t.header.intro}
+    imageKey="hero-partners"
+    imageAlt={t.header.imageAlt}
+  />
+
+  {
+    t.groups.map((group, index) => {
+      const members = partners.filter((p) => p.data.category === group.key);
+      if (members.length === 0) return null;
+
+      return (
+        <section
+          class:list={[
+            "edge py-16 md:py-20",
+            index < t.groups.length - 1 && "border-b border-line",
+          ]}
+        >
+          <div class="mb-10 grid gap-8 lg:grid-cols-12 lg:gap-12">
+            <div class="lg:col-span-4">
+              <h2 class="font-display text-[27px] leading-tight text-balance md:text-[32px]">
+                {group.label}
+              </h2>
+              <p class="mt-4 max-w-[40ch] text-[15.5px] leading-relaxed text-ink-soft">
+                {group.blurb}
+              </p>
+            </div>
+            <div class="lg:col-span-8">
+              <div class="relative aspect-16/9 overflow-hidden rounded-[2px]">
+                <Image
+                  src={image(GROUP_IMAGE[group.key]!)}
+                  alt={group.imageAlt}
+                  widths={[640, 1024]}
+                  sizes="(min-width: 1024px) 62vw, 100vw"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            {members.map((partner) => (
+              <PartnerRow
+                name={partner.data[locale].name}
+                role={partner.data[locale].role}
+                context={partner.data[locale].context}
+              />
+            ))}
+          </div>
+        </section>
+      );
+    })
+  }
+</Base>

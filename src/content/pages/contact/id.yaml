@@ -1,0 +1,63 @@
+meta:
+  title: "Hubungi Bisa Baik Bersama"
+  description: >-
+    Hubungi Bisa Baik Bersama. Kami bekerja dengan mitra filantropi, korporasi,
+    pemerintah, dan pembangunan di seluruh Indonesia.
+
+header:
+  title: Mari rancang program berikutnya dengan exit sejak awal.
+  intro: >-
+    Ceritakan penugasan yang Anda pikirkan. Kami membalas dalam dua hari kerja.
+  imageAlt: >-
+    Dua profesional bersalaman di awal sebuah pertemuan kemitraan.
+
+form:
+  heading: Kirim pertanyaan
+  name: Nama Anda
+  namePlaceholder: Nama lengkap
+  email: Email
+  emailPlaceholder: anda@lembaga.org
+  org: Lembaga
+  orgPlaceholder: Institusi atau perusahaan
+  role: Jabatan
+  rolePlaceholder: Misalnya, Direktur Program
+  interest: Yang ingin Anda bicarakan
+  interestPlaceholder: Pilih fokus
+  interestOptions:
+    - { value: program-delivery, label: Kemitraan pelaksanaan program }
+    - { value: exit-strategy, label: Strategi exit dan transisi }
+    - { value: msme-aggregation, label: Agregasi UMKM lewat PasarBaik }
+    - { value: circular-economy, label: Ekonomi sirkular dan pengelolaan sampah }
+    - { value: briefing, label: Briefing wawasan untuk tim kami }
+    - { value: other, label: Hal lain }
+  message: Pesan
+  messagePlaceholder: >-
+    Singkat saja: programnya, mitranya, wilayahnya, dan lini masanya.
+  submit: Kirim pertanyaan
+  submitting: Mengirim
+  consent: >-
+    Dengan mengirim pertanyaan, Anda bersedia dihubungi tim BisaBaik. Kami
+    tidak membagikan data Anda ke pihak lain.
+  successTitle: Pertanyaan terkirim
+  successBody: Terima kasih. Tim kami akan membalas dalam dua hari kerja.
+  errorTitle: Pertanyaan Anda tidak terkirim
+  errorBody: >-
+    Silakan coba lagi, atau kirim langsung ke info@bisabaik.or.id.
+  optional: opsional
+
+direct:
+  heading: Kontak langsung
+  emailLabel: Email
+  phoneLabel: Telepon
+  officeLabel: Kantor
+
+related:
+  heading: Platform terkait
+
+aside:
+  imageAlt: >-
+    Tim lapangan BisaBaik mengoordinasikan pelaksanaan program bersama mitra
+    setempat.
+  caption: >-
+    Koordinasi lapangan, tempat program ditinjau bersama mitra dan tim
+    setempat.

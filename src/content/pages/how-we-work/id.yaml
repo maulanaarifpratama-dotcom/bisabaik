@@ -1,0 +1,94 @@
+meta:
+  title: "Cara kerja kami: ko-desain, ko-kreasi, ko-keberlanjutan"
+  description: >-
+    Model perjalanan dampak dan pendekatan sadar risiko kami. Program dirancang
+    untuk pelaksanaan, exit, dan keberlanjutan sekaligus.
+
+header:
+  title: Kerangka yang memperlakukan exit sebagai fase, bukan peristiwa.
+  intro: >-
+    Setiap penugasan bergerak melalui tiga fase yang saling menguatkan.
+    Pelaksanaan, exit, dan keberlanjutan direncanakan bersamaan, karena dalam
+    praktik ketiganya memang tidak pernah terpisah rapi.
+  imageAlt: >-
+    Tim lapangan meninjau peta dan rencana program di dalam balai warga.
+
+journey:
+  heading: Ko-desain, ko-kreasi, ko-keberlanjutan.
+  phaseLabel: Fase
+  phases:
+    - key: design
+      numeral: I
+      title: Ko-desain untuk pelaksanaan dan exit
+      sub: Merancang program yang bisa dijalankan, akuntabel, dan sadar exit.
+      imageAlt: >-
+        Dialog melingkar bersama warga yang menjadi pijakan fase ko-desain.
+      items:
+        - Penyelarasan tujuan program dan harapan exit
+        - Perencanaan pelaksanaan dan perancangan jalur exit
+        - Pemetaan risiko sosial, operasional, dan kelembagaan
+        - Identifikasi kapasitas lokal dan peran jangka panjang
+    - key: create
+      numeral: II
+      title: Ko-kreasi lewat pelaksanaan yang akuntabel
+      sub: Menjalankan program dengan monitoring, pembelajaran, dan disiplin operasional.
+      imageAlt: >-
+        Warga dan staf lapangan bekerja bersama dalam sebuah sesi program.
+      items:
+        - Eksekusi program yang adaptif dengan tonggak yang jelas
+        - Monitoring, akuntabilitas, dan pembelajaran adaptif
+        - Penyiapan sistem, kepemimpinan, dan tata kelola lokal
+        - Penyesuaian yang sadar risiko dan berpijak pada kondisi lapangan
+    - key: sustain
+      numeral: III
+      title: Ko-keberlanjutan dengan exit yang bertanggung jawab
+      sub: Memperpanjang dampak lewat sistem, pasar, dan kemitraan.
+      imageAlt: >-
+        Sesi pelatihan yang menyiapkan aktor lokal mengambil alih saat exit.
+      items:
+        - Asesmen kesiapan exit dengan Exit Forward Model
+        - Pengalihan peran dan kepemilikan ke aktor lokal
+        - Integrasi ke mekanisme pasar dan sumber penghidupan
+        - Tinjauan pascaexit terbatas dan penangkapan pembelajaran
+
+risk:
+  heading: Disiplin yang tetap tanggap pada apa yang terjadi di lapangan.
+  body: >-
+    Program pembangunan itu kompleks, dan exit adalah titik di mana
+    kompleksitas itu paling terasa. Pendekatan yang sadar risiko itulah yang
+    menjaga program tetap relevan dan akuntabel sepanjang pelaksanaan sampai
+    transisi.
+  imageAlt: >-
+    Sesi pelatihan dan tinjauan risiko bersama tim lapangan dan perwakilan
+    warga.
+  items:
+    - label: Sosial dan kontekstual
+      body: Dinamika komunitas, relasi kuasa, dan penerimaan warga setempat.
+    - label: Operasional dan pelaksanaan
+      body: Kapasitas mitra, koordinasi lapangan, dan konsistensi eksekusi.
+    - label: Keberlanjutan dan exit
+      body: Kesiapan kelembagaan, kepemilikan lokal, dan ketergantungan pascaprogram.
+    - label: Reputasi dan akuntabilitas
+      body: Kepatuhan, transparansi, dan kejelasan peran.
+  manageHeading: Cara kami mengelolanya
+  manage:
+    - Identifikasi risiko sejak perancangan dan awal pelaksanaan
+    - Monitoring berkelanjutan dan penyesuaian adaptif
+    - Pembelajaran dikembalikan ke keputusan pelaksanaan dan exit
+    - Dokumentasi dan pelaporan yang akuntabel
+
+principles:
+  heading: Tiga prinsip yang saling menguatkan.
+  items:
+    - title: Berpusat pada komunitas
+      body: >-
+        Berangkat dari kebutuhan, nilai, dan dinamika nyata komunitas.
+        Komunitas adalah subjek perubahan, bukan objeknya.
+    - title: Berbasis data
+      body: >-
+        Keputusan digerakkan studi awal, monitoring berkelanjutan, evaluasi
+        mendalam, dan refleksi yang sistematis.
+    - title: Sadar risiko
+      body: >-
+        Setiap tahap dikelola di dalam kerangka manajemen risiko sosial dan
+        operasional, bukan lewat perkiraan informal.

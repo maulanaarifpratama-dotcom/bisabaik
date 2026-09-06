@@ -1,0 +1,111 @@
+meta:
+  title: "Bisa Baik Bersama: Impact Delivery and Responsible Exit"
+  description: >-
+    An Indonesia-based impact delivery partner. We run development programs on
+    the ground, design the exit from the first day, and keep livelihoods earning
+    through MSME market access.
+
+hero:
+  lineOne: Deliver well.
+  lineTwo: Exit responsibly.
+  lineThree: Sustain impact.
+  body: >-
+    We deliver development programs on the ground, and design the exit before
+    the first day of work.
+  primary:
+    label: How we deliver
+    href: /what-we-do
+  secondary:
+    label: Our engagements
+    href: /projects
+  imageAlt: >-
+    Fishing boats moored off an Indonesian coastal village at first light, with
+    terraced fields rising behind the shoreline.
+
+positioning:
+  lead: "We are an "
+  emphasisOne: implementation partner
+  middle: ", not a charity. Programs are designed, delivered, and "
+  emphasisTwo: transitioned
+  tail: ", so impact continues after we leave."
+
+pillars:
+  heading: Three pillars, in the order a program actually moves.
+  body: >-
+    Delivery, exit and market continuity are one sequence, not three services.
+    Each pillar hands the next one something it can work with.
+  items:
+    - title: End-to-end program implementation
+      body: >-
+        Disciplined field delivery with execution quality, accountability and
+        transition readiness, run directly or white-label under your name.
+    - title: Strategic partner for philanthropic exit
+      body: >-
+        Responsible exit designed and implemented, transferring ownership and
+        governance to local actors on a schedule everyone agreed to.
+    - title: MSME aggregation and market expansion
+      body: >-
+        Post-program economic continuity through domestic and export market
+        access for UMKM beneficiaries.
+
+journey:
+  heading: "The impact journey: from delivery to responsible exit."
+  body: >-
+    Our delivery framework moves through three reinforcing phases. Each
+    engagement is calibrated to where partners need us most, and to how they
+    want to exit.
+  phaseLabel: Phase
+  phases:
+    - numeral: I
+      title: Co-design for delivery and exit
+      body: >-
+        Alignment on program objectives and exit expectations. Implementation
+        planning, exit pathway design, and social and operational risk mapping.
+    - numeral: II
+      title: Co-create through accountable delivery
+      body: >-
+        On-the-ground execution with monitoring, accountability, adaptive
+        learning, and preparation of local systems and governance.
+    - numeral: III
+      title: Co-sustain with responsible exit
+      body: >-
+        Exit readiness assessment, role and ownership transfer, integration into
+        market mechanisms, and limited post-exit learning.
+
+flagship:
+  heading: Models that prove exit can extend impact.
+  body: >-
+    Our flagships are not pilots. They are operating models where method,
+    partnership and post-program viability are refined in the field.
+  readMore: Read the model
+
+principles:
+  heading: Community-centered. Data-driven. Risk-aware.
+  body: >-
+    The community is a subject of change, not its object. Decisions are grounded
+    in baseline studies, monitoring and reflection. Every stage is delivered
+    inside a social and operational risk framework.
+  cta:
+    label: Read about our approach
+    href: /about
+  imageAlt: >-
+    Community members and BisaBaik facilitators seated in a circle during a
+    participatory planning session.
+
+partners:
+  heading: Institutions choosing accountable delivery.
+  cta:
+    label: All partners and collaborations
+    href: /partners
+
+close:
+  heading: Designing your next program with exit in mind?
+  body: >-
+    We work with partners who treat delivery, exit and sustainability as one
+    integrated process. If that is how you think about it, we should talk.
+  primary:
+    label: Start a conversation
+    href: /contact
+  secondary:
+    label: Visit PasarBaik
+    href: https://pasarbaik.com

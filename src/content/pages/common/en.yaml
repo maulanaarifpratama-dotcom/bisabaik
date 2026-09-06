@@ -1,0 +1,50 @@
+localeName: English
+localeSwitchLabel: Baca dalam Bahasa Indonesia
+skipToContent: Skip to main content
+
+menu:
+  open: Open menu
+  close: Close menu
+
+theme:
+  label: Colour theme
+  light: Switch to light theme
+  dark: Switch to dark theme
+
+nav:
+  - { href: /about, label: About }
+  - { href: /what-we-do, label: What We Do }
+  - { href: /how-we-work, label: How We Work }
+  - { href: /impact, label: Impact }
+  - { href: /partners, label: Partners }
+  - { href: /projects, label: Projects }
+  - { href: /flagship, label: Flagship }
+  - { href: /insights, label: Insights }
+  - { href: /contact, label: Contact }
+
+aggregatorCta:
+  label: Impact Supply Aggregator
+  shortLabel: Aggregator
+  href: https://pasarbaik.com
+
+footer:
+  tagline: Deliver well, exit responsibly, sustain impact.
+  blurb: >-
+    An impact delivery partner for philanthropic, corporate, development and
+    public sector institutions working in Indonesia and beyond.
+  navHeading: Navigate
+  contactHeading: Contact
+  legalHeading: Legal
+  email: info@bisabaik.or.id
+  phone: +62 851-6147-9098
+  phoneHref: "tel:+6285161479098"
+  address:
+    - Jl. Sepat No. 43, Kebagusan
+    - Pasar Minggu, Jakarta Selatan
+    - DKI Jakarta 12520
+  legal:
+    - { href: /privacy, label: Privacy Policy }
+    - { href: /terms, label: Terms of Service }
+    - { href: /disclaimer, label: Disclaimer }
+  copyright: Bisa Baik Bersama, Rumah Pembangunan Berkelanjutan Foundation.
+  affiliation: Impact delivery arm of Immers Asia Corp.

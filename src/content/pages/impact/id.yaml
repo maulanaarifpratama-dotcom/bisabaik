@@ -1,0 +1,84 @@
+meta:
+  title: "Dampak: tempat kami bekerja dan apa yang bertahan setelah kami pergi"
+  description: >-
+    Jangkauan kerja kami di Indonesia dan Türkiye, serta kontribusi pada SDG 8
+    dan SDG 12 lewat keberlanjutan ekonomi pascaprogram dan praktik ekonomi
+    sirkular.
+
+header:
+  title: Hadir di komunitas. Berlanjut lewat pasar.
+  intro: >-
+    Dampak kami terbaca dari disiplin pelaksanaan, integritas exit, dan apakah
+    sumber penghidupan masih menghasilkan setelah kami pergi. Di bawah ini: di
+    mana kami bekerja, pada apa kami berkontribusi, dan bagaimana kami menilai
+    hasilnya bertahan.
+  imageAlt: >-
+    Pemandangan udara desa pesisir Indonesia saat fajar.
+
+presence:
+  heading: Bekerja di seluruh Indonesia, dengan jangkauan hingga Türkiye.
+  regions:
+    - region: Indonesia bagian barat
+      places: [Jakarta, Banten, Jawa Barat, Lampung, Sumatera Selatan]
+    - region: Indonesia bagian tengah
+      places: [Jawa Tengah, Yogyakarta, Jawa Timur, Bali, NTB]
+    - region: Indonesia bagian timur
+      places: [NTT, Sulawesi Selatan, Maluku]
+    - region: Internasional
+      places: [Türkiye, Adıyaman dan Hatay]
+
+livelihood:
+  heading: Dampak bertahan selama pasar terus membayar.
+  body: >-
+    Di balik tiap program unggulan ada jaringan produsen UMKM, koperasi, dan
+    lembaga komunitas yang berpenghasilan dari sistem yang ikut kami bangun.
+    Keberlanjutan itulah definisi kerja kami tentang dampak.
+  imageAlt: >-
+    Pelaku UMKM Indonesia menyiapkan biji kopi premium untuk dipasarkan.
+
+sdg:
+  heading: Berpijak pada SDG 8 dan SDG 12.
+  intro: >-
+    Pendekatan kami berakar pada dua tantangan pembangunan yang benar-benar
+    bisa kami gerakkan: keberlanjutan ekonomi pascaprogram dan pengelolaan
+    sumber daya yang bertanggung jawab.
+  items:
+    - number: "8"
+      code: SDG 8
+      title: Pekerjaan Layak dan Pertumbuhan Ekonomi
+      focus: >-
+        Memperkuat penghidupan pascaprogram lewat UMKM, keterlibatan pemuda,
+        dan akses pasar.
+      targets:
+        - "8.2 Meningkatkan produktivitas ekonomi lewat diversifikasi, peningkatan mutu, dan kesiapan pasar UMKM."
+        - "8.3 Memperkuat kewirausahaan dan pertumbuhan UMKM lewat dukungan pelaksanaan dan akses pasar."
+        - "8.6 Melibatkan pemuda dalam kegiatan ekonomi produktif melalui usaha berbasis komunitas."
+        - "8.9 Mendukung ekonomi lokal berbasis komunitas yang terhubung dengan budaya dan produk setempat."
+        - "8.a Memperluas akses pasar domestik dan ekspor sebagai bagian keberlanjutan pascaprogram dan jalur Aid for Trade."
+    - number: "12"
+      code: SDG 12
+      title: Konsumsi dan Produksi yang Bertanggung Jawab
+      focus: >-
+        Menanamkan praktik ekonomi sirkular berbasis komunitas untuk menekan
+        sampah dan meningkatkan efisiensi sumber daya.
+      targets:
+        - "12.2 Mendorong penggunaan sumber daya yang efisien lewat sistem ekonomi sirkular dan pengelolaan sampah."
+        - "12.3 Menekan susut dan sampah pangan dalam konteks komunitas dan rantai pasok lokal."
+        - "12.5 Mengurangi timbulan sampah secara signifikan lewat pencegahan, pengurangan, daur ulang, dan penggunaan ulang."
+        - "12.8 Membangun kesadaran dan kemampuan warga untuk konsumsi dan produksi berkelanjutan."
+
+reading:
+  heading: Sinyal, bukan slogan.
+  items:
+    - title: Mutu pelaksanaan
+      body: >-
+        Disiplin eksekusi, dibaca dari tonggak yang tercapai, akuntabilitas yang
+        dijaga, dan risiko yang benar-benar ditutup.
+    - title: Kesiapan transisi
+      body: >-
+        Kekuatan kelembagaan, tata kelola, dan kepemimpinan lokal yang diukur
+        tepat pada titik exit.
+    - title: Keberlanjutan pascaprogram
+      body: >-
+        Akses pasar, sumber penghidupan, dan keberlanjutan operasional setelah
+        masa hibah berakhir.

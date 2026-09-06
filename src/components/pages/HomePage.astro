@@ -1,0 +1,387 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { getCollection, getEntry } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import { localizePath, type Locale } from "@/i18n";
+import { image } from "@/lib/images";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry("home", locale);
+if (!entry) throw new Error(`Missing home copy for locale "${locale}"`);
+const t = entry.data;
+
+const flagships = (await getCollection("projects"))
+  .filter((p) => p.data.category === "flagship")
+  .sort((a, b) => a.data.order - b.data.order);
+
+const partners = (await getCollection("partners")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const href = (path: string) =>
+  path.startsWith("http") ? path : localizePath(path, locale);
+
+const heroPhoto = image("hero-delivery");
+const principlesPhoto = image("circle-discussion");
+const [lead, ...rest] = flagships;
+---
+
+<Base
+  locale={locale}
+  path="/"
+  title={t.meta.title}
+  description={t.meta.description}
+  isHome
+>
+  {/* 1. Hero: the one authored motion moment on the page. */}
+  <section class="relative isolate overflow-hidden border-b border-line">
+    <div class="hero-media absolute inset-0 -z-10">
+      <Image
+        src={heroPhoto}
+        alt={t.hero.imageAlt}
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="h-full w-full object-cover"
+      />
+      <div class="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-paper via-paper/70 to-transparent"></div>
+      <div class="absolute inset-0 bg-linear-to-r from-paper/88 via-paper/38 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-paper to-transparent"></div>
+    </div>
+
+    <div class="edge flex min-h-[34rem] flex-col justify-center pt-24 pb-20 md:min-h-[40rem] md:pb-28">
+      <h1 data-reveal class="display-1 max-w-[15ch]">
+        {t.hero.lineOne}<br />
+        {t.hero.lineTwo}<br />
+        <em class="font-normal italic">{t.hero.lineThree}</em>
+      </h1>
+
+      <p
+        data-reveal
+        style="--reveal-delay:100ms"
+        class="mt-8 max-w-lg text-[17px] leading-relaxed text-ink/85 md:text-[18.5px]"
+      >
+        {t.hero.body}
+      </p>
+
+      <div data-reveal style="--reveal-delay:190ms" class="mt-10 flex flex-wrap items-center gap-3">
+        <a href={href(t.hero.primary.href)} class="btn btn-primary group">
+          {t.hero.primary.label}
+          <Icon
+            name="ph:arrow-right"
+            class="h-4 w-4 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1"
+          />
+        </a>
+        <a href={href(t.hero.secondary.href)} class="link-rule px-2 text-[14px]">
+          {t.hero.secondary.label}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* 2. Positioning: a single statement, indented into the grid. */}
+  <section class="edge py-24 md:py-32">
+    <p
+      data-reveal
+      class="max-w-4xl font-display text-[26px] leading-[1.24] text-balance md:text-[38px] lg:ml-[8%]"
+    >
+      {t.positioning.lead}<em class="italic">{t.positioning.emphasisOne}</em
+      >{t.positioning.middle}<em class="italic">{t.positioning.emphasisTwo}</em
+      >{t.positioning.tail}
+    </p>
+  </section>
+
+  {/* 3. Pillars: an asymmetric three-cell grid, one cell per pillar. */}
+  <section class="edge border-t border-line py-24 md:py-32">
+    <div data-reveal class="max-w-3xl">
+      <h2 class="display-2">{t.pillars.heading}</h2>
+      <p class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft">
+        {t.pillars.body}
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-px bg-line lg:grid-cols-12">
+      <article
+        data-reveal
+        class="relative isolate flex min-h-[22rem] flex-col justify-end overflow-hidden bg-ink p-8 md:p-10 lg:col-span-7"
+      >
+        <Image
+          src={image("uniformed-team")}
+          alt=""
+          aria-hidden="true"
+          widths={[640, 960]}
+          sizes="(min-width: 1024px) 55vw, 100vw"
+          loading="lazy"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-linear-to-t from-ink via-ink/88 to-ink/45"></div>
+        <h3 class="relative font-display text-[24px] leading-snug text-on-ink md:text-[28px]">
+          {t.pillars.items[0]?.title}
+        </h3>
+        <p class="relative mt-4 max-w-md text-[14.5px] leading-relaxed text-on-ink/80">
+          {t.pillars.items[0]?.body}
+        </p>
+      </article>
+
+      <div class="grid gap-px bg-line lg:col-span-5">
+        <article data-reveal style="--reveal-delay:80ms" class="bg-surface-2 p-8 md:p-10">
+          <h3 class="font-display text-[21px] leading-snug">
+            {t.pillars.items[1]?.title}
+          </h3>
+          <p class="mt-4 text-[14.5px] leading-relaxed text-ink-soft">
+            {t.pillars.items[1]?.body}
+          </p>
+        </article>
+        <article
+          data-reveal
+          style="--reveal-delay:150ms"
+          class="bg-paper p-8 md:p-10"
+        >
+          <h3 class="font-display text-[21px] leading-snug">
+            {t.pillars.items[2]?.title}
+          </h3>
+          <p class="mt-4 text-[14.5px] leading-relaxed text-ink-soft">
+            {t.pillars.items[2]?.body}
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {/* 4. Journey: a stepper. The numerals are the information here. */}
+  <section class="border-y border-line bg-surface/50 py-24 md:py-32">
+    <div class="edge">
+      <div data-reveal class="max-w-3xl">
+        <h2 class="display-2">{t.journey.heading}</h2>
+        <p class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft">
+          {t.journey.body}
+        </p>
+      </div>
+
+      <ol class="mt-16 grid gap-y-12 md:grid-cols-3 md:gap-x-10">
+        {
+          t.journey.phases.map((phase, i) => (
+            <li data-reveal style={`--reveal-delay:${i * 70}ms`} class="relative">
+              <div class="flex items-baseline gap-4 border-t border-ink/25 pt-5">
+                <span class="font-display text-[34px] leading-none italic">
+                  {phase.numeral}
+                </span>
+                <span class="text-[11.5px] tracking-[0.12em] text-ink-soft uppercase">
+                  {t.journey.phaseLabel} {phase.numeral}
+                </span>
+              </div>
+              <h3 class="mt-6 font-display text-[21px] leading-snug">
+                {phase.title}
+              </h3>
+              <p class="mt-3.5 text-[14.5px] leading-relaxed text-ink-soft">
+                {phase.body}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  {/* 5. Flagships: one lead with an image, the rest as an index. */}
+  <section class="edge py-24 md:py-32">
+    <div data-reveal class="max-w-3xl">
+      <h2 class="display-2">{t.flagship.heading}</h2>
+      <p class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft">
+        {t.flagship.body}
+      </p>
+    </div>
+
+    {
+      lead && (
+        <a
+          data-reveal
+          href={href("/flagship")}
+          class="group mt-14 grid overflow-hidden rounded-[2px] border border-line bg-surface-2 lg:grid-cols-12"
+        >
+          <div class="relative min-h-[15rem] lg:col-span-6 lg:min-h-[22rem]">
+            <Image
+              src={image("pillar-msme")}
+              alt=""
+              aria-hidden="true"
+              widths={[640, 960]}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              loading="lazy"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-out)] group-hover:scale-[1.03]"
+            />
+          </div>
+          <div class="flex flex-col justify-center p-8 md:p-12 lg:col-span-6">
+            <h3 class="font-display text-[25px] leading-snug md:text-[30px]">
+              {lead.data[locale].title}
+            </h3>
+            <p class="mt-5 text-[15px] leading-relaxed text-ink-soft">
+              {lead.data[locale].context}
+            </p>
+            <span class="link-rule mt-8 text-[13.5px]">
+              {t.flagship.readMore}
+              <Icon
+                name="ph:arrow-right"
+                class="h-3.5 w-3.5 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1"
+              />
+            </span>
+          </div>
+        </a>
+      )
+    }
+
+    <ul class="mt-px">
+      {
+        rest.map((project, i) => (
+          <li data-reveal style={`--reveal-delay:${i * 70}ms`}>
+            <a
+              href={href("/flagship")}
+              class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 border-b border-hairline py-7 transition-colors duration-300 hover:bg-surface/60"
+            >
+              <h3 class="col-span-12 font-display text-[20px] leading-snug md:col-span-5">
+                {project.data[locale].title}
+              </h3>
+              <p class="col-span-12 text-[14px] leading-relaxed text-ink-soft md:col-span-6">
+                {project.data[locale].context}
+              </p>
+              <Icon
+                name="ph:arrow-up-right"
+                class="col-span-12 h-4 w-4 text-ink-soft transition-transform duration-300 ease-[var(--ease-out)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 md:col-span-1 md:justify-self-end"
+              />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {/* 6. Principles: a full-bleed split, photo against an ink panel. */}
+  <section class="grid border-t border-line lg:grid-cols-12">
+    <div class="relative min-h-[20rem] lg:col-span-7 lg:min-h-[34rem]">
+      <Image
+        src={principlesPhoto}
+        alt={t.principles.imageAlt}
+        widths={[768, 1280]}
+        sizes="(min-width: 1024px) 58vw, 100vw"
+        loading="lazy"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+    <div
+      class="flex flex-col justify-center bg-ink p-10 text-on-ink md:p-16 lg:col-span-5 lg:p-20"
+    >
+      <h2 data-reveal class="font-display text-[28px] leading-tight text-balance md:text-[36px]">
+        {t.principles.heading}
+      </h2>
+      <p data-reveal style="--reveal-delay:80ms" class="mt-6 text-[15px] leading-relaxed text-on-ink/80">
+        {t.principles.body}
+      </p>
+      <a
+        data-reveal
+        style="--reveal-delay:150ms"
+        href={href(t.principles.cta.href)}
+        class="group mt-10 inline-flex w-fit items-center gap-2 border-b border-on-ink/40 pb-1 text-[13.5px] text-on-ink transition-colors duration-200 hover:border-on-ink"
+      >
+        {t.principles.cta.label}
+        <Icon
+          name="ph:arrow-right"
+          class="h-4 w-4 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1"
+        />
+      </a>
+    </div>
+  </section>
+
+  {/* 7. Partners: an editorial index, not a logo wall. */}
+  <section class="edge py-24 md:py-32">
+    <div
+      data-reveal
+      class="flex flex-col justify-between gap-6 md:flex-row md:items-end"
+    >
+      <h2 class="display-2 max-w-[20ch]">{t.partners.heading}</h2>
+      <a href={href(t.partners.cta.href)} class="link-rule shrink-0 text-[14px]">
+        {t.partners.cta.label}
+        <Icon name="ph:arrow-right" class="h-4 w-4" />
+      </a>
+    </div>
+
+    <ul class="mt-14 grid gap-x-12 md:grid-cols-2">
+      {
+        partners.map((partner) => (
+          <li class="grid grid-cols-12 gap-x-4 border-t border-hairline py-4">
+            <span class="col-span-12 font-display text-[16px] leading-snug sm:col-span-7">
+              {partner.data[locale].name}
+            </span>
+            <span class="col-span-12 text-[12.5px] leading-snug text-ink-soft sm:col-span-5 sm:text-right">
+              {partner.data[locale].role}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {/* 8. Closing band. */}
+  <section class="border-t border-line bg-surface/50">
+    <div class="edge grid gap-10 py-20 md:grid-cols-12 md:items-end md:py-28">
+      <div class="md:col-span-7">
+        <h2 data-reveal class="display-2 text-balance">{t.close.heading}</h2>
+        <p
+          data-reveal
+          style="--reveal-delay:80ms"
+          class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft"
+        >
+          {t.close.body}
+        </p>
+      </div>
+      <div data-reveal style="--reveal-delay:150ms" class="flex flex-wrap gap-3 md:col-span-5">
+        <a href={href(t.close.primary.href)} class="btn btn-primary group">
+          {t.close.primary.label}
+          <Icon
+            name="ph:arrow-right"
+            class="h-4 w-4 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1"
+          />
+        </a>
+        <a
+          href={t.close.secondary.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-quiet"
+        >
+          {t.close.secondary.label}
+          <Icon name="ph:arrow-up-right" class="h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Scroll-driven parallax on the hero photograph only. It is the single
+     authored motion moment on the page; everything else just fades in.
+     Browsers without scroll-driven animations get a still image. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-media {
+        animation: hero-drift linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+        will-change: transform;
+      }
+
+      @keyframes hero-drift {
+        from {
+          transform: translate3d(0, -3.5%, 0) scale(1.09);
+        }
+        to {
+          transform: translate3d(0, 3.5%, 0) scale(1.02);
+        }
+      }
+    }
+  }
+</style>

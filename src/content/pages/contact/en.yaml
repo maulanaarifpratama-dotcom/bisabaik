@@ -1,0 +1,64 @@
+meta:
+  title: "Contact Bisa Baik Bersama"
+  description: >-
+    Get in touch with Bisa Baik Bersama. We work with philanthropic, corporate,
+    government and development partners across Indonesia.
+
+header:
+  title: Let us design your next program with exit in mind.
+  intro: >-
+    Tell us about the engagement you have in mind. We respond within two
+    working days.
+  imageAlt: >-
+    Two professionals greeting each other at the start of a partnership
+    meeting.
+
+form:
+  heading: Send an inquiry
+  name: Your name
+  namePlaceholder: Full name
+  email: Email
+  emailPlaceholder: you@organisation.org
+  org: Organisation
+  orgPlaceholder: Institution or company
+  role: Role
+  rolePlaceholder: For example, Programs Director
+  interest: What you would like to discuss
+  interestPlaceholder: Select a focus
+  interestOptions:
+    - { value: program-delivery, label: Program delivery partnership }
+    - { value: exit-strategy, label: Exit strategy and transition }
+    - { value: msme-aggregation, label: MSME aggregation via PasarBaik }
+    - { value: circular-economy, label: Circular economy and waste management }
+    - { value: briefing, label: Insights briefing for our team }
+    - { value: other, label: Something else }
+  message: Message
+  messagePlaceholder: >-
+    Briefly: the program, the partners, the geography and the timeline.
+  submit: Send inquiry
+  submitting: Sending
+  consent: >-
+    By sending an inquiry you agree to be contacted by the BisaBaik team. We do
+    not share your details with anyone else.
+  successTitle: Inquiry sent
+  successBody: Thank you. Our team will respond within two working days.
+  errorTitle: We could not send your inquiry
+  errorBody: >-
+    Please try again, or write to info@bisabaik.or.id directly.
+  optional: optional
+
+direct:
+  heading: Direct contact
+  emailLabel: Email
+  phoneLabel: Phone
+  officeLabel: Office
+
+related:
+  heading: Related platforms
+
+aside:
+  imageAlt: >-
+    BisaBaik field team coordinating program delivery with local partners.
+  caption: >-
+    Field coordination, where programs get reviewed with partners and local
+    teams.

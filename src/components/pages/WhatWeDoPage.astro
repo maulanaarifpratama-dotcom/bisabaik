@@ -1,0 +1,143 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/components/site/PageHeader.astro";
+import SectionHead from "@/components/site/SectionHead.astro";
+import { image, type ImageKey } from "@/lib/images";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry("whatWeDo", locale);
+if (!entry) throw new Error(`Missing what-we-do copy for locale "${locale}"`);
+const t = entry.data;
+
+const PILLAR_IMAGE: Record<"delivery" | "exit" | "market", ImageKey> = {
+  delivery: "uniformed-team",
+  exit: "training-whiteboard",
+  market: "pillar-msme",
+};
+---
+
+<Base
+  locale={locale}
+  path="/what-we-do"
+  title={t.meta.title}
+  description={t.meta.description}
+  breadcrumbs={[{ name: t.header.title, path: "/what-we-do" }]}
+>
+  <PageHeader
+    title={t.header.title}
+    intro={t.header.intro}
+    imageKey="hero-what-we-do"
+    imageAlt={t.header.imageAlt}
+  />
+
+  <section class="edge border-b border-line py-20 md:py-24">
+    <SectionHead heading={t.role.heading} />
+    <ul class="mt-10 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
+      {
+        t.role.items.map((item, i) => (
+          <li
+            data-reveal
+            style={`--reveal-delay:${i * 45}ms`}
+            class="bg-paper p-6 text-[14.5px] leading-relaxed"
+          >
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    t.pillars.map((pillar, index) => (
+      <article
+        class:list={[
+          "edge py-16 md:py-24",
+          index > 0 && "border-t border-line",
+        ]}
+      >
+        <div class="grid gap-8 md:grid-cols-12 md:gap-12">
+          <header class="md:col-span-4 md:sticky md:top-28 md:self-start">
+            <p class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase">
+              {t.labels.pillar} {String(index + 1).padStart(2, "0")}
+            </p>
+            <h2 class="mt-4 font-display text-[27px] leading-tight text-balance md:text-[33px]">
+              {pillar.title}
+            </h2>
+            <p class="mt-5 text-[15px] leading-relaxed text-ink-soft italic">
+              {pillar.purpose}
+            </p>
+
+            <div class="relative mt-8 aspect-4/3 overflow-hidden rounded-[2px]">
+              <Image
+                src={image(PILLAR_IMAGE[pillar.key])}
+                alt={pillar.imageAlt}
+                widths={[480, 800]}
+                sizes="(min-width: 768px) 32vw, 100vw"
+                loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </header>
+
+          <div class="grid gap-10 md:col-span-8 lg:grid-cols-2">
+            <div data-reveal>
+              <h3 class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase">
+                {t.labels.deliverables}
+              </h3>
+              <ul class="mt-5 space-y-3">
+                {pillar.deliverables.map((item) => (
+                  <li class="flex gap-3 text-[14.5px] leading-relaxed">
+                    <span aria-hidden="true" class="mt-2.5 h-px w-3 shrink-0 bg-bronze" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div data-reveal style="--reveal-delay:70ms">
+              <h3 class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase">
+                {t.labels.value}
+              </h3>
+              <ul class="mt-5 space-y-3">
+                {pillar.value.map((item) => (
+                  <li class="flex gap-3 text-[14.5px] leading-relaxed">
+                    <span aria-hidden="true" class="mt-2.5 h-px w-3 shrink-0 bg-bronze" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="mt-2 border-t border-line pt-8 lg:col-span-2">
+              <h3 class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase">
+                {t.labels.workflow}
+              </h3>
+              <ol class="mt-6 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-5">
+                {pillar.workflow.map((step, i) => (
+                  <li
+                    data-reveal
+                    style={`--reveal-delay:${i * 50}ms`}
+                    class="bg-paper p-5"
+                  >
+                    <p class="font-display text-[14px] text-ink-soft">
+                      {String(i + 1).padStart(2, "0")}
+                    </p>
+                    <p class="mt-3 text-[13.5px] leading-snug">{step}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</Base>

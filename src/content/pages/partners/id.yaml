@@ -1,0 +1,44 @@
+meta:
+  title: "Mitra dan kolaborasi"
+  description: >-
+    Mitra filantropi, korporasi, pemerintah, dan pembangunan yang memilih
+    BisaBaik untuk pelaksanaan yang akuntabel, exit yang bertanggung jawab, dan
+    keberlanjutan pascaprogram.
+
+header:
+  title: Lembaga yang memilih pelaksanaan yang akuntabel.
+  intro: >-
+    Kami bekerja dengan mitra yang melihat pelaksanaan, exit, dan keberlanjutan
+    sebagai satu proses. Tiap kolaborasi dijelaskan lewat peran dan konteksnya,
+    karena logo di dinding tidak menceritakan apa pun soal isi pekerjaannya.
+  imageAlt: >-
+    Pertemuan koordinasi antarlembaga mitra di Indonesia.
+
+groups:
+  - key: philanthropic
+    label: Lembaga filantropi
+    blurb: >-
+      Lembaga zakat dan yayasan yang bermitra untuk pelaksanaan dan exit yang
+      disiplin.
+    imageAlt: >-
+      Anak-anak di komunitas mitra yang didukung lewat program filantropi.
+  - key: corporate
+    label: CSR dan ESG korporasi
+    blurb: >-
+      Mitra korporasi yang menyelaraskan program dampak dengan akuntabilitas
+      operasional.
+    imageAlt: >-
+      Tinjauan program korporasi bersama tim operasi lapangan BisaBaik.
+  - key: development
+    label: Organisasi pembangunan
+    blurb: >-
+      Mitra pembangunan nasional dan internasional yang berbagi kerja lapangan.
+    imageAlt: >-
+      Dialog ko-desain bersama mitra pembangunan dan warga.
+  - key: government
+    label: Pemerintah dan sektor publik
+    blurb: >-
+      Kolaborasi sektor publik untuk keberlanjutan pasar dan tata kelola
+      program.
+    imageAlt: >-
+      Agregasi UMKM yang menopang keberlanjutan pasar bersama pemerintah.

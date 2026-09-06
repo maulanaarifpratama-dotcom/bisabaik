@@ -1,0 +1,17 @@
+order: 10
+category: government
+stage: co-create
+
+en:
+  name: "Dispora Kabupaten Bogor"
+  role: "Risk analysis and business process design"
+  context: >-
+    Risk management analysis and business process documentation for the
+    district youth and sports agency.
+
+id:
+  name: "Dispora Kabupaten Bogor"
+  role: "Analisis risiko dan perancangan proses bisnis"
+  context: >-
+    Analisis manajemen risiko dan dokumentasi proses bisnis untuk dinas
+    pemuda dan olahraga kabupaten.

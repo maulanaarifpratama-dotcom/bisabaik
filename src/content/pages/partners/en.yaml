@@ -1,0 +1,42 @@
+meta:
+  title: "Partners and collaborations"
+  description: >-
+    Philanthropic, corporate, government and development partners who choose
+    BisaBaik for accountable delivery, responsible exit and post-program
+    continuity.
+
+header:
+  title: Institutions choosing accountable delivery.
+  intro: >-
+    We work with partners who treat delivery, exit and sustainability as one
+    process. Each collaboration is described by role and context, because a
+    logo on a wall says nothing about what the work involved.
+  imageAlt: >-
+    Coordination meeting between Indonesian institutional partners.
+
+groups:
+  - key: philanthropic
+    label: Philanthropic institutions
+    blurb: >-
+      Zakat bodies and foundations partnering on disciplined delivery and exit.
+    imageAlt: >-
+      Children in a partner community supported through philanthropic programs.
+  - key: corporate
+    label: Corporate CSR and ESG
+    blurb: >-
+      Corporate partners aligning impact programs with operational
+      accountability.
+    imageAlt: >-
+      Corporate program review with the BisaBaik field operations team.
+  - key: development
+    label: Development organisations
+    blurb: >-
+      International and national development partners sharing field delivery.
+    imageAlt: >-
+      Co-design dialogue with development partners and community members.
+  - key: government
+    label: Government and public sector
+    blurb: >-
+      Public sector collaboration on market continuity and program governance.
+    imageAlt: >-
+      UMKM aggregation supporting government-backed market continuity.

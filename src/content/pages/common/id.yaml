@@ -1,0 +1,50 @@
+localeName: Bahasa Indonesia
+localeSwitchLabel: Read in English
+skipToContent: Lewati ke konten utama
+
+menu:
+  open: Buka menu
+  close: Tutup menu
+
+theme:
+  label: Tema warna
+  light: Ganti ke tema terang
+  dark: Ganti ke tema gelap
+
+nav:
+  - { href: /about, label: Tentang }
+  - { href: /what-we-do, label: Layanan }
+  - { href: /how-we-work, label: Cara Kerja }
+  - { href: /impact, label: Dampak }
+  - { href: /partners, label: Mitra }
+  - { href: /projects, label: Proyek }
+  - { href: /flagship, label: Unggulan }
+  - { href: /insights, label: Wawasan }
+  - { href: /contact, label: Kontak }
+
+aggregatorCta:
+  label: Agregator Pasokan Dampak
+  shortLabel: Agregator
+  href: https://pasarbaik.com
+
+footer:
+  tagline: Kerjakan dengan baik, akhiri dengan bertanggung jawab, lanjutkan dampaknya.
+  blurb: >-
+    Mitra pelaksana program dampak bagi lembaga filantropi, korporasi,
+    pembangunan, dan sektor publik yang bekerja di Indonesia dan sekitarnya.
+  navHeading: Navigasi
+  contactHeading: Kontak
+  legalHeading: Legal
+  email: info@bisabaik.or.id
+  phone: +62 851-6147-9098
+  phoneHref: "tel:+6285161479098"
+  address:
+    - Jl. Sepat No. 43, Kebagusan
+    - Pasar Minggu, Jakarta Selatan
+    - DKI Jakarta 12520
+  legal:
+    - { href: /privacy, label: Kebijakan Privasi }
+    - { href: /terms, label: Syarat dan Ketentuan }
+    - { href: /disclaimer, label: Penafian }
+  copyright: Bisa Baik Bersama, Yayasan Rumah Pembangunan Berkelanjutan.
+  affiliation: Lengan pelaksana program dampak dari Immers Asia Corp.

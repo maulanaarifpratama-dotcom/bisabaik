@@ -1,0 +1,11 @@
+meta:
+  title: "Page not found"
+  description: The page you were looking for is not here.
+code: "404"
+title: This page is not here.
+body: >-
+  The link may be out of date, or the page may have moved. The main sections of
+  the site are all reachable from the navigation above.
+cta:
+  label: Back to the home page
+  href: /

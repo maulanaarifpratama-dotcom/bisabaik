@@ -1,0 +1,96 @@
+meta:
+  title: "How we work: co-design, co-create, co-sustain"
+  description: >-
+    Our impact journey model and risk-aware approach. Programs are designed for
+    implementation, exit and sustainability at the same time.
+
+header:
+  title: A framework that treats exit as a phase, not an event.
+  intro: >-
+    Every engagement moves through three reinforcing phases. Implementation,
+    exit and sustainability are planned together, because in practice they
+    never separate cleanly.
+  imageAlt: >-
+    Indonesian field team reviewing maps and program plans inside a community
+    hall.
+
+journey:
+  heading: Co-design, co-create, co-sustain.
+  phaseLabel: Phase
+  phases:
+    - key: design
+      numeral: I
+      title: Co-design for delivery and exit
+      sub: Designing programs that are implementable, accountable and exit-aware.
+      imageAlt: >-
+        Community circle dialogue grounding the co-design phase in local
+        realities.
+      items:
+        - Alignment on program objectives and exit expectations
+        - Implementation planning and exit pathway design
+        - Social, operational and institutional risk mapping
+        - Identification of local capacities and long-term roles
+    - key: create
+      numeral: II
+      title: Co-create through accountable delivery
+      sub: Delivering with monitoring, learning and operational discipline.
+      imageAlt: >-
+        Community participants and field staff working together during a
+        program session.
+      items:
+        - Adaptive program execution with clear milestones
+        - Monitoring, accountability and adaptive learning
+        - Preparation of local systems, leadership and governance
+        - Risk-aware adjustments grounded in field realities
+    - key: sustain
+      numeral: III
+      title: Co-sustain with responsible exit
+      sub: Extending impact through systems, markets and partnerships.
+      imageAlt: >-
+        Training session preparing local actors to take ownership at exit.
+      items:
+        - Exit readiness assessment using the Exit Forward Model
+        - Transfer of roles and ownership to local actors
+        - Integration into market mechanisms and livelihoods
+        - Limited post-exit check-ins and learning capture
+
+risk:
+  heading: Discipline that stays responsive to what the field is doing.
+  body: >-
+    Development programs are complex, and exit is where that complexity shows
+    up most. A risk-aware approach is what keeps a program relevant and
+    accountable through delivery and transition.
+  imageAlt: >-
+    Training and risk review session with the field team and community
+    representatives.
+  items:
+    - label: Social and contextual
+      body: Community dynamics, power relations and local acceptance.
+    - label: Operational and implementation
+      body: Partner capacity, field coordination and execution consistency.
+    - label: Sustainability and exit
+      body: Institutional readiness, local ownership and post-program dependency.
+    - label: Reputational and accountability
+      body: Compliance, transparency and clarity of roles.
+  manageHeading: How we manage it
+  manage:
+    - Early risk identification during design and initial execution
+    - Continuous monitoring and adaptive adjustment
+    - Learning folded back into delivery and exit decisions
+    - Accountable documentation and reporting
+
+principles:
+  heading: Three principles that reinforce each other.
+  items:
+    - title: Community-centered
+      body: >-
+        Starting from the needs, values and real dynamics of the community. The
+        community is a subject of change, not its object.
+    - title: Data-driven
+      body: >-
+        Decisions driven by baseline studies, continuous monitoring, in-depth
+        evaluation and systematic reflection.
+    - title: Risk-aware
+      body: >-
+        Every stage managed inside a social and operational risk management
+        framework, not an informal judgement call.

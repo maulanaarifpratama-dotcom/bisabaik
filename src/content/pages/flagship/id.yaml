@@ -1,0 +1,94 @@
+meta:
+  title: "Program unggulan: Exit Forward, PasarBaik, ekonomi sirkular"
+  description: >-
+    Exit Forward Model, agregator pasokan dampak PasarBaik, dan inisiatif
+    ekonomi sirkular serta pengelolaan sampah. Tiga model praktis yang
+    membuktikan exit bisa memperpanjang dampak.
+
+header:
+  title: Ruang praktik tempat exit berubah jadi perpanjangan.
+  intro: >-
+    Program unggulan kami bukan uji coba. Ini model operasi tempat metode,
+    kemitraan, dan kelayakan pascaprogram terus diasah melawan kondisi
+    sebenarnya.
+  imageAlt: >-
+    Tim operasi lapangan BisaBaik menyusuri jalan setapak desa.
+
+labels:
+  context: Konteks
+  role: Peran kami
+  scope: Lingkup pelaksanaan
+  exit: Exit dan keberlanjutan
+  signal: Sinyal dampak
+  flagship: Program unggulan
+  engagement: Penugasan
+
+exitForward:
+  title: Exit Forward Model
+  subtitle: Model exit dan transisi yang bertanggung jawab.
+  body: >-
+    Model khas kami, mendampingi lembaga filantropi merancang sekaligus
+    benar-benar menjalankan exit yang bertanggung jawab. Cakupannya meliputi
+    transisi kepemilikan lokal dan perpanjangan dampak lewat akses pasar
+    domestik dan ekspor bagi UMKM penerima manfaat.
+  imageAlt: >-
+    Tim lapangan BisaBaik meninjau rencana exit dan transisi di lokasi.
+  stages:
+    - title: Akhir program yang biasa
+      body: >-
+        Tanpa strategi transisi, UMKM kembali bergantung begitu dukungan
+        ditarik.
+      tag: Rentan secara ekonomi
+    - title: Intervensi Exit Forward
+      body: >-
+        Exit dirancang sejak awal. Penarikan bertahap, penguatan tata kelola
+        lokal, pengembangan kapasitas pascaprogram, dan pendampingan berjangka
+        waktu.
+      tag: Agregator PasarBaik
+    - title: Kemandirian yang berkelanjutan
+      body: >-
+        Produsen yang siap ekspor, keuangan yang stabil dan tumbuh, serta
+        kepemilikan yang berada di tangan warga setempat.
+      tag: Berlanjut lewat pasar
+  note: >-
+    Dengan pendekatan ini exit tidak menghentikan dampak. Exit membawanya masuk
+    ke pasar yang terus membayar.
+
+pasarbaik:
+  title: PasarBaik
+  subtitle: Agregator pasokan dampak.
+  body: >-
+    PasarBaik mengagregasi pasokan UMKM binaan filantropi dan mempertemukannya
+    dengan permintaan domestik serta ekspor. Ia dibangun sebagai mekanisme
+    pasar, itulah sebabnya keberlanjutan adalah model operasinya, bukan
+    paragraf penutup.
+  imageAlt: >-
+    Pelaku UMKM menyiapkan biji premium untuk kanal ekspor.
+  facts:
+    - { key: Fungsi, value: Mempertemukan permintaan dan pasokan }
+    - { key: Jangkauan, value: Kanal domestik dan ekspor }
+    - { key: Pijakan, value: Jalur Aid for Trade }
+  cta:
+    label: Kunjungi PasarBaik
+    href: https://pasarbaik.com
+
+circular:
+  title: Ekonomi sirkular dan pengelolaan sampah
+  subtitle: Model demonstrasi kelayakan program lingkungan.
+  body: >-
+    Model yang layak secara finansial dan menunjukkan kapasitas pelaksanaan
+    menyeluruh dengan jalur yang jelas menuju pengelolaan mandiri oleh warga
+    setempat.
+  imageAlt: >-
+    Petugas bank sampah komunitas memilah plastik daur ulang.
+  rolesHeading: Tiga peran kami sekaligus
+  roles:
+    - Pelaksana program
+    - Operator pengelolaan sampah
+    - Pembeli material olahan
+  rolesNote: >-
+    Memegang ketiganya sekaligus itulah yang menjauhkan risiko dari mitra.
+  relevanceLabel: Relevansi strategis
+  relevance: >-
+    Model demonstrasi yang membuktikan program lingkungan bisa operasional,
+    layak secara ekonomi, dan diakhiri dengan bertanggung jawab.

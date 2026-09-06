@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+import { getEntry } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import { localizePath, type Locale } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry("notFoundPage", locale);
+if (!entry) throw new Error(`Missing 404 copy for locale "${locale}"`);
+const t = entry.data;
+---
+
+<Base
+  locale={locale}
+  path="/404"
+  title={t.meta.title}
+  description={t.meta.description}
+  noindex
+>
+  <section class="edge flex min-h-[60vh] flex-col justify-center py-24">
+    <p class="font-display text-[15px] tracking-[0.2em] text-ink-soft">
+      {t.code}
+    </p>
+    <h1 class="display-1 mt-5 max-w-[16ch]">{t.title}</h1>
+    <p class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft">
+      {t.body}
+    </p>
+    <div class="mt-10">
+      <a href={localizePath(t.cta.href, locale)} class="btn btn-primary group">
+        {t.cta.label}
+        <Icon
+          name="ph:arrow-right"
+          class="h-4 w-4 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1"
+        />
+      </a>
+    </div>
+  </section>
+</Base>

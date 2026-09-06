@@ -1,0 +1,174 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/components/site/PageHeader.astro";
+import SectionHead from "@/components/site/SectionHead.astro";
+import { image } from "@/lib/images";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry("about", locale);
+if (!entry) throw new Error(`Missing about copy for locale "${locale}"`);
+const t = entry.data;
+---
+
+<Base
+  locale={locale}
+  path="/about"
+  title={t.meta.title}
+  description={t.meta.description}
+  breadcrumbs={[{ name: t.header.title, path: "/about" }]}
+>
+  <PageHeader
+    title={t.header.title}
+    intro={t.header.intro}
+    imageKey="children-community"
+    imageAlt={t.header.imageAlt}
+  />
+
+  {/* Vision and mission: a statement, then the four commitments under it. */}
+  <section class="edge border-b border-line py-20 md:py-28">
+    <div data-reveal class="max-w-4xl">
+      <h2 class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase">
+        {t.vision.heading}
+      </h2>
+      <p class="mt-6 font-display text-[24px] leading-[1.26] text-balance md:text-[34px]">
+        {t.vision.statement}
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-8 md:grid-cols-12 md:gap-12">
+      <h3
+        data-reveal
+        class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase md:col-span-3"
+      >
+        {t.mission.heading}
+      </h3>
+      <ol class="md:col-span-9">
+        {
+          t.mission.items.map((item, i) => (
+            <li
+              data-reveal
+              style={`--reveal-delay:${i * 60}ms`}
+              class="grid grid-cols-12 gap-4 border-b border-hairline py-5 last:border-b-0"
+            >
+              <span class="col-span-2 font-display text-[15px] text-ink-soft md:col-span-1">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p class="col-span-10 text-[16px] leading-relaxed text-ink/90 md:col-span-11">
+                {item}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  {/* Why partners choose us: photo against copy, full bleed. */}
+  <section class="grid border-b border-line lg:grid-cols-12">
+    <div class="relative order-2 min-h-[20rem] lg:order-1 lg:col-span-5 lg:min-h-full">
+      <Image
+        src={image("hero-how-we-work")}
+        alt={t.why.imageAlt}
+        widths={[640, 1024]}
+        sizes="(min-width: 1024px) 42vw, 100vw"
+        loading="lazy"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+    <div class="order-1 p-10 md:p-16 lg:order-2 lg:col-span-7 lg:p-24">
+      <h2 data-reveal class="display-2">{t.why.heading}</h2>
+      <p
+        data-reveal
+        style="--reveal-delay:70ms"
+        class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft"
+      >
+        {t.why.body}
+      </p>
+      <ul class="mt-10 space-y-0">
+        {
+          t.why.items.map((item, i) => (
+            <li
+              data-reveal
+              style={`--reveal-delay:${i * 60}ms`}
+              class="border-b border-hairline py-4 text-[15px] leading-relaxed"
+            >
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  {/* Team */}
+  <section class="edge border-b border-line py-20 md:py-28">
+    <SectionHead heading={t.team.heading} body={t.team.intro} />
+    <ul class="mt-12 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
+      {
+        t.team.members.map((member, i) => (
+          <li
+            data-reveal
+            style={`--reveal-delay:${i * 45}ms`}
+            class="bg-paper p-7 transition-colors duration-300 hover:bg-surface-2"
+          >
+            <p class="font-display text-[19px] leading-tight">{member.name}</p>
+            <p class="mt-2 text-[12px] tracking-[0.1em] text-ink-soft uppercase">
+              {member.role}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {/* Associate network */}
+  <section class="bg-surface/50 py-20 md:py-28">
+    <div class="edge grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <h2 data-reveal class="display-2">{t.network.heading}</h2>
+        <p
+          data-reveal
+          style="--reveal-delay:70ms"
+          class="mt-6 text-[16.5px] leading-relaxed text-ink-soft"
+        >
+          {t.network.body}
+        </p>
+        <div data-reveal class="relative mt-10 aspect-4/3 overflow-hidden rounded-[2px]">
+          <Image
+            src={image("produce-baskets")}
+            alt={t.network.imageAlt}
+            widths={[480, 800]}
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            loading="lazy"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
+      </div>
+
+      <ul class="lg:col-span-6 lg:col-start-7">
+        {
+          t.network.items.map((item, i) => (
+            <li
+              data-reveal
+              style={`--reveal-delay:${i * 45}ms`}
+              class="flex items-baseline gap-6 border-b border-hairline py-5 first:border-t first:border-hairline"
+            >
+              <span class="w-8 shrink-0 font-display text-[14px] text-ink-soft">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span class="text-[15.5px] leading-relaxed">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Base>

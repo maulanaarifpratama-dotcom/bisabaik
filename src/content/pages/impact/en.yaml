@@ -1,0 +1,82 @@
+meta:
+  title: "Impact: where we work and what continues after we leave"
+  description: >-
+    Our presence across Indonesia and Türkiye, and our contribution to SDG 8
+    and SDG 12 through post-program economic continuity and circular economy
+    practice.
+
+header:
+  title: Presence across communities. Continuity across markets.
+  intro: >-
+    Our impact is read in the discipline of delivery, the integrity of exit,
+    and whether livelihoods are still earning after we leave. Below: where we
+    work, what we contribute to, and how we judge whether it held.
+  imageAlt: >-
+    Aerial view of an Indonesian coastal village at dawn.
+
+presence:
+  heading: Working across Indonesia, with reach into Türkiye.
+  regions:
+    - region: Western Indonesia
+      places: [Jakarta, Banten, West Java, Lampung, South Sumatra]
+    - region: Central Indonesia
+      places: [Central Java, Yogyakarta, East Java, Bali, NTB]
+    - region: Eastern Indonesia
+      places: [NTT, South Sulawesi, Maluku]
+    - region: International
+      places: [Türkiye, Adıyaman and Hatay]
+
+livelihood:
+  heading: Impact endures when markets keep paying.
+  body: >-
+    Behind every flagship is a network of MSME producers, cooperatives and
+    community institutions earning income from the same systems we helped
+    build. That continuity is our working definition of impact.
+  imageAlt: >-
+    An Indonesian MSME entrepreneur preparing premium coffee beans for market.
+
+sdg:
+  heading: Anchored in SDG 8 and SDG 12.
+  intro: >-
+    Our approach is grounded in two development challenges we can actually move:
+    post-program economic continuity, and responsible resource management.
+  items:
+    - number: "8"
+      code: SDG 8
+      title: Decent Work and Economic Growth
+      focus: >-
+        Strengthening post-program livelihoods through UMKM, youth engagement
+        and market access.
+      targets:
+        - "8.2 Improving economic productivity through UMKM diversification, upgrading and market readiness."
+        - "8.3 Strengthening entrepreneurship and MSME growth through implementation support and market access."
+        - "8.6 Engaging youth in productive economic activity through community-based enterprises."
+        - "8.9 Supporting community-based local economies linked to culture and local products."
+        - "8.a Expanding domestic and export market access as part of post-program sustainability and Aid for Trade pathways."
+    - number: "12"
+      code: SDG 12
+      title: Responsible Consumption and Production
+      focus: >-
+        Embedding community-based circular economy practice to reduce waste and
+        improve resource efficiency.
+      targets:
+        - "12.2 Promoting efficient resource use through circular economy and waste management systems."
+        - "12.3 Reducing food loss and waste within community and local supply chain contexts."
+        - "12.5 Substantially reducing waste generation through prevention, reduction, recycling and reuse."
+        - "12.8 Building community awareness and capability for sustainable consumption and production."
+
+reading:
+  heading: Signals over slogans.
+  items:
+    - title: Delivery quality
+      body: >-
+        Execution discipline, read through milestones met, accountability kept
+        and risks actually closed.
+    - title: Transition readiness
+      body: >-
+        Local institutional, governance and leadership strength measured at the
+        point of exit.
+    - title: Post-program continuity
+      body: >-
+        Market access, livelihoods and operational sustainability after the
+        grant period has ended.

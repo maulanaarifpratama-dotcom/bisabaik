@@ -1,0 +1,157 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/components/site/PageHeader.astro";
+import SectionHead from "@/components/site/SectionHead.astro";
+import { image, type ImageKey } from "@/lib/images";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry("howWeWork", locale);
+if (!entry) throw new Error(`Missing how-we-work copy for locale "${locale}"`);
+const t = entry.data;
+
+const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
+  design: "circle-discussion",
+  create: "group-circle",
+  sustain: "training-whiteboard",
+};
+---
+
+<Base
+  locale={locale}
+  path="/how-we-work"
+  title={t.meta.title}
+  description={t.meta.description}
+  breadcrumbs={[{ name: t.header.title, path: "/how-we-work" }]}
+>
+  <PageHeader
+    title={t.header.title}
+    intro={t.header.intro}
+    imageKey="hero-how-we-work"
+    imageAlt={t.header.imageAlt}
+  />
+
+  <section class="edge border-b border-line py-20 md:py-28">
+    <SectionHead heading={t.journey.heading} />
+
+    <ol class="mt-12 space-y-px bg-line">
+      {
+        t.journey.phases.map((phase) => (
+          <li class="grid gap-8 bg-paper p-8 md:grid-cols-12 md:p-12">
+            <div class="md:col-span-3">
+              <p class="font-display text-[52px] leading-none italic">
+                {phase.numeral}
+              </p>
+              <p class="mt-3 text-[11.5px] tracking-[0.12em] text-ink-soft uppercase">
+                {t.journey.phaseLabel} {phase.numeral}
+              </p>
+              <div class="relative mt-6 aspect-4/3 overflow-hidden rounded-[2px]">
+                <Image
+                  src={image(PHASE_IMAGE[phase.key])}
+                  alt={phase.imageAlt}
+                  widths={[400, 700]}
+                  sizes="(min-width: 768px) 24vw, 100vw"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div data-reveal class="md:col-span-9">
+              <h3 class="font-display text-[24px] leading-tight text-balance md:text-[29px]">
+                {phase.title}
+              </h3>
+              <p class="mt-3 text-[15px] text-ink-soft italic">{phase.sub}</p>
+              <ul class="mt-7 grid gap-x-10 gap-y-3 md:grid-cols-2">
+                {phase.items.map((item) => (
+                  <li class="flex gap-3 text-[14.5px] leading-relaxed">
+                    <span aria-hidden="true" class="mt-2.5 h-px w-3 shrink-0 bg-bronze" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  {/* Risk: photo panel beside a matrix of risk categories. */}
+  <section class="grid border-b border-line bg-surface/50 lg:grid-cols-12">
+    <div class="relative min-h-[20rem] lg:col-span-5 lg:min-h-full">
+      <Image
+        src={image("training-session")}
+        alt={t.risk.imageAlt}
+        widths={[640, 1024]}
+        sizes="(min-width: 1024px) 42vw, 100vw"
+        loading="lazy"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+    <div class="p-10 md:p-16 lg:col-span-7 lg:p-24">
+      <h2 data-reveal class="display-2">{t.risk.heading}</h2>
+      <p
+        data-reveal
+        style="--reveal-delay:70ms"
+        class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft"
+      >
+        {t.risk.body}
+      </p>
+
+      <dl class="mt-12 grid gap-px bg-line md:grid-cols-2">
+        {
+          t.risk.items.map((item, i) => (
+            <div data-reveal style={`--reveal-delay:${i * 55}ms`} class="bg-paper p-6">
+              <dt class="text-[12px] tracking-[0.1em] text-ink uppercase">
+                {item.label}
+              </dt>
+              <dd class="mt-3 text-[13.5px] leading-relaxed text-ink-soft">
+                {item.body}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <div class="mt-10">
+        <h3 class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase">
+          {t.risk.manageHeading}
+        </h3>
+        <ul class="mt-5 space-y-2.5 text-[14.5px]">
+          {
+            t.risk.manage.map((item) => (
+              <li class="flex gap-3">
+                <span aria-hidden="true" class="mt-2.5 h-px w-3 shrink-0 bg-bronze" />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="edge py-20 md:py-28">
+    <SectionHead heading={t.principles.heading} />
+    <div class="mt-12 grid gap-px bg-line md:grid-cols-3">
+      {
+        t.principles.items.map((item, i) => (
+          <div data-reveal style={`--reveal-delay:${i * 60}ms`} class="bg-paper p-9">
+            <h3 class="font-display text-[22px] leading-snug">{item.title}</h3>
+            <p class="mt-5 text-[14.5px] leading-relaxed text-ink-soft">
+              {item.body}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Base>

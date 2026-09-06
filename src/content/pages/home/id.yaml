@@ -1,0 +1,115 @@
+meta:
+  title: "Bisa Baik Bersama: Pelaksana Program Dampak dan Exit yang Bertanggung Jawab"
+  description: >-
+    Mitra pelaksana program dampak berbasis di Indonesia. Kami menjalankan
+    program pembangunan di lapangan, merancang exit sejak hari pertama, dan
+    menjaga penghidupan tetap berjalan lewat akses pasar UMKM.
+
+hero:
+  lineOne: Kerjakan dengan baik.
+  lineTwo: Akhiri dengan tanggung jawab.
+  lineThree: Lanjutkan dampaknya.
+  body: >-
+    Kami menjalankan program pembangunan di lapangan, dan merancang jalan
+    keluarnya sejak hari pertama.
+  primary:
+    label: Cara kami bekerja
+    href: /what-we-do
+  secondary:
+    label: Proyek kami
+    href: /projects
+  imageAlt: >-
+    Perahu nelayan berlabuh di perairan desa pesisir Indonesia saat fajar,
+    dengan sawah berundak di belakang garis pantai.
+
+positioning:
+  lead: "Kami "
+  emphasisOne: mitra pelaksana
+  middle: ", bukan lembaga amal. Program dirancang, dijalankan, lalu "
+  emphasisTwo: dialihkan
+  tail: ", supaya dampaknya berlanjut setelah kami pergi."
+
+pillars:
+  heading: Tiga pilar, mengikuti urutan sebenarnya sebuah program berjalan.
+  body: >-
+    Pelaksanaan, exit, dan keberlanjutan pasar adalah satu rangkaian, bukan tiga
+    layanan terpisah. Tiap pilar menyerahkan sesuatu yang siap dipakai ke pilar
+    berikutnya.
+  items:
+    - title: Pelaksanaan program menyeluruh
+      body: >-
+        Pelaksanaan lapangan yang disiplin, dengan mutu eksekusi, akuntabilitas,
+        dan kesiapan transisi. Bisa langsung atas nama kami atau white-label
+        atas nama mitra.
+    - title: Mitra strategis untuk exit filantropi
+      body: >-
+        Exit yang bertanggung jawab, dirancang sekaligus dijalankan, dengan
+        pengalihan kepemilikan dan tata kelola ke aktor lokal sesuai jadwal yang
+        disepakati bersama.
+    - title: Agregasi UMKM dan perluasan pasar
+      body: >-
+        Keberlanjutan ekonomi pascaprogram melalui akses pasar domestik dan
+        ekspor bagi UMKM penerima manfaat.
+
+journey:
+  heading: "Perjalanan dampak: dari pelaksanaan menuju exit yang bertanggung jawab."
+  body: >-
+    Kerangka kerja kami bergerak melalui tiga fase yang saling menguatkan. Tiap
+    penugasan disesuaikan dengan di mana mitra paling membutuhkan kami, dan
+    dengan cara mereka ingin mengakhirinya.
+  phaseLabel: Fase
+  phases:
+    - numeral: I
+      title: Ko-desain untuk pelaksanaan dan exit
+      body: >-
+        Penyelarasan tujuan program dan harapan exit. Perencanaan pelaksanaan,
+        perancangan jalur exit, serta pemetaan risiko sosial dan operasional.
+    - numeral: II
+      title: Ko-kreasi lewat pelaksanaan yang akuntabel
+      body: >-
+        Eksekusi di lapangan dengan monitoring, akuntabilitas, pembelajaran
+        adaptif, dan penyiapan sistem serta tata kelola lokal.
+    - numeral: III
+      title: Ko-keberlanjutan dengan exit yang bertanggung jawab
+      body: >-
+        Asesmen kesiapan exit, pengalihan peran dan kepemilikan, integrasi ke
+        mekanisme pasar, serta pembelajaran pascaexit secara terbatas.
+
+flagship:
+  heading: Model yang membuktikan exit bisa memperpanjang dampak.
+  body: >-
+    Program unggulan kami bukan uji coba. Ini model operasi tempat metode,
+    kemitraan, dan kelayakan pascaprogram diasah langsung di lapangan.
+  readMore: Baca modelnya
+
+principles:
+  heading: Berpusat pada komunitas. Berbasis data. Sadar risiko.
+  body: >-
+    Komunitas adalah subjek perubahan, bukan objeknya. Keputusan berpijak pada
+    studi awal, monitoring, dan refleksi. Setiap tahap dijalankan di dalam
+    kerangka manajemen risiko sosial dan operasional.
+  cta:
+    label: Baca pendekatan kami
+    href: /about
+  imageAlt: >-
+    Warga dan fasilitator BisaBaik duduk melingkar dalam sesi perencanaan
+    partisipatif.
+
+partners:
+  heading: Lembaga yang memilih pelaksanaan yang akuntabel.
+  cta:
+    label: Semua mitra dan kolaborasi
+    href: /partners
+
+close:
+  heading: Sedang merancang program berikutnya dengan exit sejak awal?
+  body: >-
+    Kami bekerja dengan mitra yang melihat pelaksanaan, exit, dan keberlanjutan
+    sebagai satu proses utuh. Kalau begitu juga cara Anda memandangnya, mari
+    bicara.
+  primary:
+    label: Mulai percakapan
+    href: /contact
+  secondary:
+    label: Kunjungi PasarBaik
+    href: https://pasarbaik.com

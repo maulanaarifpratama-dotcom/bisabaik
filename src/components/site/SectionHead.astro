@@ -1,0 +1,23 @@
+---
+interface Props {
+  heading: string;
+  body?: string;
+  /** Renders an h3 inside sections that already own an h2. */
+  level?: 2 | 3;
+  class?: string;
+}
+
+const { heading, body, level = 2, class: className } = Astro.props;
+const Tag = level === 2 ? "h2" : "h3";
+---
+
+<div data-reveal class:list={["max-w-3xl", className]}>
+  <Tag class="display-2">{heading}</Tag>
+  {
+    body && (
+      <p class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft">
+        {body}
+      </p>
+    )
+  }
+</div>

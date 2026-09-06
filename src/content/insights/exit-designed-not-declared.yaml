@@ -1,0 +1,18 @@
+order: 1
+forthcoming: true
+
+en:
+  kind: "Framework"
+  title: "Why exit must be designed, not declared"
+  excerpt: >-
+    A practical reflection on building exit strategy into program design from
+    day one, and the failure modes that keep recurring when it is bolted on at
+    the end.
+
+id:
+  kind: "Kerangka"
+  title: "Kenapa exit harus dirancang, bukan diumumkan"
+  excerpt: >-
+    Refleksi praktis tentang menanam strategi exit ke dalam desain program
+    sejak hari pertama, dan pola kegagalan yang terus berulang saat exit baru
+    ditempelkan di akhir.

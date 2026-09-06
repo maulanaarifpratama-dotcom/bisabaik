@@ -1,0 +1,108 @@
+meta:
+  title: "Layanan kami: pelaksanaan, strategi exit, dan keberlanjutan pasar"
+  description: >-
+    Tiga pilar pelaksanaan program dampak: implementasi menyeluruh, strategi
+    exit filantropi, dan agregasi UMKM lewat PasarBaik.
+
+header:
+  title: Pelaksanaan menyeluruh, dengan exit sejak awal.
+  intro: >-
+    Kami menyediakan kapasitas pelaksanaan bagi mitra filantropi dan
+    pembangunan, dengan exit dan keberlanjutan tertulis di rencana kerja, bukan
+    ditambahkan setelah anggaran habis.
+  imageAlt: >-
+    Tim operasi lapangan BisaBaik berjalan melintasi desa di Indonesia pada
+    sore hari.
+
+role:
+  heading: Yang biasanya masuk dalam peran kami
+  items:
+    - Perencanaan pelaksanaan dan koordinasi lapangan
+    - Eksekusi langsung atau white-label, sesuai kebutuhan mitra
+    - Manajemen risiko, akuntabilitas, dan pelaporan hasil
+    - Penguatan kapasitas lokal dan kesiapan transisi
+    - Dukungan exit dan keberlanjutan pascaprogram
+    - Agregasi dan keberlanjutan pasar melalui PasarBaik
+
+labels:
+  pillar: Pilar
+  deliverables: Keluaran utama
+  value: Nilai bagi mitra
+  workflow: Alur pelaksanaan
+
+pillars:
+  - key: delivery
+    title: Pelaksanaan program menyeluruh
+    purpose: >-
+      Menjalankan program sebagai transisi terencana menuju kemandirian, bukan
+      sekumpulan kegiatan yang berhenti begitu anggarannya habis.
+    imageAlt: >-
+      Tim lapangan BisaBaik berseragam mengoordinasikan pelaksanaan program
+      bersama mitra setempat.
+    deliverables:
+      - Rencana pelaksanaan dan kerangka koordinasi lapangan
+      - Pelaksanaan di lapangan, langsung atau white-label
+      - Daftar risiko dan tindakan mitigasi
+      - Monitoring, akuntabilitas, dan pelaporan berbasis hasil
+      - Jalur exit yang menyatu dengan pelaksanaan program
+    value:
+      - Mutu eksekusi yang konsisten dan bisa dipertanggungjawabkan
+      - Risiko pelaksanaan dan reputasi ditangani sejak dini
+      - Mitra tetap memegang kepemilikan strategis dan melihat jalannya program
+      - Program disiapkan untuk transisi, bukan ketergantungan
+    workflow:
+      - Penetapan lingkup dan penyelarasan dengan mitra
+      - Mobilisasi lapangan dan koordinasi lokal
+      - Pelaksanaan program secara adaptif dan bertahap
+      - Monitoring, pelaporan, dan pembelajaran
+      - Penyiapan transisi menuju exit
+
+  - key: exit
+    title: Mitra strategis untuk strategi exit filantropi
+    purpose: >-
+      Memperlakukan exit yang bertanggung jawab sebagai satu fase siklus dampak
+      yang dirancang, dianggarkan, dan diukur seperti fase lainnya.
+    imageAlt: >-
+      Sesi pelatihan dan kesiapan exit bersama warga di depan papan tulis.
+    deliverables:
+      - Strategi exit dan peta jalan transisi
+      - Asesmen kesiapan exit
+      - Rencana penguatan kelembagaan dan kepemimpinan lokal
+      - Kerangka pengalihan tata kelola dan peran
+      - Ringkasan monitoring dan pembelajaran pascaexit
+    value:
+      - Exit yang terukur, bertahap, dan akuntabel
+      - Risiko kegagalan pascaprogram menurun
+      - Manfaat bertahan lewat kepemilikan lokal yang jelas
+      - Exit yang menguatkan reputasi mitra, bukan membebaninya
+    workflow:
+      - Penyelarasan niat exit dan asesmen risiko
+      - Perancangan exit dan pemetaan kesiapan
+      - Alih kapasitas dan transisi tata kelola
+      - Penarikan bertahap dan serah terima kepemilikan
+      - Tinjauan pascaexit dan penangkapan pembelajaran
+
+  - key: market
+    title: Agregasi UMKM dan perluasan pasar
+    purpose: >-
+      Menjadikan akses pasar sebagai mekanisme exit ekonomi program filantropi,
+      supaya pendapatan tetap jalan tanpa perlu bantuan babak berikutnya.
+    imageAlt: >-
+      Pelaku UMKM menyiapkan produk premium untuk kanal pasar teragregasi.
+    deliverables:
+      - Agregasi UMKM melalui mekanisme PasarBaik
+      - Pertemuan permintaan dan pasokan di kanal domestik dan ekspor
+      - Kesiapan mutu, kepatuhan, dan pengemasan
+      - Koordinasi serapan dengan pembeli industri dan ritel
+      - Pendampingan berjangka waktu selama masa transisi
+    value:
+      - Dampak ekonomi yang berlanjut setelah masa hibah
+      - Ketergantungan pada bantuan lanjutan berkurang
+      - Jalur keberlanjutan yang konkret, bukan sekadar cita-cita
+      - Dampak jangka panjang yang lebih mudah dilaporkan dan dipertahankan
+    workflow:
+      - Diagnostik kesiapan UMKM
+      - Onboarding agregasi lewat PasarBaik
+      - Pertemuan dengan pembeli dan fasilitasi pesanan
+      - Dukungan mutu dan kepatuhan
+      - Pendampingan berjangka waktu sampai mandiri

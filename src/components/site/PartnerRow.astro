@@ -1,0 +1,30 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  context: string;
+}
+
+const { name, role, context } = Astro.props;
+---
+
+<article
+  class="group relative grid grid-cols-12 gap-x-5 gap-y-3 border-t border-hairline py-7 first:border-t-0"
+>
+  <span
+    aria-hidden="true"
+    class="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-bronze transition-transform duration-500 ease-[var(--ease-out)] group-first:hidden group-hover:scale-x-100"
+  ></span>
+
+  <div class="col-span-12 md:col-span-5">
+    <h3 class="font-display text-[19px] leading-snug">{name}</h3>
+    <p
+      class="mt-2 text-[11.5px] tracking-[0.1em] text-ink-soft uppercase transition-colors duration-500 group-hover:text-bronze-strong"
+    >
+      {role}
+    </p>
+  </div>
+  <p class="col-span-12 text-[14.5px] leading-relaxed text-ink/85 md:col-span-7">
+    {context}
+  </p>
+</article>

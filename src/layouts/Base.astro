@@ -1,0 +1,156 @@
+---
+import "@/styles/global.css";
+import Header from "@/components/site/Header.astro";
+import Footer from "@/components/site/Footer.astro";
+import Seo, { type Breadcrumb } from "@/components/site/Seo.astro";
+import { getEntry } from "astro:content";
+import { HTML_LANG, type Locale } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+  /** Language-neutral path, e.g. "/about". */
+  path: string;
+  title: string;
+  description: string;
+  breadcrumbs?: Breadcrumb[];
+  isHome?: boolean;
+  noindex?: boolean;
+}
+
+const {
+  locale,
+  path,
+  title,
+  description,
+  breadcrumbs,
+  isHome = false,
+  noindex = false,
+} = Astro.props;
+
+const common = await getEntry("common", locale);
+if (!common) throw new Error(`Missing common copy for locale "${locale}"`);
+---
+
+<!doctype html>
+<html lang={HTML_LANG[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#f7f6f2"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#15191e"
+    />
+
+    <Seo
+      locale={locale}
+      path={path}
+      title={title}
+      description={description}
+      breadcrumbs={breadcrumbs}
+      isHome={isHome}
+      noindex={noindex}
+    />
+
+    {/* Runs before first paint so the page never flashes the wrong ground. */}
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem("bb-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+  </head>
+
+  <body class="flex min-h-dvh flex-col">
+    <a
+      href="#main"
+      class="sr-only rounded-[2px] bg-ink px-4 py-2 text-on-ink focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-100"
+    >
+      {common.data.skipToContent}
+    </a>
+
+    <Header locale={locale} />
+
+    <main id="main" class="flex-1 pt-[68px]">
+      <slot />
+    </main>
+
+    <Footer locale={locale} />
+
+    <script>
+      // Theme toggle. The inline head script has already committed a theme;
+      // this only flips it and remembers the choice.
+      const button = document.querySelector<HTMLButtonElement>(
+        "[data-theme-toggle]",
+      );
+
+      function syncLabel(theme: string) {
+        if (!button) return;
+        const next =
+          theme === "dark" ? button.dataset.labelLight : button.dataset.labelDark;
+        if (next) button.setAttribute("aria-label", next);
+      }
+
+      syncLabel(document.documentElement.getAttribute("data-theme") ?? "light");
+
+      button?.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        try {
+          localStorage.setItem("bb-theme", next);
+        } catch {
+          /* private mode: the choice simply does not persist */
+        }
+        syncLabel(next);
+      });
+    </script>
+
+    <script>
+      // Scroll reveal. Elements ship visible; the script arms them only when
+      // motion is welcome, so no-JS and reduced-motion readers lose nothing.
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const targets = document.querySelectorAll<HTMLElement>("[data-reveal]");
+
+      if (!reduced.matches && targets.length > 0 && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              entry.target.setAttribute("data-reveal-shown", "");
+              observer.unobserve(entry.target);
+            }
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.01 },
+        );
+
+        // Observe first, hide second. If observe() ever threw part way through
+        // the list, arming first would leave the rest of the page permanently
+        // invisible; this way a failure leaves everything simply visible.
+        for (const target of targets) observer.observe(target);
+        for (const target of targets) target.setAttribute("data-reveal-armed", "");
+      }
+    </script>
+  </body>
+</html>

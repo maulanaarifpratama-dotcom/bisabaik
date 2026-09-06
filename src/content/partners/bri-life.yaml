@@ -1,0 +1,17 @@
+order: 5
+category: corporate
+stage: co-create
+
+en:
+  name: "BRI Life"
+  role: "Co-create and program implementation"
+  context: >-
+    Community-based waste management delivered with operational discipline
+    and a defined handover point.
+
+id:
+  name: "BRI Life"
+  role: "Ko-kreasi dan pelaksanaan program"
+  context: >-
+    Pengelolaan sampah berbasis komunitas yang dijalankan dengan disiplin
+    operasional dan titik serah terima yang jelas.

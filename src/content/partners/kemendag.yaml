@@ -1,0 +1,17 @@
+order: 9
+category: government
+stage: co-sustain
+
+en:
+  name: "Kementerian Perdagangan Republik Indonesia"
+  role: "UMKM aggregator and market facilitation partner"
+  context: >-
+    Aggregating philanthropic UMKM beneficiaries so they can reach domestic
+    and export markets.
+
+id:
+  name: "Kementerian Perdagangan Republik Indonesia"
+  role: "Mitra agregator UMKM dan fasilitasi pasar"
+  context: >-
+    Mengagregasi UMKM penerima manfaat program filantropi agar dapat
+    menjangkau pasar domestik dan ekspor.

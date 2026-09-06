@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import { image, type ImageKey } from "@/lib/images";
+
+interface Props {
+  title: string;
+  intro: string;
+  imageKey: ImageKey;
+  imageAlt: string;
+}
+
+const { title, intro, imageKey, imageAlt } = Astro.props;
+const photo = image(imageKey);
+---
+
+<section class="relative isolate overflow-hidden border-b border-line">
+  <div class="absolute inset-0 -z-10">
+    <Image
+      src={photo}
+      alt={imageAlt}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="h-full w-full object-cover"
+    />
+    <!-- Header band: the fixed nav sits on top of this photo. -->
+    <div
+      class="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-paper via-paper/70 to-transparent"
+    >
+    </div>
+    <!-- Reading ground for the headline. -->
+    <div
+      class="absolute inset-0 bg-linear-to-r from-paper/88 via-paper/40 to-transparent"
+    >
+    </div>
+    <!-- Blend into the page rather than cutting hard at the section edge. -->
+    <div
+      class="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-paper to-transparent"
+    >
+    </div>
+  </div>
+
+  <div class="edge pt-24 pb-14 md:pt-32 md:pb-20">
+    <h1 data-reveal class="display-1 max-w-[17ch]">{title}</h1>
+    <p
+      data-reveal
+      style="--reveal-delay:90ms"
+      class="mt-7 max-w-2xl text-[17px] leading-relaxed text-ink/85 md:text-[18px]"
+    >
+      {intro}
+    </p>
+  </div>
+</section>
