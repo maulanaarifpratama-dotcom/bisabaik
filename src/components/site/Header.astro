@@ -33,7 +33,7 @@ const isActive = (href: string) =>
 <header
   data-header
   data-hero={heroTone === "ink" ? "ink" : undefined}
-  class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-[background-color,border-color,backdrop-filter] duration-400 data-[stuck]:border-line data-[stuck]:bg-paper/85 data-[stuck]:backdrop-blur-md"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-[background-color,border-color] duration-300 ease-[var(--ease-out)] data-[stuck]:border-line data-[stuck]:bg-paper"
 >
   <div class="edge flex h-[68px] items-center justify-between gap-5">
     <a
@@ -107,7 +107,7 @@ const isActive = (href: string) =>
         href={t.aggregatorCta.href}
         target="_blank"
         rel="noopener noreferrer"
-        class:list={["btn ml-1 hidden xl:inline-flex", heroTone === "ink" ? "btn-outline-invert" : "btn-primary"]}
+        class="btn btn-primary ml-1 hidden xl:inline-flex"
       >
         {t.aggregatorCta.label}
         <Icon name="ph:arrow-up-right" class="h-3.5 w-3.5" />

@@ -91,6 +91,7 @@ const home = defineCollection({
       imageAlt: z.string(),
     }),
     positioning: z.object({
+      imageAlt: z.string(),
       lead: z.string(),
       emphasisOne: z.string(),
       middle: z.string(),
@@ -220,6 +221,7 @@ const impact = defineCollection({
     header: pageHeader,
     presence: z.object({
       heading: z.string(),
+      mapAlt: z.string(),
       regions: z.array(
         z.object({ region: z.string(), places: z.array(z.string()) }),
       ),

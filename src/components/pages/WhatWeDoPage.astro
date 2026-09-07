@@ -39,7 +39,7 @@ const PILLAR_IMAGE: Record<"delivery" | "exit" | "market", ImageKey> = {
     imageAlt={t.header.imageAlt}
   />
 
-  <section class="edge border-b border-line py-20 md:py-24">
+  <section class="edge border-b border-line pt-16 pb-12 md:pt-20 md:pb-14">
     <SectionHead heading={t.role.heading} />
     <ul class="mt-10 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
       {
@@ -60,7 +60,7 @@ const PILLAR_IMAGE: Record<"delivery" | "exit" | "market", ImageKey> = {
     t.pillars.map((pillar, index) => (
       <article
         class:list={[
-          "edge py-16 md:py-24",
+          "edge pt-16 pb-12 md:pt-20 md:pb-14",
           index > 0 && "border-t border-line",
         ]}
       >

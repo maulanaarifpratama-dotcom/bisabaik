@@ -16,6 +16,9 @@ header:
     Pemandangan udara desa pesisir Indonesia saat fajar.
 
 presence:
+  mapAlt: >-
+    Peta lokasi program Bisa Baik Bersama di seluruh kepulauan Indonesia,
+    dengan lokasi tambahan di Adiyaman dan Hatay, Türkiye.
   heading: Bekerja di seluruh Indonesia, dengan jangkauan hingga Türkiye.
   regions:
     - region: Indonesia bagian barat

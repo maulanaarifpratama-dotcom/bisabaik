@@ -133,30 +133,5 @@ if (!common) throw new Error(`Missing common copy for locale "${locale}"`);
       });
     </script>
 
-    <script>
-      // Scroll reveal. Elements ship visible; the script arms them only when
-      // motion is welcome, so no-JS and reduced-motion readers lose nothing.
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const targets = document.querySelectorAll<HTMLElement>("[data-reveal]");
-
-      if (!reduced.matches && targets.length > 0 && "IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            for (const entry of entries) {
-              if (!entry.isIntersecting) continue;
-              entry.target.setAttribute("data-reveal-shown", "");
-              observer.unobserve(entry.target);
-            }
-          },
-          { rootMargin: "0px 0px -8% 0px", threshold: 0.01 },
-        );
-
-        // Observe first, hide second. If observe() ever threw part way through
-        // the list, arming first would leave the rest of the page permanently
-        // invisible; this way a failure leaves everything simply visible.
-        for (const target of targets) observer.observe(target);
-        for (const target of targets) target.setAttribute("data-reveal-armed", "");
-      }
-    </script>
   </body>
 </html>

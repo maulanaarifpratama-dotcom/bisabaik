@@ -15,6 +15,9 @@ header:
     Aerial view of an Indonesian coastal village at dawn.
 
 presence:
+  mapAlt: >-
+    Map of Bisa Baik Bersama program locations across the Indonesian
+    archipelago, with additional sites in Adiyaman and Hatay, Türkiye.
   heading: Working across Indonesia, with reach into Türkiye.
   regions:
     - region: Western Indonesia

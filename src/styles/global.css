@@ -223,7 +223,7 @@
     font-family: var(--font-display);
     font-variation-settings: "wdth" 118;
     font-weight: 680;
-    font-size: clamp(2.7rem, 7vw, 5.6rem);
+    font-size: clamp(2.05rem, 6.6vw, 5.6rem);
     line-height: 0.92;
     letter-spacing: -0.042em;
   }
@@ -232,7 +232,7 @@
     font-family: var(--font-display);
     font-variation-settings: "wdth" 112;
     font-weight: 620;
-    font-size: clamp(2rem, 4.4vw, 3.5rem);
+    font-size: clamp(1.75rem, 4.2vw, 3.5rem);
     line-height: 1.02;
     letter-spacing: -0.032em;
   }
@@ -241,7 +241,7 @@
     font-family: var(--font-display);
     font-variation-settings: "wdth" 106;
     font-weight: 560;
-    font-size: clamp(1.4rem, 2.1vw, 1.95rem);
+    font-size: clamp(1.3rem, 2.1vw, 1.95rem);
     line-height: 1.16;
     letter-spacing: -0.022em;
   }
@@ -480,28 +480,24 @@
   }
 
   /* Photographs wipe up from their own bottom edge instead of fading. A fade
-     reads as a loading image; a wipe reads as a deliberate reveal. */
-  [data-reveal-clip] {
-    clip-path: inset(0 0 0 0);
-  }
+     reads as a loading image; a wipe reads as a deliberate reveal. Same
+     scroll-driven timeline, same guarantee: unsupported means fully visible. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      [data-reveal-clip] {
+        animation: reveal-wipe linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 55%;
+      }
 
-  [data-reveal][data-reveal-clip][data-reveal-armed] {
-    opacity: 1;
-    transform: none;
-    clip-path: inset(0 0 100% 0);
-  }
-
-  [data-reveal][data-reveal-clip][data-reveal-shown] {
-    opacity: 1;
-    transform: none;
-    clip-path: inset(0 0 0 0);
-    transition: clip-path 900ms var(--ease-in-out);
-    transition-delay: var(--reveal-delay, 0ms);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    [data-reveal][data-reveal-clip][data-reveal-armed] {
-      clip-path: inset(0 0 0 0);
+      @keyframes reveal-wipe {
+        from {
+          clip-path: inset(0 0 100% 0);
+        }
+        to {
+          clip-path: inset(0 0 0 0);
+        }
+      }
     }
   }
 
@@ -546,35 +542,36 @@
     color: color-mix(in srgb, var(--on-band) 64%, transparent);
   }
 
-  /* Scroll reveal. Default state is visible, so no-JS and reduced-motion users
-     never lose content; the script opts elements into the hidden start. */
-  [data-reveal] {
-    opacity: 1;
-  }
+  /* Scroll reveal, driven entirely by CSS.
 
-  [data-reveal][data-reveal-armed] {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+     This used to be an IntersectionObserver that hid every element and then
+     revealed it on intersection. In practice the observer did not always fire,
+     and when it did not the page rendered as a column of blank sections. A
+     scroll-driven animation cannot fail that way: where it is unsupported the
+     declaration is simply ignored and the content is already visible. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      [data-reveal] {
+        animation: reveal-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+      }
 
-  [data-reveal][data-reveal-shown] {
-    opacity: 1;
-    transform: none;
-    transition:
-      opacity 620ms var(--ease-out),
-      transform 620ms var(--ease-out);
-    transition-delay: var(--reveal-delay, 0ms);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    [data-reveal][data-reveal-armed] {
-      opacity: 1;
-      transform: none;
+      @keyframes reveal-rise {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
     }
   }
 }
 
-  /* Header over an ink hero.
+/* Header over an ink hero.
    Every page now opens on an ink band, so before the header sticks it sits
    on dark ground and has to invert. Once stuck it returns to paper. The
    logo has two artworks because the wordmark is navy and vanishes on ink. */
@@ -620,4 +617,24 @@ header[data-hero="ink"]:not([data-stuck]) .header-chip {
 
 header[data-hero="ink"]:not([data-stuck]) .header-burger {
   color: var(--on-band);
+}
+
+/* The primary button is an ink fill, which disappears against an ink band.
+   Over one, it becomes an outline; once the header sticks it fills again.
+   Driving this from the prop alone left white text on a white header. */
+header[data-hero="ink"]:not([data-stuck]) .btn-primary {
+  background: transparent;
+  color: var(--on-band);
+  border: 1px solid color-mix(in srgb, var(--on-band) 45%, transparent);
+}
+
+header[data-hero="ink"]:not([data-stuck]) .btn-primary::before {
+  background: var(--on-band);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  header[data-hero="ink"]:not([data-stuck]) .btn-primary:hover {
+    color: var(--band);
+    border-color: var(--on-band);
+  }
 }

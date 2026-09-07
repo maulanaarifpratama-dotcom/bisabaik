@@ -34,9 +34,21 @@ const t = entry.data;
     imageAlt={t.header.imageAlt}
   />
 
-  <section class="edge border-b border-line py-20 md:py-28">
+  <section class="edge border-b border-line pt-16 pb-12 md:pt-20 md:pb-14">
     <SectionHead heading={t.presence.heading} />
-    <div class="mt-12 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
+
+    <div data-reveal-clip class="relative mb-12 overflow-hidden border border-line bg-surface-2">
+      <Image
+        src={image("impact-map")}
+        alt={t.presence.mapAlt}
+        widths={[720, 1200]}
+        sizes="(min-width: 1024px) 80vw, 100vw"
+        loading="lazy"
+        class="h-full w-full object-contain"
+      />
+    </div>
+
+    <div class="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
       {
         t.presence.regions.map((region, i) => (
           <div data-reveal style={`--reveal-delay:${i * 55}ms`} class="bg-paper p-7">
@@ -80,7 +92,7 @@ const t = entry.data;
     </div>
   </section>
 
-  <section class="edge border-b border-line py-20 md:py-28">
+  <section class="edge border-b border-line pt-16 pb-12 md:pt-20 md:pb-14">
     <SectionHead heading={t.sdg.heading} body={t.sdg.intro} />
     <div class="mt-12 grid gap-6 lg:grid-cols-2">
       {
@@ -117,7 +129,7 @@ const t = entry.data;
     </div>
   </section>
 
-  <section class="edge py-20 md:py-28">
+  <section class="edge pt-16 pb-12 md:pt-20 md:pb-14">
     <SectionHead heading={t.reading.heading} />
     <div class="mt-12 grid gap-px bg-line md:grid-cols-3">
       {

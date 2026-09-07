@@ -17,8 +17,19 @@ import produceBaskets from "@/assets/photos/pdf-produce-baskets.jpg";
 import trainingWhiteboard from "@/assets/photos/pdf-training-whiteboard.jpg";
 import uniformedTeam from "@/assets/photos/pdf-uniformed-team.jpg";
 import trainingSession from "@/assets/photos/training-session.jpg";
+import circularEconomy from "@/assets/circular-economy.jpg";
+import heroLandscape from "@/assets/hero-landscape.jpg";
+import msmeMarket from "@/assets/msme-market.jpg";
+import communityChildren from "@/assets/photos/community-children.jpg";
+import impactMap from "@/assets/photos/pdf-impact-map.jpg";
+import workshopScreen from "@/assets/photos/pdf-workshop-screen.jpg";
+import programMeeting from "@/assets/photos/program-meeting.jpg";
 
 /**
+ * Only photographs of the actual work are registered here. Clip art, slide
+ * captures with text burned in, and blank textures are deliberately left out:
+ * if a key exists, someone will eventually ship it.
+ *
  * Content files reference photography by key, never by path, so that copy can
  * move to a CMS without carrying build-time import paths with it.
  */
@@ -40,6 +51,13 @@ export const IMAGES = {
   "training-whiteboard": trainingWhiteboard,
   "uniformed-team": uniformedTeam,
   "training-session": trainingSession,
+  "circular-economy": circularEconomy,
+  "hero-landscape": heroLandscape,
+  "msme-market": msmeMarket,
+  "community-children": communityChildren,
+  "impact-map": impactMap,
+  "workshop-screen": workshopScreen,
+  "program-meeting": programMeeting,
 } satisfies Record<string, ImageMetadata>;
 
 export type ImageKey = keyof typeof IMAGES;
