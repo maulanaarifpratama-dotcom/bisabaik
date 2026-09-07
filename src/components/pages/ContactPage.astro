@@ -69,6 +69,8 @@ const label =
                 type="text"
                 autocomplete="name"
                 required
+                minlength="2"
+                maxlength="120"
                 placeholder={f.namePlaceholder}
               />
             </div>
@@ -81,6 +83,7 @@ const label =
                 type="email"
                 autocomplete="email"
                 required
+                maxlength="200"
                 placeholder={f.emailPlaceholder}
               />
             </div>
@@ -93,6 +96,8 @@ const label =
                 type="text"
                 autocomplete="organization"
                 required
+                minlength="2"
+                maxlength="160"
                 placeholder={f.orgPlaceholder}
               />
             </div>
@@ -109,6 +114,7 @@ const label =
                 name="role"
                 type="text"
                 autocomplete="organization-title"
+                maxlength="120"
                 placeholder={f.rolePlaceholder}
               />
             </div>
@@ -139,6 +145,8 @@ const label =
               name="message"
               rows="5"
               required
+              minlength="10"
+              maxlength="5000"
               placeholder={f.messagePlaceholder}></textarea>
           </div>
 

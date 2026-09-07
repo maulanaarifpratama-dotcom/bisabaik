@@ -8,6 +8,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "check:api": "node scripts/check-contact-api.mjs",
+    "preflight": "node scripts/preflight.mjs",
+    "verify": "astro check && node scripts/check-contact-api.mjs && astro build && node scripts/preflight.mjs",
     "sync": "astro sync"
   },
   "dependencies": {

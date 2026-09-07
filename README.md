@@ -27,11 +27,18 @@ switch, the mobile menu, the scroll reveal, and (on `/contact`) the form.
 
 ```bash
 npm install
-npm run dev      # dev server on http://localhost:4321
-npm run build    # type-check, then build to dist/
-npm run preview  # serve the built output
-npm run check    # astro check only
+npm run dev       # dev server on http://localhost:4321
+npm run build     # type-check, then build to dist/
+npm run preview   # serve the built output
+npm run check     # astro check only
+npm run check:api # exercise the contact function, no network, no deploy
+npm run preflight # deploy readiness, run after a build
+npm run verify    # everything above, in order. Run this before pushing.
 ```
+
+`npm run verify` is the gate before a push. It type-checks, runs the contact
+function against fourteen cases, builds, then runs twenty-six deploy checks and
+prints what still has to be set in Vercel. A non-zero exit means do not push.
 
 ## Content model
 
@@ -117,12 +124,33 @@ utilities (`bg-paper`, `text-ink`, `text-ink-soft`, `border-line`, `text-bronze`
 ## Contact form
 
 `src/components/pages/ContactPage.astro` posts JSON to `/api/send-contact`,
-a Vercel serverless function in `api/send-contact.ts` that forwards to the
-Google Apps Script endpoint in the `GSCRIPT_URL` environment variable. Set that
-variable in the Vercel project settings.
+a Vercel serverless function in `api/send-contact.ts` that validates the
+inquiry and forwards it to the Google Apps Script endpoint in the `GSCRIPT_URL`
+environment variable. Set that variable in the Vercel project settings.
+
+Everything form-specific lives in the `FIELDS` object at the top of the
+handler. Adding, removing or loosening a field is one line there; the rest of
+the file does not know the field names. When you change a limit, change the
+matching `minlength` / `maxlength` on the input too, so the browser catches it
+before the server has to.
+
+Responses:
+
+| Status | Meaning |
+| --- | --- |
+| 200 | Accepted. Body is `{ ok: true }` and nothing from upstream is echoed back. |
+| 400 | The body was not a JSON object. |
+| 405 | Not a POST. |
+| 413 | Body larger than 20 KB. |
+| 422 | Valid JSON, invalid inquiry. Body names the offending fields. |
+| 500 | `GSCRIPT_URL` is not set. |
+| 502 | Upstream refused, failed or timed out after 10s. |
+
+Only known fields are forwarded, so an extra key in the request never reaches
+the mailbox. An upstream failure is never reported to the visitor as success.
 
 In local `npm run dev` there is no `/api`, so submitting shows the error state.
-That is expected.
+That is expected. Use `npm run check:api` to exercise the function instead.
 
 ## SEO
 
