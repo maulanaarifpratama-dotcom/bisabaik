@@ -3,6 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.bisabaik.org"
+        }
+      ],
+      "destination": "https://bisabaik.org/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
