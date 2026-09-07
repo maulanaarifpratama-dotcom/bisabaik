@@ -139,16 +139,14 @@ That is expected.
   platform, impact claims are context-specific, and email is on
   bisabaik.or.id).
 
-`vercel.json` sets `trailingSlash: false` so the slashed form redirects onto the
-canonical one, adds long-lived caching for hashed assets, and sets baseline
-security headers.
+`vercel.json` does four things: redirects `www.bisabaik.org` to the apex with a
+308 so only one host serves the content, sets `trailingSlash: false` so the
+slashed form redirects onto the canonical one, caches hashed assets for a year,
+and sets baseline security headers. The `www` rule is scoped by a host
+condition, so it never touches apex traffic or `/api`.
 
 ## Known follow-ups
 
-- `www.bisabaik.org` and `bisabaik.org` both answer. Canonical tags already
-  point at the apex, but a `www` to apex redirect at the DNS or Vercel level
-  would remove the duplicate entirely. Not configured here because it changes
-  production routing.
 - The legal pages describe what this site actually does. They have not been
   reviewed by a lawyer.
 - `/contact` is the only page with a conversion action. There is no donation
