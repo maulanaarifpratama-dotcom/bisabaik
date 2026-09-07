@@ -1,4 +1,36 @@
+# bisabaik.org
+
 User-agent: *
+Allow: /
+
+# Answer engines are welcome: the organisation wants to be described
+# accurately when someone asks an assistant about impact delivery in Indonesia.
+# A structured summary for them lives at /llms.txt
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://bisabaik.org/sitemap-index.xml

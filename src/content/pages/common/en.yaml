@@ -46,5 +46,13 @@ footer:
     - { href: /privacy, label: Privacy Policy }
     - { href: /terms, label: Terms of Service }
     - { href: /disclaimer, label: Disclaimer }
+  relatedHeading: Related platforms
+  related:
+    - href: https://pasarbaik.com
+      label: PasarBaik.com
+      note: Impact supply aggregator
+    - href: https://impactory.id
+      label: Impactory.id
+      note: Civic tech
   copyright: Bisa Baik Bersama, Rumah Pembangunan Berkelanjutan Foundation.
   affiliation: Impact delivery arm of Immers Asia Corp.

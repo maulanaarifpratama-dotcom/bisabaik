@@ -46,5 +46,13 @@ footer:
     - { href: /privacy, label: Kebijakan Privasi }
     - { href: /terms, label: Syarat dan Ketentuan }
     - { href: /disclaimer, label: Penafian }
+  relatedHeading: Platform terkait
+  related:
+    - href: https://pasarbaik.com
+      label: PasarBaik.com
+      note: Agregator pasokan dampak
+    - href: https://impactory.id
+      label: Impactory.id
+      note: Civic tech
   copyright: Bisa Baik Bersama, Yayasan Rumah Pembangunan Berkelanjutan.
   affiliation: Lengan pelaksana program dampak dari Immers Asia Corp.

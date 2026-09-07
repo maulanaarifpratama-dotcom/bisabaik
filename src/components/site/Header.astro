@@ -13,9 +13,10 @@ import logoDark from "@/assets/logo-bisabaik-dark.png";
 
 interface Props {
   locale: Locale;
+  heroTone?: "ink" | "paper";
 }
 
-const { locale } = Astro.props;
+const { locale, heroTone = "paper" } = Astro.props;
 
 const entry = await getEntry("common", locale);
 if (!entry) throw new Error(`Missing common copy for locale "${locale}"`);
@@ -29,13 +30,9 @@ const isActive = (href: string) =>
   here === href || (href !== "/" && here.startsWith(`${href}/`));
 ---
 
-<!-- Sentinel: the header reads its own scrolled state from this element
-     crossing the viewport top, which avoids a scroll listener entirely. -->
-<div data-header-sentinel aria-hidden="true" class="absolute top-0 h-px w-px">
-</div>
-
 <header
   data-header
+  data-hero={heroTone === "ink" ? "ink" : undefined}
   class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-[background-color,border-color,backdrop-filter] duration-400 data-[stuck]:border-line data-[stuck]:bg-paper/85 data-[stuck]:backdrop-blur-md"
 >
   <div class="edge flex h-[68px] items-center justify-between gap-5">
@@ -50,7 +47,7 @@ const isActive = (href: string) =>
         width={260}
         densities={[1, 2]}
         loading="eager"
-        class="h-8 w-auto object-contain md:h-9 dark:hidden"
+        class="logo-on-light h-8 w-auto object-contain md:h-9"
       />
       <Image
         src={logoDark}
@@ -58,7 +55,7 @@ const isActive = (href: string) =>
         width={260}
         densities={[1, 2]}
         loading="eager"
-        class="hidden h-8 w-auto object-contain md:h-9 dark:block"
+        class="logo-on-dark h-8 w-auto object-contain md:h-9"
       />
     </a>
 
@@ -72,7 +69,7 @@ const isActive = (href: string) =>
             href={localizePath(item.href, locale)}
             aria-current={isActive(item.href) ? "page" : undefined}
             class:list={[
-              "relative whitespace-nowrap py-1 text-[13px] transition-colors duration-200",
+              "nav-link relative whitespace-nowrap py-1 text-[13px] transition-colors duration-200",
               isActive(item.href)
                 ? "text-ink after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:bg-bronze"
                 : "text-ink-soft hover:text-ink",
@@ -89,7 +86,7 @@ const isActive = (href: string) =>
         href={localizePath(here, other)}
         hreflang={other === "id" ? "id" : "en"}
         title={t.localeSwitchLabel}
-        class="hidden h-9 items-center rounded-[2px] border border-line px-2.5 text-[12px] font-medium tracking-[0.06em] text-ink-soft uppercase transition-colors duration-200 hover:border-ink hover:text-ink sm:inline-flex"
+        class="header-chip hidden h-9 items-center rounded-[2px] border border-line px-2.5 text-[12px] font-medium tracking-[0.06em] text-ink-soft uppercase transition-colors duration-200 hover:border-ink hover:text-ink sm:inline-flex"
       >
         {other === "id" ? "ID" : "EN"}
       </a>
@@ -97,7 +94,7 @@ const isActive = (href: string) =>
       <button
         type="button"
         data-theme-toggle
-        class="inline-flex h-9 w-9 items-center justify-center rounded-[2px] border border-line text-ink-soft transition-colors duration-200 hover:border-ink hover:text-ink"
+        class="header-chip inline-flex h-9 w-9 items-center justify-center rounded-[2px] border border-line text-ink-soft transition-colors duration-200 hover:border-ink hover:text-ink"
         aria-label={t.theme.label}
         data-label-light={t.theme.light}
         data-label-dark={t.theme.dark}
@@ -110,7 +107,7 @@ const isActive = (href: string) =>
         href={t.aggregatorCta.href}
         target="_blank"
         rel="noopener noreferrer"
-        class="btn btn-primary ml-1 hidden xl:inline-flex"
+        class:list={["btn ml-1 hidden xl:inline-flex", heroTone === "ink" ? "btn-outline-invert" : "btn-primary"]}
       >
         {t.aggregatorCta.label}
         <Icon name="ph:arrow-up-right" class="h-3.5 w-3.5" />
@@ -124,7 +121,7 @@ const isActive = (href: string) =>
         aria-label={t.menu.open}
         data-label-open={t.menu.open}
         data-label-close={t.menu.close}
-        class="-mr-1.5 inline-flex h-9 w-9 items-center justify-center rounded-[2px] text-ink lg:hidden"
+        class="header-burger -mr-1.5 inline-flex h-9 w-9 items-center justify-center rounded-[2px] text-ink lg:hidden"
       >
         <Icon name="ph:list" class="h-5 w-5" data-menu-icon="open" />
         <Icon name="ph:x" class="hidden h-5 w-5" data-menu-icon="close" />
@@ -187,16 +184,32 @@ const isActive = (href: string) =>
 
 <script>
   const header = document.querySelector<HTMLElement>("[data-header]");
-  const sentinel = document.querySelector("[data-header-sentinel]");
 
-  if (header && sentinel) {
-    new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) header.removeAttribute("data-stuck");
-        else header.setAttribute("data-stuck", "");
-      },
-      { threshold: 0 },
-    ).observe(sentinel);
+  if (header) {
+    // A one-pixel IntersectionObserver sentinel at the viewport edge proved
+    // unreliable, and getting this wrong makes the logo unreadable, so the
+    // state is read straight from the scroll position. The listener is
+    // passive and coalesced into one frame, so it costs a boolean compare.
+    let ticking = false;
+    let stuck: boolean | null = null;
+
+    const apply = () => {
+      ticking = false;
+      const next = window.scrollY > 8;
+      if (next === stuck) return;
+      stuck = next;
+      header.toggleAttribute("data-stuck", next);
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(apply);
+    };
+
+    apply();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
   }
 
   const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");

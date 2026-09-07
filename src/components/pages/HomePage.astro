@@ -27,8 +27,6 @@ const partners = (await getCollection("partners")).sort(
 const href = (path: string) =>
   path.startsWith("http") ? path : localizePath(path, locale);
 
-const heroPhoto = image("hero-delivery");
-const principlesPhoto = image("circle-discussion");
 const [lead, ...rest] = flagships;
 ---
 
@@ -37,13 +35,14 @@ const [lead, ...rest] = flagships;
   path="/"
   title={t.meta.title}
   description={t.meta.description}
+  heroTone="ink"
   isHome
 >
-  {/* 1. Hero: the one authored motion moment on the page. */}
-  <section class="relative isolate overflow-hidden border-b border-line">
-    <div class="hero-media absolute inset-0 -z-10">
+  {/* 1. Hero. Ink ground, oversized wide-set type, lines rising in sequence. */}
+  <section class="band-ink relative isolate overflow-hidden">
+    <div class="hero-media absolute inset-0">
       <Image
-        src={heroPhoto}
+        src={image("hero-delivery")}
         alt={t.hero.imageAlt}
         widths={[768, 1280, 1920]}
         sizes="100vw"
@@ -51,66 +50,81 @@ const [lead, ...rest] = flagships;
         fetchpriority="high"
         class="h-full w-full object-cover"
       />
-      <div class="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-paper via-paper/70 to-transparent"></div>
-      <div class="absolute inset-0 bg-linear-to-r from-paper/88 via-paper/38 to-transparent"></div>
-      <div class="absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-paper to-transparent"></div>
     </div>
+    <!-- Three scrims, three jobs. Each is dense only where something has to
+         stay readable, so the middle and right of the frame stay photographic. -->
+    <div class="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-band/85 to-transparent"></div>
+    <div class="absolute inset-0 bg-linear-to-r from-band via-band/52 to-band/5"></div>
+    <div class="absolute inset-x-0 bottom-0 h-3/5 bg-linear-to-t from-band via-band/70 to-transparent"></div>
 
-    <div class="edge flex min-h-[34rem] flex-col justify-center pt-24 pb-20 md:min-h-[40rem] md:pb-28">
-      <h1 data-reveal class="display-1 max-w-[15ch]">
-        {t.hero.lineOne}<br />
-        {t.hero.lineTwo}<br />
-        <em class="font-normal italic">{t.hero.lineThree}</em>
+    <div
+      class="edge relative flex min-h-[36rem] flex-col justify-end pt-32 pb-16 md:min-h-[43rem] md:pb-20"
+    >
+      <h1 class="display-1 max-w-[13ch]">
+        <span class="hero-line" style="--line-index:0"
+          ><span>{t.hero.lineOne}</span></span
+        >
+        <span class="hero-line" style="--line-index:1"
+          ><span>{t.hero.lineTwo}</span></span
+        >
+        <span class="hero-line" style="--line-index:2"
+          ><span class="text-band-accent">{t.hero.lineThree}</span></span
+        >
       </h1>
 
-      <p
-        data-reveal
-        style="--reveal-delay:100ms"
-        class="mt-8 max-w-lg text-[17px] leading-relaxed text-ink/85 md:text-[18.5px]"
-      >
-        {t.hero.body}
-      </p>
-
-      <div data-reveal style="--reveal-delay:190ms" class="mt-10 flex flex-wrap items-center gap-3">
-        <a href={href(t.hero.primary.href)} class="btn btn-primary group">
-          {t.hero.primary.label}
-          <Icon
-            name="ph:arrow-right"
-            class="h-4 w-4 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1"
-          />
-        </a>
-        <a href={href(t.hero.secondary.href)} class="link-rule px-2 text-[14px]">
-          {t.hero.secondary.label}
-        </a>
+      <div class="mt-12 grid gap-8 lg:grid-cols-12 lg:items-end">
+        <p
+          data-reveal
+          style="--reveal-delay:320ms"
+          class="text-[17px] leading-relaxed text-on-band/80 md:text-[18.5px] lg:col-span-6"
+        >
+          {t.hero.body}
+        </p>
+        <div
+          data-reveal
+          style="--reveal-delay:400ms"
+          class="flex flex-wrap gap-3 lg:col-span-5 lg:col-start-8 lg:justify-end"
+        >
+          <a href={href(t.hero.primary.href)} class="btn btn-invert group">
+            {t.hero.primary.label}
+            <Icon
+              name="ph:arrow-right"
+              class="h-4 w-4 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1"
+            />
+          </a>
+          <a
+            href={href(t.hero.secondary.href)}
+            class="btn btn-outline-invert group"
+          >
+            {t.hero.secondary.label}
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  {/* 2. Positioning: a single statement, indented into the grid. */}
-  <section class="edge py-24 md:py-32">
-    <p
-      data-reveal
-      class="max-w-4xl font-display text-[26px] leading-[1.24] text-balance md:text-[38px] lg:ml-[8%]"
-    >
+  {/* 2. Positioning. One sentence, set large, indented off the left edge. */}
+  <section class="edge py-28 md:py-40">
+    <p data-reveal class="display-2 max-w-5xl text-balance lg:ml-[10%]">
       {t.positioning.lead}<em class="italic">{t.positioning.emphasisOne}</em
       >{t.positioning.middle}<em class="italic">{t.positioning.emphasisTwo}</em
       >{t.positioning.tail}
     </p>
   </section>
 
-  {/* 3. Pillars: an asymmetric three-cell grid, one cell per pillar. */}
+  {/* 3. Pillars. Asymmetric grid, one cell per pillar, the first with an image. */}
   <section class="edge border-t border-line py-24 md:py-32">
     <div data-reveal class="max-w-3xl">
       <h2 class="display-2">{t.pillars.heading}</h2>
-      <p class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft">
+      <p class="prose-measure mt-7 text-[16.5px] leading-relaxed text-ink-soft">
         {t.pillars.body}
       </p>
     </div>
 
-    <div class="mt-14 grid gap-px bg-line lg:grid-cols-12">
+    <div class="mt-16 grid gap-px bg-line lg:grid-cols-12">
       <article
         data-reveal
-        class="relative isolate flex min-h-[22rem] flex-col justify-end overflow-hidden bg-ink p-8 md:p-10 lg:col-span-7"
+        class="relative isolate flex min-h-[24rem] flex-col justify-end overflow-hidden bg-band p-9 md:p-12 lg:col-span-7"
       >
         <Image
           src={image("uniformed-team")}
@@ -121,33 +135,36 @@ const [lead, ...rest] = flagships;
           loading="lazy"
           class="absolute inset-0 h-full w-full object-cover"
         />
-        <div class="absolute inset-0 bg-linear-to-t from-ink via-ink/88 to-ink/45"></div>
-        <h3 class="relative font-display text-[24px] leading-snug text-on-ink md:text-[28px]">
+        <div class="absolute inset-0 bg-linear-to-t from-band via-band/90 to-band/40"></div>
+        <span aria-hidden="true" class="relative block h-px w-12 bg-band-accent"></span>
+        <h3 class="display-3 relative mt-6 text-on-band">
           {t.pillars.items[0]?.title}
         </h3>
-        <p class="relative mt-4 max-w-md text-[14.5px] leading-relaxed text-on-ink/80">
+        <p class="relative mt-4 max-w-md text-[15px] leading-relaxed text-on-band/80">
           {t.pillars.items[0]?.body}
         </p>
       </article>
 
       <div class="grid gap-px bg-line lg:col-span-5">
-        <article data-reveal style="--reveal-delay:80ms" class="bg-surface-2 p-8 md:p-10">
-          <h3 class="font-display text-[21px] leading-snug">
-            {t.pillars.items[1]?.title}
-          </h3>
-          <p class="mt-4 text-[14.5px] leading-relaxed text-ink-soft">
+        <article
+          data-reveal
+          style="--reveal-delay:80ms"
+          class="bg-surface-2 p-9 md:p-11"
+        >
+          <span aria-hidden="true" class="block h-px w-12 bg-bronze"></span>
+          <h3 class="display-3 mt-6">{t.pillars.items[1]?.title}</h3>
+          <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">
             {t.pillars.items[1]?.body}
           </p>
         </article>
         <article
           data-reveal
           style="--reveal-delay:150ms"
-          class="bg-paper p-8 md:p-10"
+          class="bg-paper p-9 md:p-11"
         >
-          <h3 class="font-display text-[21px] leading-snug">
-            {t.pillars.items[2]?.title}
-          </h3>
-          <p class="mt-4 text-[14.5px] leading-relaxed text-ink-soft">
+          <span aria-hidden="true" class="block h-px w-12 bg-bronze"></span>
+          <h3 class="display-3 mt-6">{t.pillars.items[2]?.title}</h3>
+          <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">
             {t.pillars.items[2]?.body}
           </p>
         </article>
@@ -155,32 +172,28 @@ const [lead, ...rest] = flagships;
     </div>
   </section>
 
-  {/* 4. Journey: a stepper. The numerals are the information here. */}
-  <section class="border-y border-line bg-surface/50 py-24 md:py-32">
+  {/* 4. Journey. A stepper: here the numerals carry the information. */}
+  <section class="border-y border-line bg-surface/60 py-24 md:py-32">
     <div class="edge">
       <div data-reveal class="max-w-3xl">
         <h2 class="display-2">{t.journey.heading}</h2>
-        <p class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft">
+        <p class="prose-measure mt-7 text-[16.5px] leading-relaxed text-ink-soft">
           {t.journey.body}
         </p>
       </div>
 
-      <ol class="mt-16 grid gap-y-12 md:grid-cols-3 md:gap-x-10">
+      <ol class="mt-16 grid gap-y-14 md:grid-cols-3 md:gap-x-10">
         {
           t.journey.phases.map((phase, i) => (
-            <li data-reveal style={`--reveal-delay:${i * 70}ms`} class="relative">
-              <div class="flex items-baseline gap-4 border-t border-ink/25 pt-5">
-                <span class="font-display text-[34px] leading-none italic">
-                  {phase.numeral}
-                </span>
-                <span class="text-[11.5px] tracking-[0.12em] text-ink-soft uppercase">
+            <li data-reveal style={`--reveal-delay:${i * 80}ms`}>
+              <div class="flex items-end justify-between border-b-2 border-ink pb-4">
+                <span class="display-2 leading-none">{phase.numeral}</span>
+                <span class="label pb-1">
                   {t.journey.phaseLabel} {phase.numeral}
                 </span>
               </div>
-              <h3 class="mt-6 font-display text-[21px] leading-snug">
-                {phase.title}
-              </h3>
-              <p class="mt-3.5 text-[14.5px] leading-relaxed text-ink-soft">
+              <h3 class="display-3 mt-7">{phase.title}</h3>
+              <p class="mt-4 text-[15px] leading-relaxed text-ink-soft">
                 {phase.body}
               </p>
             </li>
@@ -190,11 +203,11 @@ const [lead, ...rest] = flagships;
     </div>
   </section>
 
-  {/* 5. Flagships: one lead with an image, the rest as an index. */}
+  {/* 5. Flagships. One lead with an image, the remainder as an index. */}
   <section class="edge py-24 md:py-32">
     <div data-reveal class="max-w-3xl">
       <h2 class="display-2">{t.flagship.heading}</h2>
-      <p class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft">
+      <p class="prose-measure mt-7 text-[16.5px] leading-relaxed text-ink-soft">
         {t.flagship.body}
       </p>
     </div>
@@ -202,25 +215,26 @@ const [lead, ...rest] = flagships;
     {
       lead && (
         <a
-          data-reveal
           href={href("/flagship")}
-          class="group mt-14 grid overflow-hidden rounded-[2px] border border-line bg-surface-2 lg:grid-cols-12"
+          class="group mt-16 grid overflow-hidden border-t-2 border-ink lg:grid-cols-12"
         >
-          <div class="relative min-h-[15rem] lg:col-span-6 lg:min-h-[22rem]">
+          <div
+            data-reveal
+            data-reveal-clip
+            class="relative min-h-[16rem] lg:col-span-7 lg:min-h-[26rem]"
+          >
             <Image
               src={image("pillar-msme")}
               alt=""
               aria-hidden="true"
-              widths={[640, 960]}
-              sizes="(min-width: 1024px) 50vw, 100vw"
+              widths={[640, 1024]}
+              sizes="(min-width: 1024px) 58vw, 100vw"
               loading="lazy"
-              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-out)] group-hover:scale-[1.03]"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-out)] group-hover:scale-[1.04]"
             />
           </div>
-          <div class="flex flex-col justify-center p-8 md:p-12 lg:col-span-6">
-            <h3 class="font-display text-[25px] leading-snug md:text-[30px]">
-              {lead.data[locale].title}
-            </h3>
+          <div class="flex flex-col justify-center py-9 lg:col-span-5 lg:py-12 lg:pl-12">
+            <h3 class="display-3">{lead.data[locale].title}</h3>
             <p class="mt-5 text-[15px] leading-relaxed text-ink-soft">
               {lead.data[locale].context}
             </p>
@@ -236,18 +250,18 @@ const [lead, ...rest] = flagships;
       )
     }
 
-    <ul class="mt-px">
+    <ul>
       {
         rest.map((project, i) => (
           <li data-reveal style={`--reveal-delay:${i * 70}ms`}>
             <a
               href={href("/flagship")}
-              class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 border-b border-hairline py-7 transition-colors duration-300 hover:bg-surface/60"
+              class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 border-t border-hairline py-8 transition-colors duration-300 hover:bg-surface/70"
             >
-              <h3 class="col-span-12 font-display text-[20px] leading-snug md:col-span-5">
+              <h3 class="display-3 col-span-12 md:col-span-5">
                 {project.data[locale].title}
               </h3>
-              <p class="col-span-12 text-[14px] leading-relaxed text-ink-soft md:col-span-6">
+              <p class="col-span-12 text-[14.5px] leading-relaxed text-ink-soft md:col-span-6">
                 {project.data[locale].context}
               </p>
               <Icon
@@ -261,11 +275,15 @@ const [lead, ...rest] = flagships;
     </ul>
   </section>
 
-  {/* 6. Principles: a full-bleed split, photo against an ink panel. */}
-  <section class="grid border-t border-line lg:grid-cols-12">
-    <div class="relative min-h-[20rem] lg:col-span-7 lg:min-h-[34rem]">
+  {/* 6. Principles. Full-bleed split, photograph against ink. */}
+  <section class="grid lg:grid-cols-12">
+    <div
+      data-reveal
+      data-reveal-clip
+      class="relative min-h-[22rem] lg:col-span-7 lg:min-h-[36rem]"
+    >
       <Image
-        src={principlesPhoto}
+        src={image("circle-discussion")}
         alt={t.principles.imageAlt}
         widths={[768, 1280]}
         sizes="(min-width: 1024px) 58vw, 100vw"
@@ -274,19 +292,22 @@ const [lead, ...rest] = flagships;
       />
     </div>
     <div
-      class="flex flex-col justify-center bg-ink p-10 text-on-ink md:p-16 lg:col-span-5 lg:p-20"
+      class="band-ink flex flex-col justify-center p-10 md:p-16 lg:col-span-5 lg:p-20"
     >
-      <h2 data-reveal class="font-display text-[28px] leading-tight text-balance md:text-[36px]">
-        {t.principles.heading}
-      </h2>
-      <p data-reveal style="--reveal-delay:80ms" class="mt-6 text-[15px] leading-relaxed text-on-ink/80">
+      <span aria-hidden="true" class="block h-px w-12 bg-band-accent"></span>
+      <h2 data-reveal class="display-2 mt-7">{t.principles.heading}</h2>
+      <p
+        data-reveal
+        style="--reveal-delay:80ms"
+        class="mt-6 text-[15.5px] leading-relaxed text-on-band/80"
+      >
         {t.principles.body}
       </p>
       <a
         data-reveal
         style="--reveal-delay:150ms"
         href={href(t.principles.cta.href)}
-        class="group mt-10 inline-flex w-fit items-center gap-2 border-b border-on-ink/40 pb-1 text-[13.5px] text-on-ink transition-colors duration-200 hover:border-on-ink"
+        class="btn btn-outline-invert group mt-10 w-fit"
       >
         {t.principles.cta.label}
         <Icon
@@ -297,27 +318,27 @@ const [lead, ...rest] = flagships;
     </div>
   </section>
 
-  {/* 7. Partners: an editorial index, not a logo wall. */}
+  {/* 7. Partners. An index of who and in what role, not a logo wall. */}
   <section class="edge py-24 md:py-32">
     <div
       data-reveal
-      class="flex flex-col justify-between gap-6 md:flex-row md:items-end"
+      class="flex flex-col justify-between gap-6 border-b-2 border-ink pb-8 md:flex-row md:items-end"
     >
-      <h2 class="display-2 max-w-[20ch]">{t.partners.heading}</h2>
+      <h2 class="display-2 max-w-[18ch]">{t.partners.heading}</h2>
       <a href={href(t.partners.cta.href)} class="link-rule shrink-0 text-[14px]">
         {t.partners.cta.label}
         <Icon name="ph:arrow-right" class="h-4 w-4" />
       </a>
     </div>
 
-    <ul class="mt-14 grid gap-x-12 md:grid-cols-2">
+    <ul class="grid gap-x-14 md:grid-cols-2">
       {
         partners.map((partner) => (
-          <li class="grid grid-cols-12 gap-x-4 border-t border-hairline py-4">
-            <span class="col-span-12 font-display text-[16px] leading-snug sm:col-span-7">
+          <li class="grid grid-cols-12 items-baseline gap-x-4 border-b border-hairline py-5">
+            <span class="col-span-12 text-[17px] leading-snug font-medium sm:col-span-7">
               {partner.data[locale].name}
             </span>
-            <span class="col-span-12 text-[12.5px] leading-snug text-ink-soft sm:col-span-5 sm:text-right">
+            <span class="label col-span-12 leading-snug sm:col-span-5 sm:text-right">
               {partner.data[locale].role}
             </span>
           </li>
@@ -327,20 +348,25 @@ const [lead, ...rest] = flagships;
   </section>
 
   {/* 8. Closing band. */}
-  <section class="border-t border-line bg-surface/50">
-    <div class="edge grid gap-10 py-20 md:grid-cols-12 md:items-end md:py-28">
+  <section class="band-ink">
+    <div class="edge grid gap-10 py-24 md:grid-cols-12 md:items-end md:py-32">
       <div class="md:col-span-7">
-        <h2 data-reveal class="display-2 text-balance">{t.close.heading}</h2>
+        <span aria-hidden="true" class="block h-px w-12 bg-band-accent"></span>
+        <h2 data-reveal class="display-2 mt-7 text-balance">{t.close.heading}</h2>
         <p
           data-reveal
           style="--reveal-delay:80ms"
-          class="prose-measure mt-6 text-[16.5px] leading-relaxed text-ink-soft"
+          class="prose-measure mt-6 text-[16.5px] leading-relaxed text-on-band/80"
         >
           {t.close.body}
         </p>
       </div>
-      <div data-reveal style="--reveal-delay:150ms" class="flex flex-wrap gap-3 md:col-span-5">
-        <a href={href(t.close.primary.href)} class="btn btn-primary group">
+      <div
+        data-reveal
+        style="--reveal-delay:150ms"
+        class="flex flex-wrap gap-3 md:col-span-5 md:justify-end"
+      >
+        <a href={href(t.close.primary.href)} class="btn btn-invert group">
           {t.close.primary.label}
           <Icon
             name="ph:arrow-right"
@@ -351,7 +377,7 @@ const [lead, ...rest] = flagships;
           href={t.close.secondary.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-quiet"
+          class="btn btn-outline-invert"
         >
           {t.close.secondary.label}
           <Icon name="ph:arrow-up-right" class="h-4 w-4" />
@@ -362,8 +388,8 @@ const [lead, ...rest] = flagships;
 </Base>
 
 <style>
-  /* Scroll-driven parallax on the hero photograph only. It is the single
-     authored motion moment on the page; everything else just fades in.
+  /* Scroll-driven parallax on the hero photograph. It is the one authored
+     motion moment on the page; everything else only fades or wipes in.
      Browsers without scroll-driven animations get a still image. */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
@@ -376,7 +402,7 @@ const [lead, ...rest] = flagships;
 
       @keyframes hero-drift {
         from {
-          transform: translate3d(0, -3.5%, 0) scale(1.09);
+          transform: translate3d(0, -3.5%, 0) scale(1.1);
         }
         to {
           transform: translate3d(0, 3.5%, 0) scale(1.02);

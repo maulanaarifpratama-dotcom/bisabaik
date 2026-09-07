@@ -67,6 +67,10 @@ const common = defineCollection({
       phoneHref: z.string(),
       address: z.array(z.string()),
       legal: z.array(z.object({ href: z.string(), label: z.string() })),
+      relatedHeading: z.string(),
+      related: z.array(
+        z.object({ href: z.string(), label: z.string(), note: z.string() }),
+      ),
       copyright: z.string(),
       affiliation: z.string(),
     }),

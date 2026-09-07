@@ -34,6 +34,7 @@ const GROUP_IMAGE: Record<string, ImageKey> = {
   path="/partners"
   title={t.meta.title}
   description={t.meta.description}
+  heroTone="ink"
   breadcrumbs={[{ name: t.header.title, path: "/partners" }]}
 >
   <PageHeader
@@ -57,7 +58,7 @@ const GROUP_IMAGE: Record<string, ImageKey> = {
         >
           <div class="mb-10 grid gap-8 lg:grid-cols-12 lg:gap-12">
             <div class="lg:col-span-4">
-              <h2 class="font-display text-[27px] leading-tight text-balance md:text-[32px]">
+              <h2 class="display-2">
                 {group.label}
               </h2>
               <p class="mt-4 max-w-[40ch] text-[15.5px] leading-relaxed text-ink-soft">

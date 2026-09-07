@@ -29,6 +29,7 @@ const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
   path="/how-we-work"
   title={t.meta.title}
   description={t.meta.description}
+  heroTone="ink"
   breadcrumbs={[{ name: t.header.title, path: "/how-we-work" }]}
 >
   <PageHeader
@@ -46,7 +47,7 @@ const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
         t.journey.phases.map((phase) => (
           <li class="grid gap-8 bg-paper p-8 md:grid-cols-12 md:p-12">
             <div class="md:col-span-3">
-              <p class="font-display text-[52px] leading-none italic">
+              <p class="display-1 leading-none">
                 {phase.numeral}
               </p>
               <p class="mt-3 text-[11.5px] tracking-[0.12em] text-ink-soft uppercase">
@@ -65,7 +66,7 @@ const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
             </div>
 
             <div data-reveal class="md:col-span-9">
-              <h3 class="font-display text-[24px] leading-tight text-balance md:text-[29px]">
+              <h3 class="display-3">
                 {phase.title}
               </h3>
               <p class="mt-3 text-[15px] text-ink-soft italic">{phase.sub}</p>
@@ -145,7 +146,7 @@ const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
       {
         t.principles.items.map((item, i) => (
           <div data-reveal style={`--reveal-delay:${i * 60}ms`} class="bg-paper p-9">
-            <h3 class="font-display text-[22px] leading-snug">{item.title}</h3>
+            <h3 class="display-3">{item.title}</h3>
             <p class="mt-5 text-[14.5px] leading-relaxed text-ink-soft">
               {item.body}
             </p>

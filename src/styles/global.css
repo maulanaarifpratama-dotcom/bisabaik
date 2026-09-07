@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
-/* Self-hosted, no external font requests. Newsreader carries an optical-size axis,
-   which is why it holds up at both 68px display and 15px pull-quote sizes. */
-@import "@fontsource-variable/newsreader/opsz.css";
-@import "@fontsource-variable/newsreader/opsz-italic.css";
-@import "@fontsource-variable/inter-tight/wght.css";
+/* One family, self-hosted, no external font requests.
+   Archivo carries a width axis (62 to 125) alongside weight, so the display
+   voice and the text voice come from the same drawing: headlines run wide and
+   heavy, body runs normal and light. That is a type system, not a pairing. */
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource-variable/archivo/wdth-italic.css";
 
 /* Theme is always written to <html data-theme> by an inline script before paint,
    so the variant is attribute-driven and never disagrees with the painted colours. */
@@ -29,6 +30,13 @@
   --bronze-strong: #715b36;
   --on-accent: #fcfbf9;
   --on-ink: #f4f2ee;
+
+  /* Full-bleed bands keep their own ground so they stay dark in both themes. */
+  --band: #1f2934;
+  --on-band: #f4f2ee;
+  --band-accent: #c9a870;
+  --band-line: #36424f;
+
   --danger: #9d2f2a;
   --shadow-tint: 35 46 56;
 
@@ -49,6 +57,12 @@
     --bronze-strong: #c6a46b;
     --on-accent: #15191e;
     --on-ink: #15191e;
+
+    --band: #1b2632;
+    --on-band: #eceae4;
+    --band-accent: #c9a870;
+    --band-line: #2f3b48;
+
     --danger: #e08b84;
     --shadow-tint: 0 0 0;
 
@@ -68,6 +82,12 @@
   --bronze-strong: #c6a46b;
   --on-accent: #15191e;
   --on-ink: #15191e;
+
+  --band: #1b2632;
+  --on-band: #eceae4;
+  --band-accent: #c9a870;
+  --band-line: #2f3b48;
+
   --danger: #e08b84;
   --shadow-tint: 0 0 0;
 
@@ -86,10 +106,14 @@
   --color-bronze-strong: var(--bronze-strong);
   --color-on-accent: var(--on-accent);
   --color-on-ink: var(--on-ink);
+  --color-band: var(--band);
+  --color-on-band: var(--on-band);
+  --color-band-accent: var(--band-accent);
+  --color-band-line: var(--band-line);
   --color-danger: var(--danger);
 
-  --font-display: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
-  --font-sans: "Inter Tight Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Archivo Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Archivo Variable", "Helvetica Neue", Arial, sans-serif;
 
   /* One radius for the whole site. Documents have corners, not pills. */
   --radius-brand: 2px;
@@ -117,9 +141,10 @@
     background-color: var(--paper);
     color: var(--ink);
     font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.6;
-    letter-spacing: -0.006em;
+    font-variation-settings: "wdth" 100;
+    font-size: 16.5px;
+    line-height: 1.62;
+    letter-spacing: -0.008em;
     font-variant-numeric: tabular-nums;
   }
 
@@ -128,8 +153,9 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.022em;
+    font-variation-settings: "wdth" 112;
+    font-weight: 600;
+    letter-spacing: -0.028em;
     text-wrap: balance;
   }
 
@@ -191,22 +217,42 @@
     }
   }
 
+  /* Width does the work the weight cannot: at 118 the headline reads as a
+     poster, at 104 the sub-heads stay quiet without changing family. */
   .display-1 {
-    font-size: clamp(2.35rem, 5.2vw, 4.25rem);
-    line-height: 1.04;
-    font-weight: 380;
+    font-family: var(--font-display);
+    font-variation-settings: "wdth" 118;
+    font-weight: 680;
+    font-size: clamp(2.7rem, 7vw, 5.6rem);
+    line-height: 0.92;
+    letter-spacing: -0.042em;
   }
 
   .display-2 {
-    font-size: clamp(1.85rem, 3.5vw, 2.9rem);
-    line-height: 1.1;
-    font-weight: 400;
+    font-family: var(--font-display);
+    font-variation-settings: "wdth" 112;
+    font-weight: 620;
+    font-size: clamp(2rem, 4.4vw, 3.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.032em;
   }
 
   .display-3 {
-    font-size: clamp(1.35rem, 2vw, 1.75rem);
-    line-height: 1.22;
-    font-weight: 450;
+    font-family: var(--font-display);
+    font-variation-settings: "wdth" 106;
+    font-weight: 560;
+    font-size: clamp(1.4rem, 2.1vw, 1.95rem);
+    line-height: 1.16;
+    letter-spacing: -0.022em;
+  }
+
+  /* Small caps label used where a word genuinely classifies a value, never as
+     an eyebrow above a heading. */
+  .label {
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
   }
 
   .prose-measure {
@@ -242,6 +288,9 @@
   }
 
   .btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -264,15 +313,27 @@
     transform: scale(0.975);
   }
 
-  .btn-primary {
-    background: var(--ink);
-    color: var(--on-ink);
+  /* The fill wipes in from the left rather than cross-fading, which reads as
+     one object changing state instead of two colours swapping. */
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--bronze-strong);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 320ms var(--ease-out);
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .btn-primary:hover {
-      background: color-mix(in srgb, var(--ink) 88%, var(--bronze));
+    .btn:hover::before {
+      clip-path: inset(0 0 0 0);
     }
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--on-ink);
   }
 
   .btn-quiet {
@@ -280,9 +341,40 @@
     color: var(--ink);
   }
 
+  .btn-quiet::before {
+    background: var(--ink);
+  }
+
   @media (hover: hover) and (pointer: fine) {
     .btn-quiet:hover {
+      color: var(--on-ink);
       border-color: var(--ink);
+    }
+  }
+
+  /* Buttons that sit on an ink band. */
+  .btn-invert {
+    background: var(--on-band);
+    color: var(--band);
+  }
+
+  .btn-invert::before {
+    background: var(--band-accent);
+  }
+
+  .btn-outline-invert {
+    border: 1px solid color-mix(in srgb, var(--on-band) 45%, transparent);
+    color: var(--on-band);
+  }
+
+  .btn-outline-invert::before {
+    background: var(--on-band);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-outline-invert:hover {
+      color: var(--band);
+      border-color: var(--on-band);
     }
   }
 
@@ -387,6 +479,73 @@
     text-decoration-color: var(--bronze);
   }
 
+  /* Photographs wipe up from their own bottom edge instead of fading. A fade
+     reads as a loading image; a wipe reads as a deliberate reveal. */
+  [data-reveal-clip] {
+    clip-path: inset(0 0 0 0);
+  }
+
+  [data-reveal][data-reveal-clip][data-reveal-armed] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  [data-reveal][data-reveal-clip][data-reveal-shown] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 900ms var(--ease-in-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal][data-reveal-clip][data-reveal-armed] {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  /* Hero lines arrive one after another. This runs on load from CSS alone,
+     never from the observer: above-the-fold copy must never depend on a
+     script finishing, or a stall leaves the page looking empty. */
+  .hero-line {
+    display: block;
+    overflow: hidden;
+    /* Descenders in the display face need room or the mask clips them. */
+    padding-block-end: 0.06em;
+  }
+
+  .hero-line > span {
+    display: block;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-line > span {
+      animation: line-rise 820ms var(--ease-out) both;
+      animation-delay: calc(var(--line-index, 0) * 95ms);
+    }
+
+    @keyframes line-rise {
+      from {
+        transform: translateY(108%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  /* A full-bleed ink band. Used three times on the home page to give the
+     scroll a spine: opening, middle, close. */
+  .band-ink {
+    background: var(--band);
+    color: var(--on-band);
+  }
+
+  .band-ink .label {
+    color: color-mix(in srgb, var(--on-band) 64%, transparent);
+  }
+
   /* Scroll reveal. Default state is visible, so no-JS and reduced-motion users
      never lose content; the script opts elements into the hidden start. */
   [data-reveal] {
@@ -413,4 +572,52 @@
       transform: none;
     }
   }
+}
+
+  /* Header over an ink hero.
+   Every page now opens on an ink band, so before the header sticks it sits
+   on dark ground and has to invert. Once stuck it returns to paper. The
+   logo has two artworks because the wordmark is navy and vanishes on ink. */
+.logo-on-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo-on-light,
+header[data-hero="ink"]:not([data-stuck]) .logo-on-light {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo-on-dark,
+header[data-hero="ink"]:not([data-stuck]) .logo-on-dark {
+  display: block;
+}
+
+header[data-hero="ink"]:not([data-stuck]) .nav-link {
+  color: color-mix(in srgb, var(--on-band) 74%, transparent);
+}
+
+header[data-hero="ink"]:not([data-stuck]) .nav-link[aria-current="page"] {
+  color: var(--on-band);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  header[data-hero="ink"]:not([data-stuck]) .nav-link:hover {
+    color: var(--on-band);
+  }
+}
+
+header[data-hero="ink"]:not([data-stuck]) .header-chip {
+  border-color: color-mix(in srgb, var(--on-band) 40%, transparent);
+  color: color-mix(in srgb, var(--on-band) 86%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  header[data-hero="ink"]:not([data-stuck]) .header-chip:hover {
+    border-color: var(--on-band);
+    color: var(--on-band);
+  }
+}
+
+header[data-hero="ink"]:not([data-stuck]) .header-burger {
+  color: var(--on-band);
 }

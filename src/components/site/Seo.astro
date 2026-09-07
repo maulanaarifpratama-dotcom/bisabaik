@@ -50,6 +50,16 @@ const organization = {
   image: ogImage,
   email: "info@bisabaik.or.id",
   telephone: "+62-851-6147-9098",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "partnerships",
+      email: "info@bisabaik.or.id",
+      telephone: "+62-851-6147-9098",
+      availableLanguage: ["en", "id"],
+      areaServed: "ID",
+    },
+  ],
   description,
   foundingDate: "2020",
   parentOrganization: { "@type": "Organization", name: "Immers Asia Corp" },
@@ -74,12 +84,29 @@ const organization = {
     "Monitoring, Evaluation, Accountability and Learning",
     "Circular economy",
   ],
-  sameAs: ["https://pasarbaik.com"],
+  sameAs: ["https://pasarbaik.com", "https://impactory.id"],
+};
+
+/* Every page declares itself as a WebPage tied to the organisation. Answer
+   engines lean on this to attribute a claim to the right entity. */
+const webPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": canonical,
+  url: canonical,
+  name: title,
+  description,
+  inLanguage: HTML_LANG[locale],
+  isPartOf: { "@type": "WebSite", "@id": `${SITE_URL}/#website` },
+  about: { "@type": "NGO", name: "Bisa Baik Bersama", url: `${SITE_URL}/` },
+  publisher: { "@type": "Organization", name: "Bisa Baik Bersama" },
+  primaryImageOfPage: { "@type": "ImageObject", url: ogImage },
 };
 
 const website = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
   name: "Bisa Baik Bersama",
   url: `${SITE_URL}/`,
   inLanguage: ["en", "id"],
@@ -153,6 +180,11 @@ const breadcrumbList =
     </>
   )
 }
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify(webPage)}
+/>
 {
   breadcrumbList && (
     <script

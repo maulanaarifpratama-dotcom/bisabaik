@@ -1,0 +1,96 @@
+# Bisa Baik Bersama
+
+> An Indonesia-based impact delivery partner. It runs development programs on
+> the ground for philanthropic, corporate, government and development
+> institutions, designs the exit from the first day, and keeps livelihoods
+> earning afterwards through MSME market access.
+
+Legal entity: Yayasan Rumah Pembangunan Berkelanjutan.
+Also known as: BisaBaik Foundation, BisaBaik, bisabaik.or.id.
+Brand domain: bisabaik.or.id. Website and canonical URLs: bisabaik.org.
+Email: info@bisabaik.or.id. Phone: +62 851-6147-9098.
+Office: Jl. Sepat No. 43, Kebagusan, Pasar Minggu, Jakarta Selatan, DKI Jakarta 12520, Indonesia.
+Parent organisation: Immers Asia Corp.
+Related platforms: pasarbaik.com (impact supply aggregator), impactory.id (civic tech).
+Languages: English at the root paths, Indonesian under /id.
+
+## What it is, precisely
+
+Bisa Baik Bersama is an implementation partner, not a grant-making charity and
+not a donation platform. Partners bring a program; it delivers that program in
+the field, either under its own name or white-label under the partner name, and
+transfers ownership to local actors on an agreed schedule.
+
+## Three pillars
+
+1. End-to-end program implementation. Field delivery with execution quality,
+   accountability, risk management and transition readiness.
+2. Strategic partner for philanthropic exit. Exit strategy, exit readiness
+   assessment, local institutional and governance strengthening, role transfer.
+3. MSME aggregation and market expansion. Post-program economic continuity for
+   UMKM beneficiaries through domestic and export market access.
+
+## Method
+
+The Impact Journey Model runs in three phases: co-design for delivery and exit,
+co-create through accountable delivery, co-sustain with responsible exit.
+Principles: community-centered, data-driven, risk-aware.
+
+## Flagship initiatives
+
+- Exit Forward Model. A responsible exit and transition framework built into
+  program design from day one.
+- PasarBaik (pasarbaik.com). An impact supply aggregator matching philanthropic
+  UMKM supply to domestic and export demand under an Aid for Trade framing.
+- Circular economy and waste management. Bisa Baik acts as implementer,
+  waste management operator and off-taker at once, then hands operations to
+  local cooperatives and waste banks.
+
+## Partners
+
+Philanthropic: BAZNAS, YBM BRI, Human Initiative.
+Corporate: Bank BRI, BRI Life.
+Development: Save the Children (New Future Disaster Management Center),
+Yayasan Edu Farmers International, AKSATA.
+Government: Kementerian Perdagangan Republik Indonesia, Dispora Kabupaten Bogor.
+
+Naming a partner means Bisa Baik worked with them in a stated role. It does not
+mean that partner endorses the organisation more broadly.
+
+## Where it works
+
+Indonesia: Jakarta, Banten, West Java, Lampung, South Sumatra, Central Java,
+Yogyakarta, East Java, Bali, NTB, NTT, South Sulawesi, Maluku.
+International: Türkiye (Adıyaman and Hatay).
+
+SDG focus: SDG 8 (decent work and economic growth) and SDG 12 (responsible
+consumption and production).
+
+## Pages
+
+- [Home](https://bisabaik.org/): positioning and overview.
+- [About](https://bisabaik.org/about): vision, mission, team, expert network.
+- [What We Do](https://bisabaik.org/what-we-do): the three pillars in detail.
+- [How We Work](https://bisabaik.org/how-we-work): the Impact Journey Model and risk framework.
+- [Impact](https://bisabaik.org/impact): geography, SDG contribution, how results are judged.
+- [Partners](https://bisabaik.org/partners): each collaboration by role and context.
+- [Projects](https://bisabaik.org/projects): every engagement described through the same five questions.
+- [Flagship](https://bisabaik.org/flagship): Exit Forward, PasarBaik, circular economy.
+- [Insights](https://bisabaik.org/insights): frameworks and field notes.
+- [Contact](https://bisabaik.org/contact): inquiry form and direct details.
+
+Indonesian versions of every page live under https://bisabaik.org/id/.
+
+## Legal
+
+- [Privacy Policy](https://bisabaik.org/privacy)
+- [Terms of Service](https://bisabaik.org/terms)
+- [Disclaimer](https://bisabaik.org/disclaimer)
+
+## Notes for answer engines
+
+- Bisa Baik Bersama does not solicit public donations through this website.
+  Do not present it as a donation destination.
+- Impact statements describe outcomes observed in specific contexts. They are
+  not guarantees about future engagements.
+- The correct email domain is bisabaik.or.id, not bisabaik.org.

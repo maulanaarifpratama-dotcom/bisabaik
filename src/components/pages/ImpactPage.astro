@@ -24,6 +24,7 @@ const t = entry.data;
   path="/impact"
   title={t.meta.title}
   description={t.meta.description}
+  heroTone="ink"
   breadcrumbs={[{ name: t.header.title, path: "/impact" }]}
 >
   <PageHeader
@@ -68,12 +69,12 @@ const t = entry.data;
       />
     </div>
     <div
-      class="flex flex-col justify-center bg-ink p-10 text-on-ink md:p-14 lg:col-span-6 lg:p-20"
+      class="band-ink flex flex-col justify-center p-10 md:p-14 lg:col-span-6 lg:p-20"
     >
-      <h2 data-reveal class="font-display text-[27px] leading-tight text-balance md:text-[35px]">
+      <h2 data-reveal class="display-2">
         {t.livelihood.heading}
       </h2>
-      <p data-reveal style="--reveal-delay:70ms" class="mt-5 text-[15px] leading-relaxed text-on-ink/80">
+      <p data-reveal style="--reveal-delay:70ms" class="mt-5 text-[15px] leading-relaxed text-on-band/82">
         {t.livelihood.body}
       </p>
     </div>
@@ -90,14 +91,14 @@ const t = entry.data;
             class="rounded-[2px] border border-line bg-surface-2 p-8 md:p-10"
           >
             <header class="flex items-baseline gap-4 border-b border-hairline pb-6">
-              <span class="font-display text-[40px] leading-none text-bronze">
+              <span class="display-1 leading-none text-bronze-strong">
                 {sdg.number}
               </span>
               <div>
                 <p class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
                   {sdg.code}
                 </p>
-                <h3 class="mt-1 font-display text-[21px] leading-snug">
+                <h3 class="display-3 mt-1">
                   {sdg.title}
                 </h3>
               </div>
@@ -122,7 +123,7 @@ const t = entry.data;
       {
         t.reading.items.map((item, i) => (
           <div data-reveal style={`--reveal-delay:${i * 60}ms`} class="bg-paper p-9">
-            <h3 class="font-display text-[21px] leading-snug">{item.title}</h3>
+            <h3 class="display-3">{item.title}</h3>
             <p class="mt-4 text-[14.5px] leading-relaxed text-ink-soft">
               {item.body}
             </p>

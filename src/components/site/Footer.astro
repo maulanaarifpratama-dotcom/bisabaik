@@ -18,9 +18,11 @@ const t = entry.data;
 const f = t.footer;
 
 const year = new Date().getFullYear();
+const heading =
+  "text-[11.5px] font-semibold tracking-[0.14em] text-ink-soft uppercase";
 ---
 
-<footer class="mt-28 border-t border-line bg-surface/60">
+<footer class="mt-28 border-t-2 border-ink bg-surface/50">
   <div class="edge py-16 md:py-20">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
       <div class="md:col-span-5">
@@ -30,7 +32,7 @@ const year = new Date().getFullYear();
           width={320}
           densities={[1, 2]}
           loading="lazy"
-          class="h-12 w-auto object-contain dark:hidden"
+          class="logo-on-light h-12 w-auto object-contain"
         />
         <Image
           src={logoDark}
@@ -38,21 +40,16 @@ const year = new Date().getFullYear();
           width={320}
           densities={[1, 2]}
           loading="lazy"
-          class="hidden h-12 w-auto object-contain dark:block"
+          class="logo-on-dark h-12 w-auto object-contain"
         />
-        <p class="display-3 mt-8 max-w-md font-display">{f.tagline}</p>
+        <p class="display-3 mt-8 max-w-md">{f.tagline}</p>
         <p class="mt-5 max-w-md text-[14.5px] leading-relaxed text-ink-soft">
           {f.blurb}
         </p>
       </div>
 
-      <nav class="md:col-span-3 md:col-start-7" aria-labelledby="footer-nav">
-        <h2
-          id="footer-nav"
-          class="font-sans text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase"
-        >
-          {f.navHeading}
-        </h2>
+      <nav class="md:col-span-2" aria-labelledby="footer-nav">
+        <h2 id="footer-nav" class={heading}>{f.navHeading}</h2>
         <ul class="mt-5 space-y-2.5 text-[14px]">
           {
             t.nav.map((item) => (
@@ -69,30 +66,44 @@ const year = new Date().getFullYear();
         </ul>
       </nav>
 
-      <div class="md:col-span-3">
-        <h2
-          class="font-sans text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase"
-        >
-          {f.contactHeading}
-        </h2>
+      <div class="md:col-span-2">
+        <h2 class={heading}>{f.contactHeading}</h2>
         <ul class="mt-5 space-y-2.5 text-[14px] text-ink-soft">
           <li>
-            <a
-              href={`mailto:${f.email}`}
-              class="link-rule text-ink">{f.email}</a
-            >
+            <a href={`mailto:${f.email}`} class="link-rule text-ink">{f.email}</a>
           </li>
           <li><a href={f.phoneHref} class="hover:text-ink">{f.phone}</a></li>
           <li class="leading-relaxed">
             {f.address.map((line) => <span class="block">{line}</span>)}
           </li>
         </ul>
+      </div>
 
-        <h2
-          class="mt-8 font-sans text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase"
-        >
-          {f.legalHeading}
-        </h2>
+      <div class="md:col-span-3">
+        <h2 class={heading}>{f.relatedHeading}</h2>
+        <ul class="mt-5 space-y-4">
+          {
+            f.related.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group inline-flex items-baseline gap-1.5 text-[14.5px] text-ink"
+                >
+                  <span class="link-rule">{item.label}</span>
+                  <Icon
+                    name="ph:arrow-up-right"
+                    class="h-3 w-3 shrink-0 self-center transition-transform duration-200 ease-[var(--ease-out)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </a>
+                <p class="mt-1 text-[12.5px] text-ink-soft">{item.note}</p>
+              </li>
+            ))
+          }
+        </ul>
+
+        <h2 class={`${heading} mt-9`}>{f.legalHeading}</h2>
         <ul class="mt-5 space-y-2.5 text-[14px]">
           {
             f.legal.map((item) => (
@@ -106,17 +117,6 @@ const year = new Date().getFullYear();
               </li>
             ))
           }
-          <li>
-            <a
-              href={t.aggregatorCta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-ink-soft transition-colors duration-200 hover:text-ink"
-            >
-              PasarBaik.com
-              <Icon name="ph:arrow-up-right" class="h-3 w-3" />
-            </a>
-          </li>
         </ul>
       </div>
     </div>

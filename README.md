@@ -17,7 +17,7 @@ site links to it.
 | Styling | Tailwind CSS 4, CSS-first tokens | Theme lives in `src/styles/global.css` |
 | Content | Astro content collections | File-based, so a CMS can be layered on later |
 | Icons | Phosphor via `astro-icon` | One family, one stroke weight |
-| Fonts | Newsreader + Inter Tight, self-hosted | No third-party font requests |
+| Fonts | Archivo Variable, self-hosted | One family, width axis carries display vs text |
 | Interactivity | Small vanilla scripts | Menu, theme, scroll reveal, contact form |
 
 There is no client-side framework. The only JavaScript on a page is the theme
@@ -88,15 +88,31 @@ utilities (`bg-paper`, `text-ink`, `text-ink-soft`, `border-line`, `text-bronze`
 - **Colour** comes from the logo: ink navy for text, bronze for the single
   accent, on a desaturated paper ground. Bronze has two tones, `bronze` for
   large type and rules, `bronze-strong` where small text needs 4.5:1.
-- **Type** is Newsreader for display and Inter Tight for everything else.
+- **Bands have their own tokens.** `--ink` is a text colour and flips with the
+  theme, so a full-bleed dark band cannot be built from it or dark mode turns
+  it light. `--band`, `--on-band`, `--band-accent` stay dark-on-light in both
+  themes. Use `.band-ink` plus `bg-band` / `text-on-band` / `text-band-accent`
+  inside one, never `bg-ink` / `text-on-ink`.
+- **Type** is one family, Archivo Variable, doing two jobs through its width
+  axis: display runs at `wdth` 112 to 118 and weight 620 to 680, body runs at
+  `wdth` 100 and weight 400. Emphasis is italic of the same family. Sizes go
+  through `.display-1/2/3`, never ad-hoc `text-[Npx]` on a heading.
 - **Radius** is 2px everywhere. One value, no exceptions.
 - **Dark mode** is attribute-driven. An inline script in `<head>` writes
   `data-theme` before first paint, so the page never flashes the wrong ground.
   A `prefers-color-scheme` block covers visitors without JavaScript.
-- **Motion** is deliberately quiet. One authored moment, the scroll-driven
-  parallax on the home hero, plus a fade-up reveal. Elements ship visible and
-  are only hidden once the reveal script arms them, so no-JS and
-  reduced-motion readers never lose content.
+- **Header inverts over a band.** Every page opens on an ink band, so the
+  header carries `data-hero="ink"` and switches to the light logo artwork and
+  light nav until it sticks. Those rules sit outside `@layer` on purpose:
+  the same elements carry Tailwind colour utilities, and the utilities layer
+  outranks components.
+- **Motion** is deliberately quiet. The hero headline rises line by line from
+  CSS alone on load, never from an observer, because above-the-fold copy must
+  not depend on a script finishing. Below the fold, a fade-up reveal is driven
+  by an IntersectionObserver that observes before it hides, so a failure leaves
+  content visible. The one scroll-driven effect is the hero parallax.
+- **Buttons** wipe their fill in from the left with `clip-path` rather than
+  cross-fading, and press to `scale(0.975)`.
 
 ## Contact form
 
@@ -114,7 +130,14 @@ That is expected.
 - `hreflang` on every page, plus `x-default`.
 - JSON-LD: `NGO` and `WebSite` on the home page, `BreadcrumbList` on inner pages.
 - Open Graph and Twitter card metadata per page, in the page's own language.
-- `public/robots.txt` points at `/sitemap-index.xml`.
+- `public/robots.txt` points at `/sitemap-index.xml` and explicitly allows the
+  answer-engine crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended and
+  friends).
+- `public/llms.txt` is a plain-language brief for answer engines: what the
+  organisation is, the three pillars, the flagships, the partner list, where it
+  works, and three corrections it should not get wrong (it is not a donation
+  platform, impact claims are context-specific, and email is on
+  bisabaik.or.id).
 
 `vercel.json` sets `trailingSlash: false` so the slashed form redirects onto the
 canonical one, adds long-lived caching for hashed assets, and sets baseline

@@ -13,8 +13,8 @@ const { title, intro, imageKey, imageAlt } = Astro.props;
 const photo = image(imageKey);
 ---
 
-<section class="relative isolate overflow-hidden border-b border-line">
-  <div class="absolute inset-0 -z-10">
+<section class="band-ink relative isolate overflow-hidden">
+  <div class="absolute inset-0">
     <Image
       src={photo}
       alt={imageAlt}
@@ -24,31 +24,22 @@ const photo = image(imageKey);
       fetchpriority="high"
       class="h-full w-full object-cover"
     />
-    <!-- Header band: the fixed nav sits on top of this photo. -->
-    <div
-      class="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-paper via-paper/70 to-transparent"
-    >
-    </div>
-    <!-- Reading ground for the headline. -->
-    <div
-      class="absolute inset-0 bg-linear-to-r from-paper/88 via-paper/40 to-transparent"
-    >
-    </div>
-    <!-- Blend into the page rather than cutting hard at the section edge. -->
-    <div
-      class="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-paper to-transparent"
-    >
-    </div>
   </div>
 
-  <div class="edge pt-24 pb-14 md:pt-32 md:pb-20">
-    <h1 data-reveal class="display-1 max-w-[17ch]">{title}</h1>
-    <p
-      data-reveal
-      style="--reveal-delay:90ms"
-      class="mt-7 max-w-2xl text-[17px] leading-relaxed text-ink/85 md:text-[18px]"
-    >
-      {intro}
-    </p>
+  <!-- The photograph is atmosphere here, not subject. The type has to win. -->
+  <div class="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-band/85 to-transparent"></div>
+  <div class="absolute inset-0 bg-linear-to-r from-band via-band/58 to-band/8"></div>
+  <div class="absolute inset-x-0 bottom-0 h-3/5 bg-linear-to-t from-band via-band/72 to-transparent"></div>
+
+  <div class="edge relative grid gap-10 pt-32 pb-20 md:pt-40 md:pb-28 lg:grid-cols-12">
+    <div class="lg:col-span-9">
+      <h1 class="display-1"><span class="hero-line"><span>{title}</span></span></h1>
+    </div>
+    <div class="lg:col-span-7">
+      <span aria-hidden="true" class="block h-px w-16 bg-band-accent"></span>
+      <p class="mt-6 text-[17px] leading-relaxed text-on-band/82 md:text-[18.5px]">
+        {intro}
+      </p>
+    </div>
   </div>
 </section>

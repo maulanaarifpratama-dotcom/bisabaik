@@ -33,6 +33,7 @@ const label =
   path="/contact"
   title={t.meta.title}
   description={t.meta.description}
+  heroTone="ink"
   breadcrumbs={[{ name: t.header.title, path: "/contact" }]}
 >
   <PageHeader
@@ -210,18 +211,23 @@ const label =
           <h2 class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase">
             {t.related.heading}
           </h2>
-          <ul class="mt-5 space-y-3 text-[14.5px]">
-            <li>
-              <a
-                href={c.aggregatorCta.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="link-rule"
-              >
-                PasarBaik.com
-                <Icon name="ph:arrow-up-right" class="h-3 w-3" />
-              </a>
-            </li>
+          <ul class="mt-5 space-y-4">
+            {
+              c.footer.related.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-rule text-[14.5px]"
+                  >
+                    {item.label}
+                    <Icon name="ph:arrow-up-right" class="h-3 w-3" />
+                  </a>
+                  <p class="mt-1 text-[12.5px] text-ink-soft">{item.note}</p>
+                </li>
+              ))
+            }
           </ul>
         </div>
 

@@ -23,6 +23,7 @@ const t = entry.data;
   path="/about"
   title={t.meta.title}
   description={t.meta.description}
+  heroTone="ink"
   breadcrumbs={[{ name: t.header.title, path: "/about" }]}
 >
   <PageHeader
@@ -38,7 +39,7 @@ const t = entry.data;
       <h2 class="text-[12px] font-medium tracking-[0.14em] text-ink-soft uppercase">
         {t.vision.heading}
       </h2>
-      <p class="mt-6 font-display text-[24px] leading-[1.26] text-balance md:text-[34px]">
+      <p class="display-2 mt-6">
         {t.vision.statement}
       </p>
     </div>
@@ -58,7 +59,7 @@ const t = entry.data;
               style={`--reveal-delay:${i * 60}ms`}
               class="grid grid-cols-12 gap-4 border-b border-hairline py-5 last:border-b-0"
             >
-              <span class="col-span-2 font-display text-[15px] text-ink-soft md:col-span-1">
+              <span class="label col-span-2 md:col-span-1">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <p class="col-span-10 text-[16px] leading-relaxed text-ink/90 md:col-span-11">
@@ -119,7 +120,7 @@ const t = entry.data;
             style={`--reveal-delay:${i * 45}ms`}
             class="bg-paper p-7 transition-colors duration-300 hover:bg-surface-2"
           >
-            <p class="font-display text-[19px] leading-tight">{member.name}</p>
+            <p class="text-[18px] leading-tight font-semibold">{member.name}</p>
             <p class="mt-2 text-[12px] tracking-[0.1em] text-ink-soft uppercase">
               {member.role}
             </p>
@@ -161,7 +162,7 @@ const t = entry.data;
               style={`--reveal-delay:${i * 45}ms`}
               class="flex items-baseline gap-6 border-b border-hairline py-5 first:border-t first:border-hairline"
             >
-              <span class="w-8 shrink-0 font-display text-[14px] text-ink-soft">
+              <span class="label w-8 shrink-0">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span class="text-[15.5px] leading-relaxed">{item}</span>

@@ -13,6 +13,8 @@ interface Props {
   title: string;
   description: string;
   breadcrumbs?: Breadcrumb[];
+  /** "ink" when the page opens on a dark band, so the header inverts. */
+  heroTone?: "ink" | "paper";
   isHome?: boolean;
   noindex?: boolean;
 }
@@ -23,6 +25,7 @@ const {
   title,
   description,
   breadcrumbs,
+  heroTone = "paper",
   isHome = false,
   noindex = false,
 } = Astro.props;
@@ -90,9 +93,12 @@ if (!common) throw new Error(`Missing common copy for locale "${locale}"`);
       {common.data.skipToContent}
     </a>
 
-    <Header locale={locale} />
+    <Header locale={locale} heroTone={heroTone} />
 
-    <main id="main" class="flex-1 pt-[68px]">
+    <main
+      id="main"
+      class:list={["flex-1", heroTone === "paper" && "pt-[68px]"]}
+    >
       <slot />
     </main>
 
