@@ -203,6 +203,25 @@ const label =
                 <a href={c.footer.phoneHref} class="text-[15px]">{c.footer.phone}</a>
               </div>
             </li>
+            {/* Same number as the line above, so this row carries the action
+                rather than repeating the digits under a second label. */}
+            <li class="flex items-start gap-4">
+              <Icon name="ph:whatsapp-logo" class="mt-1 h-4 w-4 text-ink-soft" />
+              <div>
+                <p class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
+                  {t.direct.whatsappLabel}
+                </p>
+                <a
+                  href={c.footer.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link-rule text-[15px]"
+                >
+                  {c.footer.whatsapp}
+                  <Icon name="ph:arrow-up-right" class="h-3 w-3" />
+                </a>
+              </div>
+            </li>
             <li class="flex items-start gap-4">
               <Icon name="ph:map-pin" class="mt-1 h-4 w-4 text-ink-soft" />
               <div>

@@ -73,6 +73,17 @@ const heading =
             <a href={`mailto:${f.email}`} class="link-rule text-ink">{f.email}</a>
           </li>
           <li><a href={f.phoneHref} class="hover:text-ink">{f.phone}</a></li>
+          <li>
+            <a
+              href={f.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1.5 text-ink"
+            >
+              <Icon name="ph:whatsapp-logo" class="h-3.5 w-3.5 shrink-0" />
+              <span class="link-rule">{f.whatsapp}</span>
+            </a>
+          </li>
           <li class="leading-relaxed">
             {f.address.map((line) => <span class="block">{line}</span>)}
           </li>

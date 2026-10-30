@@ -51,6 +51,7 @@ direct:
   heading: Direct contact
   emailLabel: Email
   phoneLabel: Phone
+  whatsappLabel: WhatsApp
   officeLabel: Office
 
 related:
