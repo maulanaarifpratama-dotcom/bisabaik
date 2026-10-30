@@ -74,7 +74,6 @@ const common = defineCollection({
         z.object({ href: z.string(), label: z.string(), note: z.string() }),
       ),
       copyright: z.string(),
-      affiliation: z.string(),
     }),
   }),
 });

@@ -11,7 +11,6 @@ Brand domain: bisabaik.or.id. Website and canonical URLs: bisabaik.org.
 Email: info@bisabaik.or.id. Phone and WhatsApp: +62 878-8379-9175
 (https://wa.me/6287883799175).
 Office: Jl. Raya Muchtar RT 05 RW 07 No. 7, Sawangan, Depok, Jawa Barat 16511, Indonesia.
-Parent organisation: Immers Asia Corp.
 Related platforms: pasarbaik.com (impact supply aggregator), impactory.id (civic tech).
 Languages: English at the root paths, Indonesian under /id.
 
