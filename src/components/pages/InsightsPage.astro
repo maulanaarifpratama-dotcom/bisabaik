@@ -27,6 +27,7 @@ const pieces = (await getCollection("insights")).sort(
   path="/insights"
   title={t.meta.title}
   description={t.meta.description}
+  pageType="CollectionPage"
   heroTone="ink"
   breadcrumbs={[{ name: t.header.title, path: "/insights" }]}
 >

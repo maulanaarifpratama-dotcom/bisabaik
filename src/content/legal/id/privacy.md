@@ -17,8 +17,8 @@ updatedLabel: Terakhir diperbarui
 ## Siapa kami
 
 Situs ini dikelola **Yayasan Rumah Pembangunan Berkelanjutan**, yang
-menjalankan program Bisa Baik Bersama. Kantor kami di Jl. Sepat No. 43,
-Kebagusan, Pasar Minggu, Jakarta Selatan, DKI Jakarta 12520, Indonesia.
+menjalankan program Bisa Baik Bersama. Kantor kami di Jl. Raya Muchtar
+RT 05 RW 07 No. 7, Sawangan, Depok, Jawa Barat 16511, Indonesia.
 
 Untuk pertanyaan apa pun soal kebijakan ini atau soal data Anda, kirim surel ke
 [info@bisabaik.or.id](mailto:info@bisabaik.or.id).

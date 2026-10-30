@@ -23,6 +23,12 @@ interface Props {
   breadcrumbs?: Breadcrumb[];
   /** Emitted on the home page only. */
   isHome?: boolean;
+  /**
+   * The schema.org type for this page. ContactPage and AboutPage are the two
+   * an answer engine actually treats differently: they are where it expects to
+   * find the organisation itself rather than a claim about it.
+   */
+  pageType?: "WebPage" | "ContactPage" | "AboutPage" | "CollectionPage";
   noindex?: boolean;
 }
 
@@ -33,6 +39,7 @@ const {
   description,
   breadcrumbs = [],
   isHome = false,
+  pageType = "WebPage",
   noindex = false,
 } = Astro.props;
 
@@ -40,35 +47,54 @@ const canonical = absoluteUrl(path, locale);
 const ogImage = `${SITE_URL}/og-image.jpg`;
 const hreflang = alternates(path);
 
+/* The organisation is emitted wherever a reader could reasonably arrive
+   looking for the organisation itself: the home page, About, and Contact.
+   Before, it lived on the home page alone, so anyone landing on /contact from
+   a search for the office or the phone number found a page that described
+   itself and never named the entity it belonged to. */
+const emitOrganization =
+  isHome || pageType === "ContactPage" || pageType === "AboutPage";
+
 const organization = {
   "@context": "https://schema.org",
   "@type": "NGO",
+  "@id": `${SITE_URL}/#organization`,
   name: "Bisa Baik Bersama",
   alternateName: ["BisaBaik Foundation", "BisaBaik", "bisabaik.or.id"],
   url: `${SITE_URL}/`,
-  logo: `${SITE_URL}/favicon-512.png`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/favicon-512.png`,
+    width: 512,
+    height: 512,
+    caption: "Bisa Baik Bersama",
+  },
   image: ogImage,
   email: "info@bisabaik.or.id",
-  telephone: "+62-851-6147-9098",
+  telephone: "+62-878-8379-9175",
   contactPoint: [
     {
       "@type": "ContactPoint",
       contactType: "partnerships",
       email: "info@bisabaik.or.id",
-      telephone: "+62-851-6147-9098",
+      telephone: "+62-878-8379-9175",
       availableLanguage: ["en", "id"],
       areaServed: "ID",
     },
   ],
-  description,
+  description:
+    "An Indonesia-based impact delivery partner. It runs development programs " +
+    "on the ground for philanthropic, corporate, government and development " +
+    "institutions, designs the exit from the first day, and keeps livelihoods " +
+    "earning afterwards through MSME market access.",
   foundingDate: "2020",
   parentOrganization: { "@type": "Organization", name: "Immers Asia Corp" },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Jl. Sepat No. 43, Kebagusan, Pasar Minggu",
-    addressLocality: "Jakarta Selatan",
-    addressRegion: "DKI Jakarta",
-    postalCode: "12520",
+    streetAddress: "Jl. Raya Muchtar RT 05 RW 07 No. 7, Sawangan",
+    addressLocality: "Depok",
+    addressRegion: "Jawa Barat",
+    postalCode: "16511",
     addressCountry: "ID",
   },
   areaServed: [
@@ -91,15 +117,15 @@ const organization = {
    engines lean on this to attribute a claim to the right entity. */
 const webPage = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": pageType,
   "@id": canonical,
   url: canonical,
   name: title,
   description,
   inLanguage: HTML_LANG[locale],
   isPartOf: { "@type": "WebSite", "@id": `${SITE_URL}/#website` },
-  about: { "@type": "NGO", name: "Bisa Baik Bersama", url: `${SITE_URL}/` },
-  publisher: { "@type": "Organization", name: "Bisa Baik Bersama" },
+  about: { "@id": `${SITE_URL}/#organization` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
   primaryImageOfPage: { "@type": "ImageObject", url: ogImage },
 };
 
@@ -110,7 +136,7 @@ const website = {
   name: "Bisa Baik Bersama",
   url: `${SITE_URL}/`,
   inLanguage: ["en", "id"],
-  publisher: { "@type": "Organization", name: "Bisa Baik Bersama" },
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 const breadcrumbList =
@@ -134,7 +160,6 @@ const breadcrumbList =
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
 
 {
   hreflang.map((alt) => (
@@ -160,24 +185,38 @@ const breadcrumbList =
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+<meta
+  name="twitter:image:alt"
+  content="Bisa Baik Bersama. Deliver well, exit responsibly, sustain impact."
+/>
 
+<meta
+  name="robots"
+  content={
+    noindex
+      ? "noindex, nofollow"
+      : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  }
+/>
 <meta name="author" content="Bisa Baik Bersama" />
 <meta name="language" content={HTML_LANG[locale]} />
 
 {
+  emitOrganization && (
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(organization)}
+    />
+  )
+}
+{
   isHome && (
-    <>
-      <script
-        type="application/ld+json"
-        is:inline
-        set:html={JSON.stringify(organization)}
-      />
-      <script
-        type="application/ld+json"
-        is:inline
-        set:html={JSON.stringify(website)}
-      />
-    </>
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(website)}
+    />
   )
 }
 <script

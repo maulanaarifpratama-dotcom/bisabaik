@@ -36,12 +36,12 @@ footer:
   contactHeading: Contact
   legalHeading: Legal
   email: info@bisabaik.or.id
-  phone: +62 851-6147-9098
-  phoneHref: "tel:+6285161479098"
+  phone: +62 878-8379-9175
+  phoneHref: "tel:+6287883799175"
   address:
-    - Jl. Sepat No. 43, Kebagusan
-    - Pasar Minggu, Jakarta Selatan
-    - DKI Jakarta 12520
+    - Jl. Raya Muchtar RT 05 RW 07 No. 7
+    - Sawangan, Depok
+    - Jawa Barat 16511
   legal:
     - { href: /privacy, label: Privacy Policy }
     - { href: /terms, label: Terms of Service }

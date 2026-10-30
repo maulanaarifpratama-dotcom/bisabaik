@@ -31,6 +31,14 @@
   --on-accent: #fcfbf9;
   --on-ink: #f4f2ee;
 
+  /* Form controls get their own boundary and placeholder tones. The document
+     hairline is deliberately faint, which is right for a rule between
+     paragraphs and wrong for the edge of something you are meant to type in:
+     a control boundary has to clear 3:1 and a placeholder 4.5:1. Reusing
+     --line and a tinted --ink-soft put both under the floor. */
+  --field-line: #8d8779;
+  --field-placeholder: #6b7380;
+
   /* Full-bleed bands keep their own ground so they stay dark in both themes. */
   --band: #1f2934;
   --on-band: #f4f2ee;
@@ -58,6 +66,9 @@
     --on-accent: #15191e;
     --on-ink: #15191e;
 
+    --field-line: #5b6573;
+    --field-placeholder: #949cab;
+
     --band: #1b2632;
     --on-band: #eceae4;
     --band-accent: #c9a870;
@@ -83,6 +94,9 @@
   --on-accent: #15191e;
   --on-ink: #15191e;
 
+  --field-line: #5b6573;
+  --field-placeholder: #949cab;
+
   --band: #1b2632;
   --on-band: #eceae4;
   --band-accent: #c9a870;
@@ -106,6 +120,8 @@
   --color-bronze-strong: var(--bronze-strong);
   --color-on-accent: var(--on-accent);
   --color-on-ink: var(--on-ink);
+  --color-field-line: var(--field-line);
+  --color-field-placeholder: var(--field-placeholder);
   --color-band: var(--band);
   --color-on-band: var(--on-band);
   --color-band-accent: var(--band-accent);
@@ -159,6 +175,14 @@
     text-wrap: balance;
   }
 
+  /* Headings balance; body copy only needs its last line not to be a single
+     orphaned word. Cheap, and it shows on every intro paragraph on the site. */
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
   /* Browser surfaces belong to the design system too. */
   ::selection {
     background: color-mix(in srgb, var(--bronze) 30%, transparent);
@@ -176,6 +200,13 @@
     outline: 2px solid var(--bronze-strong);
     outline-offset: 2px;
     border-radius: 1px;
+  }
+
+  /* Bands keep their ground in both themes, so the light-theme focus bronze
+     lands on ink and nearly disappears. The band carries its own accent. */
+  .band-ink :focus-visible,
+  [data-hero="ink"]:not([data-stuck]) :focus-visible {
+    outline-color: var(--band-accent);
   }
 
   a {
@@ -225,7 +256,7 @@
     font-weight: 680;
     font-size: clamp(2.05rem, 6.6vw, 5.6rem);
     line-height: 0.92;
-    letter-spacing: -0.042em;
+    letter-spacing: -0.04em;
   }
 
   .display-2 {
@@ -315,6 +346,9 @@
 
   /* The fill wipes in from the left rather than cross-fading, which reads as
      one object changing state instead of two colours swapping. */
+  /* Arrival is deliberate, departure is not: the fill takes 320ms to wipe
+     across and 180ms to leave, so moving the pointer away never feels like
+     waiting for the button to finish an idea. */
   .btn::before {
     content: "";
     position: absolute;
@@ -322,12 +356,13 @@
     z-index: -1;
     background: var(--bronze-strong);
     clip-path: inset(0 100% 0 0);
-    transition: clip-path 320ms var(--ease-out);
+    transition: clip-path 180ms var(--ease-out);
   }
 
   @media (hover: hover) and (pointer: fine) {
     .btn:hover::before {
       clip-path: inset(0 0 0 0);
+      transition-duration: 320ms;
     }
   }
 
@@ -382,6 +417,95 @@
     height: 1px;
     width: 100%;
     background: var(--hairline);
+  }
+
+  /* Form controls.
+     Held here rather than as a string of utilities in the contact page so the
+     boundary, the placeholder and the select arrow all come from one place
+     and stay in step across themes. */
+  .field {
+    width: 100%;
+    border: 1px solid var(--field-line);
+    border-radius: var(--radius-brand);
+    background: var(--surface-2);
+    padding: 0.625rem 0.875rem;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+    transition:
+      border-color 180ms var(--ease-out),
+      box-shadow 180ms var(--ease-out);
+  }
+
+  .field::placeholder {
+    color: var(--field-placeholder);
+  }
+
+  .field:hover {
+    border-color: color-mix(in srgb, var(--ink) 55%, var(--field-line));
+  }
+
+  /* A focused field reads as focused from across the page, not only at the
+     one-pixel edge: the ring is the border thickened optically, so nothing
+     reflows. */
+  .field:focus {
+    border-color: var(--ink);
+    outline: none;
+    box-shadow: inset 0 0 0 1px var(--ink);
+  }
+
+  .field:focus-visible {
+    outline: 2px solid var(--bronze-strong);
+    outline-offset: 2px;
+  }
+
+  /* The native select arrow is a browser default that belongs to no design
+     system, and a CSS triangle is only a second one. This is Phosphor's
+     caret-down, the same family and stroke as every other icon on the site,
+     masked so its colour comes from the token and follows the theme. */
+  select.field {
+    appearance: none;
+    cursor: pointer;
+    padding-inline-end: 2.75rem;
+  }
+
+  /* The prompt option is required and empty, so the control is invalid until
+     a real choice is made. That is exactly when it should read as a
+     placeholder rather than as an answer. */
+  select.field:invalid {
+    color: var(--field-placeholder);
+  }
+
+  select.field option {
+    color: var(--ink);
+  }
+
+  .field-select {
+    position: relative;
+  }
+
+  .field-select::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: 0.95rem;
+    inset-block-start: 50%;
+    width: 0.9rem;
+    height: 0.9rem;
+    translate: 0 -50%;
+    pointer-events: none;
+    background-color: var(--ink-soft);
+    transition: background-color 180ms var(--ease-out);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M213.66 101.66l-80 80a8 8 0 0 1-11.32 0l-80-80A8 8 0 0 1 53.66 90.34L128 164.69l74.34-74.35a8 8 0 0 1 11.32 11.32z'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+  }
+
+  .field-select:focus-within::after {
+    background-color: var(--ink);
+  }
+
+  textarea.field {
+    resize: vertical;
+    min-height: 8rem;
   }
 
   /* Long-form legal prose. Written here rather than pulled from a plugin so the
@@ -551,10 +675,19 @@
      declaration is simply ignored and the content is already visible. */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
+      /* --reveal-delay used to be written into the markup in 37 places and
+         read by nothing: a scroll-driven animation has no clock, so
+         animation-delay is meaningless on it. The cascade is a scroll
+         offset instead — a later sibling starts its rise a little further
+         down the entry range. Dividing the authored duration by 40ms keeps
+         the markup unchanged and lands every shift between 2% and 10%,
+         which reads as a cascade without making the last item wait. */
       [data-reveal] {
+        --reveal-shift: calc(var(--reveal-delay, 0ms) / 40ms * 1%);
         animation: reveal-rise linear both;
         animation-timeline: view();
-        animation-range: entry 0% entry 45%;
+        animation-range: entry var(--reveal-shift)
+          entry calc(45% + var(--reveal-shift));
       }
 
       @keyframes reveal-rise {

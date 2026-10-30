@@ -16,6 +16,8 @@ interface Props {
   /** "ink" when the page opens on a dark band, so the header inverts. */
   heroTone?: "ink" | "paper";
   isHome?: boolean;
+  /** Passed through to the page's schema.org node. */
+  pageType?: "WebPage" | "ContactPage" | "AboutPage" | "CollectionPage";
   noindex?: boolean;
 }
 
@@ -27,6 +29,7 @@ const {
   breadcrumbs,
   heroTone = "paper",
   isHome = false,
+  pageType = "WebPage",
   noindex = false,
 } = Astro.props;
 
@@ -41,6 +44,11 @@ if (!common) throw new Error(`Missing common copy for locale "${locale}"`);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
 
+    {/* Browsers ask for /favicon.ico whether or not it is declared, and
+        without one every page load carried a 404. Declared first so the
+        request is at least deliberate; the PNGs below are what modern
+        browsers actually pick. */}
+    <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
@@ -63,6 +71,7 @@ if (!common) throw new Error(`Missing common copy for locale "${locale}"`);
       description={description}
       breadcrumbs={breadcrumbs}
       isHome={isHome}
+      pageType={pageType}
       noindex={noindex}
     />
 

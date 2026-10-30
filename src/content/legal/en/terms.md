@@ -85,7 +85,7 @@ the content on this site does and does not represent.
 ## Governing law
 
 These terms are governed by the laws of the Republic of Indonesia, and disputes
-fall to the courts of Jakarta Selatan.
+fall to the courts of Depok, West Java.
 
 ## Contact
 

@@ -87,7 +87,7 @@ diwakili isi situs ini.
 ## Hukum yang berlaku
 
 Ketentuan ini tunduk pada hukum Republik Indonesia, dan sengketa diselesaikan
-di pengadilan Jakarta Selatan.
+di pengadilan Depok, Jawa Barat.
 
 ## Kontak
 

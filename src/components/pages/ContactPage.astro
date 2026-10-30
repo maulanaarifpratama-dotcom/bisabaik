@@ -22,8 +22,9 @@ const t = entry.data;
 const f = t.form;
 const c = commonEntry.data;
 
-const field =
-  "w-full rounded-[2px] border border-line bg-surface-2 px-3.5 py-2.5 text-[15px] text-ink placeholder:text-ink-soft/70 transition-colors duration-200 focus:border-ink focus:outline-none";
+/* The control itself is `.field` in the stylesheet: boundary, placeholder,
+   focus ring and the select arrow all live together there. */
+const field = "field";
 const label =
   "block text-[12px] font-medium tracking-[0.1em] text-ink-soft uppercase";
 ---
@@ -33,6 +34,7 @@ const label =
   path="/contact"
   title={t.meta.title}
   description={t.meta.description}
+  pageType="ContactPage"
   heroTone="ink"
   breadcrumbs={[{ name: t.header.title, path: "/contact" }]}
 >
@@ -122,25 +124,25 @@ const label =
 
           <div>
             <label class={label} for="cf-interest">{f.interest}</label>
-            <select
-              class={`${field} mt-2 cursor-pointer`}
-              id="cf-interest"
-              name="interest"
-              required
-            >
-              <option value="" disabled selected>{f.interestPlaceholder}</option>
-              {
-                f.interestOptions.map((option) => (
-                  <option value={option.value}>{option.label}</option>
-                ))
-              }
-            </select>
+            {/* The wrapper exists only to hang the drawn caret on. */}
+            <div class="field-select mt-2">
+              <select class={field} id="cf-interest" name="interest" required>
+                <option value="" disabled selected>
+                  {f.interestPlaceholder}
+                </option>
+                {
+                  f.interestOptions.map((option) => (
+                    <option value={option.value}>{option.label}</option>
+                  ))
+                }
+              </select>
+            </div>
           </div>
 
           <div>
             <label class={label} for="cf-message">{f.message}</label>
             <textarea
-              class={`${field} mt-2 resize-y`}
+              class={`${field} mt-2`}
               id="cf-message"
               name="message"
               rows="5"
@@ -164,7 +166,7 @@ const label =
               role="status"
               aria-live="polite"
               hidden
-              class="mt-5 border-l-2 py-1 pl-4 text-[14px] leading-relaxed"
+              class="mt-5 border-l py-1 pl-4 text-[14px] leading-relaxed"
             >
             </p>
 
