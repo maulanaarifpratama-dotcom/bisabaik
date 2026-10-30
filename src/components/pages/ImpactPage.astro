@@ -4,6 +4,7 @@ import { Icon } from "astro-icon/components";
 import { getEntry } from "astro:content";
 import Base from "@/layouts/Base.astro";
 import PageHeader from "@/components/site/PageHeader.astro";
+import ImpactMap from "@/components/site/ImpactMap.astro";
 import SectionHead from "@/components/site/SectionHead.astro";
 import { image } from "@/lib/images";
 import type { Locale } from "@/i18n";
@@ -30,7 +31,7 @@ const t = entry.data;
   <PageHeader
     title={t.header.title}
     intro={t.header.intro}
-    imageKey="hero-impact"
+    imageKey="rice-terraces-walker"
     imageAlt={t.header.imageAlt}
   />
 
@@ -38,14 +39,7 @@ const t = entry.data;
     <SectionHead heading={t.presence.heading} />
 
     <div data-reveal-clip class="relative mb-12 overflow-hidden border border-line bg-surface-2">
-      <Image
-        src={image("impact-map")}
-        alt={t.presence.mapAlt}
-        widths={[720, 1200]}
-        sizes="(min-width: 1024px) 80vw, 100vw"
-        loading="lazy"
-        class="h-full w-full object-contain"
-      />
+      <ImpactMap alt={t.presence.mapAlt} />
     </div>
 
     <div class="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
@@ -72,11 +66,12 @@ const t = entry.data;
   <section class="grid border-b border-line lg:grid-cols-12">
     <div class="relative min-h-[20rem] lg:col-span-6 lg:min-h-[32rem]">
       <Image
-        src={image("pillar-msme")}
+        src={image("chili-vendor")}
         alt={t.livelihood.imageAlt}
         widths={[640, 1024]}
         sizes="(min-width: 1024px) 50vw, 100vw"
         loading="lazy"
+        quality={68}
         class="absolute inset-0 h-full w-full object-cover"
       />
     </div>

@@ -22,10 +22,10 @@ const partners = (await getCollection("partners")).sort(
 );
 
 const GROUP_IMAGE: Record<string, ImageKey> = {
-  philanthropic: "children-community",
-  corporate: "uniformed-team",
-  development: "circle-discussion",
-  government: "produce-baskets",
+  philanthropic: "elder-woman-portrait",
+  corporate: "chili-vendor",
+  development: "village-women-laughing",
+  government: "market-women",
 };
 ---
 
@@ -41,7 +41,7 @@ const GROUP_IMAGE: Record<string, ImageKey> = {
   <PageHeader
     title={t.header.title}
     intro={t.header.intro}
-    imageKey="hero-partners"
+    imageKey="village-gathering"
     imageAlt={t.header.imageAlt}
   />
 
@@ -74,6 +74,7 @@ const GROUP_IMAGE: Record<string, ImageKey> = {
                   widths={[640, 1024]}
                   sizes="(min-width: 1024px) 62vw, 100vw"
                   loading="lazy"
+                  quality={68}
                   class="absolute inset-0 h-full w-full object-cover"
                 />
               </div>

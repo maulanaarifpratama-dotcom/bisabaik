@@ -42,13 +42,14 @@ const [lead, ...rest] = flagships;
   <section class="band-ink relative isolate overflow-hidden">
     <div class="hero-media absolute inset-0">
       <Image
-        src={image("hero-delivery")}
+        src={image("rice-planting-hills")}
         alt={t.hero.imageAlt}
-        widths={[768, 1280, 1920]}
+        widths={[640, 1024, 1600]}
         sizes="100vw"
         loading="eager"
         fetchpriority="high"
-        class="h-full w-full object-cover"
+        quality={58}
+        class="h-full w-full translate-x-[16%] object-cover [mask-image:linear-gradient(to_right,transparent_0%,black_38%)]"
       />
     </div>
     <!-- Three scrims, three jobs. Each is dense only where something has to
@@ -119,11 +120,12 @@ const [lead, ...rest] = flagships;
         class="relative aspect-4/5 overflow-hidden lg:col-span-5 lg:col-start-8"
       >
         <Image
-          src={image("circular-economy")}
+          src={image("farmer-elder-baskets")}
           alt={t.positioning.imageAlt}
           widths={[420, 720]}
           sizes="(min-width: 1024px) 38vw, 100vw"
           loading="lazy"
+          quality={68}
           class="absolute inset-0 h-full w-full object-cover"
         />
       </div>
@@ -145,12 +147,13 @@ const [lead, ...rest] = flagships;
         class="relative isolate flex min-h-[24rem] flex-col justify-end overflow-hidden bg-band p-9 md:p-12 lg:col-span-7"
       >
         <Image
-          src={image("uniformed-team")}
+          src={image("health-post-community")}
           alt=""
           aria-hidden="true"
           widths={[640, 960]}
           sizes="(min-width: 1024px) 55vw, 100vw"
           loading="lazy"
+          quality={68}
           class="absolute inset-0 h-full w-full object-cover"
         />
         <div class="absolute inset-0 bg-linear-to-t from-band via-band/90 to-band/40"></div>
@@ -242,12 +245,13 @@ const [lead, ...rest] = flagships;
             class="relative min-h-[16rem] lg:col-span-7 lg:min-h-[26rem]"
           >
             <Image
-              src={image("pillar-msme")}
+              src={image("market-women")}
               alt=""
               aria-hidden="true"
               widths={[640, 1024]}
               sizes="(min-width: 1024px) 58vw, 100vw"
               loading="lazy"
+              quality={68}
               class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-out)] group-hover:scale-[1.04]"
             />
           </div>
@@ -301,11 +305,12 @@ const [lead, ...rest] = flagships;
       class="relative min-h-[22rem] lg:col-span-7 lg:min-h-[36rem]"
     >
       <Image
-        src={image("circle-discussion")}
+        src={image("village-women-laughing")}
         alt={t.principles.imageAlt}
         widths={[768, 1280]}
         sizes="(min-width: 1024px) 58vw, 100vw"
         loading="lazy"
+        quality={68}
         class="absolute inset-0 h-full w-full object-cover"
       />
     </div>

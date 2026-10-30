@@ -8,7 +8,7 @@ description: >-
 intro: >-
   We publish descriptions of programs, partnerships and results. This page sets
   out how those descriptions should be read.
-updated: 7 September 2026
+updated: 30 October 2026
 updatedLabel: Last updated
 ---
 
@@ -48,10 +48,30 @@ publications reflect our intentions at the time of writing. Plans change.
 
 ## Photography
 
-Photographs on this site come from our own program documentation and are used
-with the consent of the communities and teams shown. They illustrate the kind
-of work described nearby. A photograph is not necessarily taken at the specific
-project it appears next to.
+The photographs on this site are licensed stock photographs from Unsplash,
+chosen because they were taken in Indonesia. They are not documentation of our
+programs, and the people in them are not our staff, partners or beneficiaries.
+They show the settings and the kind of work described nearby, nothing more.
+Where we hold our own documentation and the consent to use it, it will replace
+these.
+
+Credits, with thanks to the photographers:
+
+- Rice planting beneath forested hills: [RS Riduan](https://unsplash.com/photos/a-couple-of-people-that-are-standing-in-a-field-dcn4xqKLQTI)
+- Farmer with baskets, Bali: [Who’s Denilo ?](https://unsplash.com/photos/man-in-grey-polo-shirt-carrying-baskets-xj7HV0FvSg0)
+- Community health post: [Mufid Majnun](https://unsplash.com/photos/a-group-of-people-in-a-room-ladIl7DD8nw)
+- Street market vendors: [septiyeni .36](https://unsplash.com/photos/selective-focus-photography-of-selling-food-on-streety-AGRkhWqdZ8g)
+- Village women laughing, Tabanan: [Tyler Morgan](https://unsplash.com/photos/two-women-looking-at-the-back-while-smiling-and-taking-picture-WSrgO-8GYgo)
+- Chili vendor, Tangerang: [Cecep Rahmat](https://unsplash.com/photos/a-woman-standing-in-front-of-a-pile-of-vegetables-dzsGZKUzsd0)
+- Rice terraces at sunrise, Sidemen, Bali: [Geio Tischler](https://unsplash.com/photos/person-walking-through-green-rice-terraces-7hww7t6NLcg)
+- Village celebration, Tasikmalaya: [firman fatthul](https://unsplash.com/photos/a-group-of-people-standing-outside-a-building-uUao11JBlHw)
+- Woman waving, Ubud: [Diego Morales](https://unsplash.com/photos/smiling-woman-in-gray-crew-neck-shirt-wearing-white-red-and-green-knit-cap-3r0ebTocOso)
+- Teacher and students: [Fajar Herlambang STUDIO](https://unsplash.com/photos/a-group-of-people-in-clothing-meovJ4hqaao)
+- Street sweeper, Bandung: [Abdul Ridwan](https://unsplash.com/photos/a-street-sweeper-stands-proudly-with-his-brooms-iBTlYUo_jqQ)
+- Penglipuran village, Bali: [Galuh Sari](https://unsplash.com/photos/people-walking-down-a-village-path-with-traditional-buildings-Gt-r8JWFHYY)
+- Batik canting, Yogyakarta: [Mahmur Marganti](https://unsplash.com/photos/person-holding-brown-metal-tool-8Bg8N8HtiWI)
+- Older woman in an orange headwrap: [Carles Rabada](https://unsplash.com/photos/woman-smiling-qIBVHDafIdw)
+- Older man beside a garden wall, Bali: [Ruben Hutabarat](https://unsplash.com/photos/man-siting-beside-wall-near-trees-I0uU4rjFGs8)
 
 ## External content
 

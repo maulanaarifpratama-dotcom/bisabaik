@@ -18,9 +18,9 @@ if (!entry) throw new Error(`Missing what-we-do copy for locale "${locale}"`);
 const t = entry.data;
 
 const PILLAR_IMAGE: Record<"delivery" | "exit" | "market", ImageKey> = {
-  delivery: "uniformed-team",
-  exit: "training-whiteboard",
-  market: "pillar-msme",
+  delivery: "school-fieldwork",
+  exit: "batik-hands",
+  market: "market-women",
 };
 ---
 
@@ -35,7 +35,7 @@ const PILLAR_IMAGE: Record<"delivery" | "exit" | "market", ImageKey> = {
   <PageHeader
     title={t.header.title}
     intro={t.header.intro}
-    imageKey="hero-what-we-do"
+    imageKey="health-post-community"
     imageAlt={t.header.imageAlt}
   />
 
@@ -83,6 +83,7 @@ const PILLAR_IMAGE: Record<"delivery" | "exit" | "market", ImageKey> = {
                 widths={[480, 800]}
                 sizes="(min-width: 768px) 32vw, 100vw"
                 loading="lazy"
+                quality={68}
                 class="absolute inset-0 h-full w-full object-cover"
               />
             </div>

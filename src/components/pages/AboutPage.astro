@@ -30,7 +30,7 @@ const t = entry.data;
   <PageHeader
     title={t.header.title}
     intro={t.header.intro}
-    imageKey="children-community"
+    imageKey="village-path"
     imageAlt={t.header.imageAlt}
   />
 
@@ -77,11 +77,12 @@ const t = entry.data;
   <section class="grid border-b border-line lg:grid-cols-12">
     <div class="relative order-2 min-h-[20rem] lg:order-1 lg:col-span-5 lg:min-h-full">
       <Image
-        src={image("hero-how-we-work")}
+        src={image("elder-woman-portrait")}
         alt={t.why.imageAlt}
         widths={[640, 1024]}
         sizes="(min-width: 1024px) 42vw, 100vw"
         loading="lazy"
+        quality={68}
         class="absolute inset-0 h-full w-full object-cover"
       />
     </div>
@@ -145,11 +146,12 @@ const t = entry.data;
         </p>
         <div data-reveal class="relative mt-10 aspect-4/3 overflow-hidden rounded-[2px]">
           <Image
-            src={image("produce-baskets")}
+            src={image("school-fieldwork")}
             alt={t.network.imageAlt}
             widths={[480, 800]}
             sizes="(min-width: 1024px) 40vw, 100vw"
             loading="lazy"
+            quality={68}
             class="absolute inset-0 h-full w-full object-cover"
           />
         </div>

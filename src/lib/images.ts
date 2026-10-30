@@ -1,63 +1,50 @@
 import type { ImageMetadata } from "astro";
 
-import heroContact from "@/assets/hero-contact.jpg";
-import heroDelivery from "@/assets/hero-delivery.jpg";
-import heroHowWeWork from "@/assets/hero-howework.jpg";
-import heroImpact from "@/assets/hero-impact.jpg";
-import heroInsights from "@/assets/hero-insights.jpg";
-import heroPartners from "@/assets/hero-partners.jpg";
-import heroProjects from "@/assets/hero-projects.jpg";
-import heroWhatWeDo from "@/assets/hero-whatwedo.jpg";
-import pillarCircular from "@/assets/pillar-circular.jpg";
-import pillarMsme from "@/assets/pillar-msme.jpg";
-import childrenCommunity from "@/assets/photos/pdf-children-community.jpg";
-import circleDiscussion from "@/assets/photos/pdf-circle-discussion.jpg";
-import groupCircle from "@/assets/photos/pdf-group-circle.jpg";
-import produceBaskets from "@/assets/photos/pdf-produce-baskets.jpg";
-import trainingWhiteboard from "@/assets/photos/pdf-training-whiteboard.jpg";
-import uniformedTeam from "@/assets/photos/pdf-uniformed-team.jpg";
-import trainingSession from "@/assets/photos/training-session.jpg";
-import circularEconomy from "@/assets/circular-economy.jpg";
-import heroLandscape from "@/assets/hero-landscape.jpg";
-import msmeMarket from "@/assets/msme-market.jpg";
-import communityChildren from "@/assets/photos/community-children.jpg";
-import impactMap from "@/assets/photos/pdf-impact-map.jpg";
-import workshopScreen from "@/assets/photos/pdf-workshop-screen.jpg";
-import programMeeting from "@/assets/photos/program-meeting.jpg";
+import batikHands from "@/assets/stock/batik-hands.jpg";
+import chiliVendor from "@/assets/stock/chili-vendor.jpg";
+import elderMan from "@/assets/stock/elder-man.jpg";
+import elderWomanPortrait from "@/assets/stock/elder-woman-portrait.jpg";
+import elderWomanWave from "@/assets/stock/elder-woman-wave.jpg";
+import farmerElderBaskets from "@/assets/stock/farmer-elder-baskets.jpg";
+import healthPostCommunity from "@/assets/stock/health-post-community.jpg";
+import marketWomen from "@/assets/stock/market-women.jpg";
+import ricePlantingHills from "@/assets/stock/rice-planting-hills.jpg";
+import riceTerracesWalker from "@/assets/stock/rice-terraces-walker.jpg";
+import schoolFieldwork from "@/assets/stock/school-fieldwork.jpg";
+import streetSweeper from "@/assets/stock/street-sweeper.jpg";
+import villageGathering from "@/assets/stock/village-gathering.jpg";
+import villagePath from "@/assets/stock/village-path.jpg";
+import villageWomenLaughing from "@/assets/stock/village-women-laughing.jpg";
 
 /**
- * Only photographs of the actual work are registered here. Clip art, slide
- * captures with text burned in, and blank textures are deliberately left out:
- * if a key exists, someone will eventually ship it.
+ * Photographs are licensed stock, not the organisation's own programme
+ * documentation, and every one was checked against its Unsplash page for where
+ * it was taken: three candidates were dropped because the page placed them in
+ * India, Taiwan, or nowhere that could be confirmed. Credits live in the
+ * Disclaimer, and the alt text describes only what is visible. It never says
+ * "our field team", because these are not.
  *
  * Content files reference photography by key, never by path, so that copy can
- * move to a CMS without carrying build-time import paths with it.
+ * move to a CMS without carrying build-time import paths with it. Keys name
+ * the picture, not the slot, so a photo can move between pages without the key
+ * lying about where it is.
  */
 export const IMAGES = {
-  "hero-contact": heroContact,
-  "hero-delivery": heroDelivery,
-  "hero-how-we-work": heroHowWeWork,
-  "hero-impact": heroImpact,
-  "hero-insights": heroInsights,
-  "hero-partners": heroPartners,
-  "hero-projects": heroProjects,
-  "hero-what-we-do": heroWhatWeDo,
-  "pillar-circular": pillarCircular,
-  "pillar-msme": pillarMsme,
-  "children-community": childrenCommunity,
-  "circle-discussion": circleDiscussion,
-  "group-circle": groupCircle,
-  "produce-baskets": produceBaskets,
-  "training-whiteboard": trainingWhiteboard,
-  "uniformed-team": uniformedTeam,
-  "training-session": trainingSession,
-  "circular-economy": circularEconomy,
-  "hero-landscape": heroLandscape,
-  "msme-market": msmeMarket,
-  "community-children": communityChildren,
-  "impact-map": impactMap,
-  "workshop-screen": workshopScreen,
-  "program-meeting": programMeeting,
+  "batik-hands": batikHands,
+  "chili-vendor": chiliVendor,
+  "elder-man": elderMan,
+  "elder-woman-portrait": elderWomanPortrait,
+  "elder-woman-wave": elderWomanWave,
+  "farmer-elder-baskets": farmerElderBaskets,
+  "health-post-community": healthPostCommunity,
+  "market-women": marketWomen,
+  "rice-planting-hills": ricePlantingHills,
+  "rice-terraces-walker": riceTerracesWalker,
+  "school-fieldwork": schoolFieldwork,
+  "street-sweeper": streetSweeper,
+  "village-gathering": villageGathering,
+  "village-path": villagePath,
+  "village-women-laughing": villageWomenLaughing,
 } satisfies Record<string, ImageMetadata>;
 
 export type ImageKey = keyof typeof IMAGES;

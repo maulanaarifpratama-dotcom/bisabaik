@@ -36,7 +36,8 @@ const engagements = all.filter((p) => p.data.category === "engagement");
   <PageHeader
     title={t.header.title}
     intro={t.header.intro}
-    imageKey="hero-projects"
+    imageKey="chili-vendor"
+    flip
     imageAlt={t.header.imageAlt}
   />
 
@@ -55,11 +56,12 @@ const engagements = all.filter((p) => p.data.category === "engagement");
       <div data-reveal class="lg:col-span-7">
         <div class="relative aspect-16/9 overflow-hidden rounded-[2px]">
           <Image
-            src={image("hero-delivery")}
+            src={image("rice-planting-hills")}
             alt={t.flagship.imageAlt}
             widths={[640, 1024]}
             sizes="(min-width: 1024px) 55vw, 100vw"
             loading="lazy"
+            quality={68}
             class="absolute inset-0 h-full w-full object-cover"
           />
         </div>

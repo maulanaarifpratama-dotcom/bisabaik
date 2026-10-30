@@ -7,9 +7,15 @@ interface Props {
   intro: string;
   imageKey: ImageKey;
   imageAlt: string;
+  /**
+   * Mirror the photograph. The headline sits on the left, so a subject who
+   * happens to be on the left would be read through the type. Mirroring is
+   * only safe where the frame has no lettering in it.
+   */
+  flip?: boolean;
 }
 
-const { title, intro, imageKey, imageAlt } = Astro.props;
+const { title, intro, imageKey, imageAlt, flip = false } = Astro.props;
 const photo = image(imageKey);
 ---
 
@@ -18,11 +24,12 @@ const photo = image(imageKey);
     <Image
       src={photo}
       alt={imageAlt}
-      widths={[768, 1280, 1920]}
+      widths={[640, 1024, 1600]}
       sizes="100vw"
       loading="eager"
       fetchpriority="high"
-      class="h-full w-full object-cover"
+      quality={58}
+      class:list={["h-full w-full object-cover", flip && "-scale-x-100"]}
     />
   </div>
 

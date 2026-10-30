@@ -9,7 +9,7 @@ description: >-
 intro: >-
   Kami menerbitkan penjelasan tentang program, kemitraan, dan hasil kerja.
   Halaman ini menjelaskan bagaimana penjelasan itu sebaiknya dibaca.
-updated: 7 September 2026
+updated: 30 Oktober 2026
 updatedLabel: Terakhir diperbarui
 ---
 
@@ -51,10 +51,30 @@ Rencana bisa berubah.
 
 ## Fotografi
 
-Foto di situs ini berasal dari dokumentasi program kami sendiri dan dipakai
-dengan persetujuan komunitas serta tim yang tampak di dalamnya. Foto-foto itu
-menggambarkan jenis pekerjaan yang dibahas di dekatnya. Sebuah foto tidak
-selalu diambil di proyek spesifik yang tertulis di sebelahnya.
+Foto di situs ini adalah foto stok berlisensi dari Unsplash, dipilih karena
+diambil di Indonesia. Foto-foto itu bukan dokumentasi program kami, dan orang
+di dalamnya bukan staf, mitra, atau penerima manfaat kami. Foto-foto itu hanya
+menggambarkan suasana dan jenis pekerjaan yang dibahas di dekatnya. Kalau kami
+sudah memegang dokumentasi sendiri beserta persetujuan pemakaiannya, foto-foto
+itu akan menggantikan yang ini.
+
+Kredit, dengan terima kasih kepada para fotografer:
+
+- Petani menanam padi di bawah perbukitan: [RS Riduan](https://unsplash.com/photos/a-couple-of-people-that-are-standing-in-a-field-dcn4xqKLQTI)
+- Petani memikul keranjang, Bali: [Who’s Denilo ?](https://unsplash.com/photos/man-in-grey-polo-shirt-carrying-baskets-xj7HV0FvSg0)
+- Pos kesehatan masyarakat: [Mufid Majnun](https://unsplash.com/photos/a-group-of-people-in-a-room-ladIl7DD8nw)
+- Pedagang pasar kaget: [septiyeni .36](https://unsplash.com/photos/selective-focus-photography-of-selling-food-on-streety-AGRkhWqdZ8g)
+- Perempuan desa tertawa, Tabanan: [Tyler Morgan](https://unsplash.com/photos/two-women-looking-at-the-back-while-smiling-and-taking-picture-WSrgO-8GYgo)
+- Pedagang cabai, Tangerang: [Cecep Rahmat](https://unsplash.com/photos/a-woman-standing-in-front-of-a-pile-of-vegetables-dzsGZKUzsd0)
+- Sawah terasering saat fajar, Sidemen, Bali: [Geio Tischler](https://unsplash.com/photos/person-walking-through-green-rice-terraces-7hww7t6NLcg)
+- Perayaan kampung, Tasikmalaya: [firman fatthul](https://unsplash.com/photos/a-group-of-people-standing-outside-a-building-uUao11JBlHw)
+- Perempuan melambai, Ubud: [Diego Morales](https://unsplash.com/photos/smiling-woman-in-gray-crew-neck-shirt-wearing-white-red-and-green-knit-cap-3r0ebTocOso)
+- Guru dan pelajar: [Fajar Herlambang STUDIO](https://unsplash.com/photos/a-group-of-people-in-clothing-meovJ4hqaao)
+- Petugas kebersihan, Bandung: [Abdul Ridwan](https://unsplash.com/photos/a-street-sweeper-stands-proudly-with-his-brooms-iBTlYUo_jqQ)
+- Desa Penglipuran, Bali: [Galuh Sari](https://unsplash.com/photos/people-walking-down-a-village-path-with-traditional-buildings-Gt-r8JWFHYY)
+- Canting batik, Yogyakarta: [Mahmur Marganti](https://unsplash.com/photos/person-holding-brown-metal-tool-8Bg8N8HtiWI)
+- Perempuan lansia berikat kepala jingga: [Carles Rabada](https://unsplash.com/photos/woman-smiling-qIBVHDafIdw)
+- Lelaki lansia di dekat pagar taman, Bali: [Ruben Hutabarat](https://unsplash.com/photos/man-siting-beside-wall-near-trees-I0uU4rjFGs8)
 
 ## Konten eksternal
 

@@ -11,7 +11,8 @@ header:
     sebagai satu proses. Tiap kolaborasi dijelaskan lewat peran dan konteksnya,
     karena logo di dinding tidak menceritakan apa pun soal isi pekerjaannya.
   imageAlt: >-
-    Pertemuan koordinasi antarlembaga mitra di Indonesia.
+    Warga berbusana meriah berkumpul di jalan kampung yang dihias untuk
+    perayaan warga.
 
 groups:
   - key: philanthropic
@@ -20,24 +21,28 @@ groups:
       Lembaga zakat dan yayasan yang bermitra untuk pelaksanaan dan exit yang
       disiplin.
     imageAlt: >-
-      Anak-anak di komunitas mitra yang didukung lewat program filantropi.
+      Seorang perempuan lansia berikat kepala jingga, dengan sawah dan pondok
+      tani di belakangnya.
   - key: corporate
     label: CSR dan ESG korporasi
     blurb: >-
       Mitra korporasi yang menyelaraskan program dampak dengan akuntabilitas
       operasional.
     imageAlt: >-
-      Tinjauan program korporasi bersama tim operasi lapangan BisaBaik.
+      Seorang perempuan muda berkerudung ungu menyortir sayuran di lapak pasar
+      yang penuh cabai merah.
   - key: development
     label: Organisasi pembangunan
     blurb: >-
       Mitra pembangunan nasional dan internasional yang berbagi kerja lapangan.
     imageAlt: >-
-      Dialog ko-desain bersama mitra pembangunan dan warga.
+      Dua perempuan lansia di desa tertawa bersama, salah satunya dengan
+      handuk di kepala.
   - key: government
     label: Pemerintah dan sektor publik
     blurb: >-
       Kolaborasi sektor publik untuk keberlanjutan pasar dan tata kelola
       program.
     imageAlt: >-
-      Agregasi UMKM yang menopang keberlanjutan pasar bersama pemerintah.
+      Para perempuan menjual gorengan dan jajanan tradisional di pasar kaget
+      yang ramai.

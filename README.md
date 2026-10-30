@@ -72,6 +72,14 @@ Nothing else needs touching.
 Photography is referenced by key, never by path. The key list is in
 `src/lib/images.ts`.
 
+The photographs are licensed stock from Unsplash, not programme documentation,
+and the alt text describes only what is visible: never write "our field team" for
+one of them. Before adding a photo, open its Unsplash page and confirm where it
+was taken (three candidates were dropped for being in India, Taiwan, or
+unconfirmable), then add the photographer to the Disclaimer's Photography
+section in both languages. The impact map is generated geometry in
+`src/components/site/ImpactMap.astro`, not an image.
+
 ## Languages and routing
 
 English is served from the bare paths the site is already indexed on. Indonesian

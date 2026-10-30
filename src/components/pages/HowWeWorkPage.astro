@@ -18,9 +18,9 @@ if (!entry) throw new Error(`Missing how-we-work copy for locale "${locale}"`);
 const t = entry.data;
 
 const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
-  design: "circle-discussion",
-  create: "group-circle",
-  sustain: "training-whiteboard",
+  design: "village-women-laughing",
+  create: "health-post-community",
+  sustain: "batik-hands",
 };
 ---
 
@@ -35,7 +35,8 @@ const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
   <PageHeader
     title={t.header.title}
     intro={t.header.intro}
-    imageKey="hero-how-we-work"
+    imageKey="school-fieldwork"
+    flip
     imageAlt={t.header.imageAlt}
   />
 
@@ -60,6 +61,7 @@ const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
                   widths={[400, 700]}
                   sizes="(min-width: 768px) 24vw, 100vw"
                   loading="lazy"
+                  quality={68}
                   class="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
@@ -89,11 +91,12 @@ const PHASE_IMAGE: Record<"design" | "create" | "sustain", ImageKey> = {
   <section class="grid border-b border-line bg-surface/50 lg:grid-cols-12">
     <div class="relative min-h-[20rem] lg:col-span-5 lg:min-h-full">
       <Image
-        src={image("training-session")}
+        src={image("village-gathering")}
         alt={t.risk.imageAlt}
         widths={[640, 1024]}
         sizes="(min-width: 1024px) 42vw, 100vw"
         loading="lazy"
+        quality={68}
         class="absolute inset-0 h-full w-full object-cover"
       />
     </div>

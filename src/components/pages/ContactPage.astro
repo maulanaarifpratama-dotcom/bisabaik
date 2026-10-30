@@ -41,7 +41,8 @@ const label =
   <PageHeader
     title={t.header.title}
     intro={t.header.intro}
-    imageKey="hero-contact"
+    imageKey="elder-woman-wave"
+    flip
     imageAlt={t.header.imageAlt}
   />
 
@@ -263,11 +264,12 @@ const label =
         <div>
           <div class="relative aspect-4/5 overflow-hidden rounded-[2px]">
             <Image
-              src={image("uniformed-team")}
+              src={image("elder-man")}
               alt={t.aside.imageAlt}
               widths={[400, 700]}
               sizes="(min-width: 1024px) 30vw, 100vw"
               loading="lazy"
+              quality={68}
               class="absolute inset-0 h-full w-full object-cover"
             />
           </div>

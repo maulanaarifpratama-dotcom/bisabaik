@@ -11,7 +11,8 @@ header:
     kemitraan, dan kelayakan pascaprogram terus diasah melawan kondisi
     sebenarnya.
   imageAlt: >-
-    Tim operasi lapangan BisaBaik menyusuri jalan setapak desa.
+    Para perempuan menjual gorengan dan jajanan tradisional di pasar kaget
+    yang ramai.
 
 labels:
   context: Konteks
@@ -31,7 +32,7 @@ exitForward:
     transisi kepemilikan lokal dan perpanjangan dampak lewat akses pasar
     domestik dan ekspor bagi UMKM penerima manfaat.
   imageAlt: >-
-    Tim lapangan BisaBaik meninjau rencana exit dan transisi di lokasi.
+    Seorang lelaki lansia berbaju putih duduk tenang di dekat pagar taman.
   stages:
     - title: Akhir program yang biasa
       body: >-
@@ -62,7 +63,8 @@ pasarbaik:
     pasar, itulah sebabnya keberlanjutan adalah model operasinya, bukan
     paragraf penutup.
   imageAlt: >-
-    Pelaku UMKM menyiapkan biji premium untuk kanal ekspor.
+    Seorang perempuan muda berkerudung ungu menyortir sayuran di lapak pasar
+    yang penuh cabai merah.
   facts:
     - { key: Fungsi, value: Mempertemukan permintaan dan pasokan }
     - { key: Jangkauan, value: Kanal domestik dan ekspor }
@@ -79,7 +81,8 @@ circular:
     menyeluruh dengan jalur yang jelas menuju pengelolaan mandiri oleh warga
     setempat.
   imageAlt: >-
-    Petugas bank sampah komunitas memilah plastik daur ulang.
+    Petugas kebersihan kota membawa sapu dan tong sampah di jalan kota di
+    Bandung.
   rolesHeading: Tiga peran kami sekaligus
   roles:
     - Pelaksana program
