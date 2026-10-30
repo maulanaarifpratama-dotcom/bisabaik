@@ -10,14 +10,14 @@ intro: >-
   Kebijakan ini menjelaskan apa yang dikumpulkan bisabaik.org, untuk apa, dan
   apa yang kami lakukan dengannya. Isinya menggambarkan perilaku situs yang
   sebenarnya, bukan salinan template.
-updated: 7 September 2026
+updated: 30 Oktober 2026
 updatedLabel: Terakhir diperbarui
 ---
 
 ## Siapa kami
 
 Situs ini dikelola **Yayasan Rumah Pembangunan Berkelanjutan**, yang
-menjalankan program Bisa Baik Bersama. Kantor kami di Jl. Raya Muchtar
+berkegiatan dengan nama Bisa Baik Bersama. Kantor kami di Jl. Raya Muchtar
 RT 05 RW 07 No. 7, Sawangan, Depok, Jawa Barat 16511, Indonesia.
 
 Untuk pertanyaan apa pun soal kebijakan ini atau soal data Anda, kirim surel ke

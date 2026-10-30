@@ -9,7 +9,7 @@ intro: >-
   These terms cover your use of this website. They do not govern any program,
   engagement or contract between Bisa Baik Bersama and a partner, which are set
   out in their own signed agreements.
-updated: 7 September 2026
+updated: 30 October 2026
 updatedLabel: Last updated
 ---
 
@@ -18,8 +18,8 @@ updatedLabel: Last updated
 By using bisabaik.org you accept these terms. If you do not accept them, please
 do not use the site.
 
-The site is operated by **Yayasan Rumah Pembangunan Berkelanjutan**, which runs
-the Bisa Baik Bersama program.
+The site is operated by **Yayasan Rumah Pembangunan Berkelanjutan**, which
+works under the name Bisa Baik Bersama.
 
 ## What this site is for
 

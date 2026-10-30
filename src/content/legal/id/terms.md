@@ -9,7 +9,7 @@ intro: >-
   Ketentuan ini mengatur penggunaan situs ini. Ia tidak mengatur program,
   penugasan, atau kontrak apa pun antara Bisa Baik Bersama dan mitra, yang
   diatur perjanjian tertulis masing-masing.
-updated: 7 September 2026
+updated: 30 Oktober 2026
 updatedLabel: Terakhir diperbarui
 ---
 
@@ -19,7 +19,7 @@ Dengan menggunakan bisabaik.org, Anda menerima ketentuan ini. Kalau Anda tidak
 menerimanya, mohon jangan menggunakan situs ini.
 
 Situs ini dikelola **Yayasan Rumah Pembangunan Berkelanjutan**, yang
-menjalankan program Bisa Baik Bersama.
+berkegiatan dengan nama Bisa Baik Bersama.
 
 ## Untuk apa situs ini
 

@@ -9,14 +9,14 @@ description: >-
 intro: >-
   This policy explains what bisabaik.org collects, why, and what we do with it.
   It describes how the site actually behaves rather than restating a template.
-updated: 7 September 2026
+updated: 30 October 2026
 updatedLabel: Last updated
 ---
 
 ## Who we are
 
 This website is operated by **Yayasan Rumah Pembangunan Berkelanjutan**, which
-runs the Bisa Baik Bersama program. Our office is at Jl. Raya Muchtar
+works under the name Bisa Baik Bersama. Our office is at Jl. Raya Muchtar
 RT 05 RW 07 No. 7, Sawangan, Depok, Jawa Barat 16511, Indonesia.
 
 For any question about this policy or about your data, write to
