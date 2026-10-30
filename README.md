@@ -72,7 +72,7 @@ Nothing else needs touching.
 Photography is referenced by key, never by path. The key list is in
 `src/lib/images.ts`.
 
-The photographs are licensed stock from Unsplash, not programme documentation,
+The photographs are licensed stock from Unsplash and Pexels, not programme documentation,
 and the alt text describes only what is visible: never write "our field team" for
 one of them. Before adding a photo, open its Unsplash page and confirm where it
 was taken (three candidates were dropped for being in India, Taiwan, or

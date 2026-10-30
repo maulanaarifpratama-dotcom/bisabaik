@@ -51,8 +51,8 @@ Rencana bisa berubah.
 
 ## Fotografi
 
-Foto di situs ini adalah foto stok berlisensi dari Unsplash, dipilih karena
-diambil di Indonesia. Foto-foto itu bukan dokumentasi program kami, dan orang
+Foto di situs ini adalah foto stok berlisensi dari Unsplash dan Pexels, dipilih
+karena diambil di Indonesia. Foto-foto itu bukan dokumentasi program kami, dan orang
 di dalamnya bukan staf, mitra, atau penerima manfaat kami. Foto-foto itu hanya
 menggambarkan suasana dan jenis pekerjaan yang dibahas di dekatnya. Kalau kami
 sudah memegang dokumentasi sendiri beserta persetujuan pemakaiannya, foto-foto
@@ -75,6 +75,9 @@ Kredit, dengan terima kasih kepada para fotografer:
 - Canting batik, Yogyakarta: [Mahmur Marganti](https://unsplash.com/photos/person-holding-brown-metal-tool-8Bg8N8HtiWI)
 - Perempuan lansia berikat kepala jingga: [Carles Rabada](https://unsplash.com/photos/woman-smiling-qIBVHDafIdw)
 - Lelaki lansia di dekat pagar taman, Bali: [Ruben Hutabarat](https://unsplash.com/photos/man-siting-beside-wall-near-trees-I0uU4rjFGs8)
+- Kejuaraan para-atletik nasional, Peparnas, Jawa Barat: [uiliamnornberg](https://www.pexels.com/photo/paralympic-athlete-throws-javelin-in-competition-40285276/) (Pexels)
+- Pasar terbuka, Papua: [tomfisk](https://www.pexels.com/photo/local-market-scene-in-agats-papua-indonesia-28528429/) (Pexels)
+- Penenun di lapak tekstil: [Bezalens](https://www.pexels.com/photo/traditional-weaving-in-west-nusa-tenggara-indonesia-36665420/) (Pexels)
 
 ## Konten eksternal
 

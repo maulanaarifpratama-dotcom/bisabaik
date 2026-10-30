@@ -48,8 +48,8 @@ publications reflect our intentions at the time of writing. Plans change.
 
 ## Photography
 
-The photographs on this site are licensed stock photographs from Unsplash,
-chosen because they were taken in Indonesia. They are not documentation of our
+The photographs on this site are licensed stock photographs from Unsplash and
+Pexels, chosen because they were taken in Indonesia. They are not documentation of our
 programs, and the people in them are not our staff, partners or beneficiaries.
 They show the settings and the kind of work described nearby, nothing more.
 Where we hold our own documentation and the consent to use it, it will replace
@@ -72,6 +72,9 @@ Credits, with thanks to the photographers:
 - Batik canting, Yogyakarta: [Mahmur Marganti](https://unsplash.com/photos/person-holding-brown-metal-tool-8Bg8N8HtiWI)
 - Older woman in an orange headwrap: [Carles Rabada](https://unsplash.com/photos/woman-smiling-qIBVHDafIdw)
 - Older man beside a garden wall, Bali: [Ruben Hutabarat](https://unsplash.com/photos/man-siting-beside-wall-near-trees-I0uU4rjFGs8)
+- National para-athletics competition, Peparnas, West Java: [uiliamnornberg](https://www.pexels.com/photo/paralympic-athlete-throws-javelin-in-competition-40285276/) (Pexels)
+- Open-air market, Papua: [tomfisk](https://www.pexels.com/photo/local-market-scene-in-agats-papua-indonesia-28528429/) (Pexels)
+- Weaver at a textile stall: [Bezalens](https://www.pexels.com/photo/traditional-weaving-in-west-nusa-tenggara-indonesia-36665420/) (Pexels)
 
 ## External content
 
