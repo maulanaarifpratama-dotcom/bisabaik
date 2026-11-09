@@ -98,6 +98,16 @@ principles:
     Dua perempuan lansia di desa tertawa bersama, salah satunya dengan handuk
     di kepala.
 
+updates:
+  heading: Kabar lapangan, lengkap dengan tanggal dan tempatnya.
+  body: >-
+    Apa yang kami laporkan di sini sudah diperiksa ulang terhadap kanal publik
+    kami sendiri. Kalau sebuah angka tidak bisa dipastikan, kami membiarkannya
+    kosong.
+  cta:
+    label: Semua kabar lapangan
+    href: /updates
+
 partners:
   heading: Lembaga yang memilih pelaksanaan yang akuntabel.
   cta:

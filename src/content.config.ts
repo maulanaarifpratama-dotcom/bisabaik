@@ -121,6 +121,7 @@ const home = defineCollection({
       cta,
       imageAlt: z.string(),
     }),
+    updates: z.object({ heading: z.string(), body: z.string(), cta }),
     partners: z.object({ heading: z.string(), cta }),
     close: z.object({
       heading: z.string(),
@@ -462,6 +463,63 @@ const insights = defineCollection({
   }),
 });
 
+const updatesPage = defineCollection({
+  loader: pageLoader("updates"),
+  schema: z.object({
+    meta,
+    header: pageHeader,
+    intro: z.object({ heading: z.string(), body: z.string() }),
+    labels: z.object({
+      location: z.string(),
+      beneficiaries: z.string(),
+      partner: z.string(),
+      source: z.string(),
+      detail: z.object({ report: z.string(), ongoing: z.string() }),
+      pillars: z.object({
+        education: z.string(),
+        humanity: z.string(),
+        empowerment: z.string(),
+      }),
+      programTypes: z.object({
+        "humanitarian-relief": z.string(),
+        "food-security": z.string(),
+        "orphan-care": z.string(),
+        "community-infrastructure": z.string(),
+        "csr-advisory": z.string(),
+      }),
+    }),
+  }),
+});
+
+const localizedUpdate = z.object({
+  title: z.string(),
+  body: z.string(),
+});
+
+const updates = defineCollection({
+  loader: glob({ pattern: "*.yaml", base: "./src/content/updates" }),
+  schema: z.object({
+    date: z.string(),
+    location: z.string(),
+    pillar: z.enum(["education", "humanity", "empowerment"]),
+    programType: z.enum([
+      "humanitarian-relief",
+      "food-security",
+      "orphan-care",
+      "community-infrastructure",
+      "csr-advisory",
+    ]),
+    beneficiaries: z.string().optional(),
+    partner: z.string().optional(),
+    source: z.string(),
+    /** "report": a dated, figured field report. "ongoing": a named programme
+     * area we can confirm exists but cannot yet report dates or reach for. */
+    detail: z.enum(["report", "ongoing"]).default("report"),
+    en: localizedUpdate,
+    id: localizedUpdate,
+  }),
+});
+
 const legal = defineCollection({
   loader: glob({
     pattern: "**/*.md",
@@ -498,5 +556,7 @@ export const collections = {
   partners,
   projects,
   insights,
+  updatesPage,
+  updates,
   legal,
 };

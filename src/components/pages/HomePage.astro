@@ -24,6 +24,17 @@ const partners = (await getCollection("partners")).sort(
   (a, b) => a.data.order - b.data.order,
 );
 
+const updatesEntry = await getEntry("updatesPage", locale);
+if (!updatesEntry) throw new Error(`Missing updates copy for locale "${locale}"`);
+const updatesLabels = updatesEntry.data.labels;
+
+const latestUpdates = (await getCollection("updates"))
+  .sort((a, b) => {
+    if (a.data.detail !== b.data.detail) return a.data.detail === "report" ? -1 : 1;
+    return a.data.date < b.data.date ? 1 : a.data.date > b.data.date ? -1 : 0;
+  })
+  .slice(0, 3);
+
 const href = (path: string) =>
   path.startsWith("http") ? path : localizePath(path, locale);
 
@@ -293,6 +304,59 @@ const [lead, ...rest] = flagships;
             </a>
           </li>
         ))
+      }
+    </ul>
+  </section>
+
+  {/* 5b. Field updates. Dated, text-forward log, no stock photo pretending
+         to be documentation of a specific event. */}
+  <section class="edge border-t border-line pt-20 pb-14 md:pt-24 md:pb-16">
+    <div
+      data-reveal
+      class="flex flex-col justify-between gap-6 border-b-2 border-ink pb-8 md:flex-row md:items-end"
+    >
+      <div class="max-w-2xl">
+        <h2 class="display-2">{t.updates.heading}</h2>
+        <p class="mt-5 text-[15.5px] leading-relaxed text-ink-soft">
+          {t.updates.body}
+        </p>
+      </div>
+      <a href={href(t.updates.cta.href)} class="link-rule shrink-0 text-[14px]">
+        {t.updates.cta.label}
+        <Icon name="ph:arrow-right" class="h-4 w-4" />
+      </a>
+    </div>
+
+    <ul>
+      {
+        latestUpdates.map((entry, i) => {
+          const c = entry.data[locale];
+          return (
+            <li data-reveal style={`--reveal-delay:${i * 70}ms`}>
+              <a
+                href={href("/updates")}
+                class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 border-t border-hairline py-8 transition-colors duration-300 hover:bg-surface/70"
+              >
+                <div class="col-span-12 flex flex-wrap items-center gap-x-3 gap-y-1 md:col-span-3">
+                  <span class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
+                    {entry.data.date}
+                  </span>
+                  <span class="label rounded-[2px] border border-line px-1.5 py-0.5">
+                    {updatesLabels.pillars[entry.data.pillar]}
+                  </span>
+                </div>
+                <h3 class="display-3 col-span-12 md:col-span-6">{c.title}</h3>
+                <span class="label col-span-11 md:col-span-2 md:text-right">
+                  {entry.data.location}
+                </span>
+                <Icon
+                  name="ph:arrow-up-right"
+                  class="col-span-1 h-4 w-4 justify-self-end text-ink-soft transition-transform duration-300 ease-[var(--ease-out)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 md:col-span-1"
+                />
+              </a>
+            </li>
+          );
+        })
       }
     </ul>
   </section>

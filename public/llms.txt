@@ -77,6 +77,7 @@ consumption and production).
 - [Partners](https://bisabaik.org/partners): each collaboration by role and context.
 - [Projects](https://bisabaik.org/projects): every engagement described through the same five questions.
 - [Flagship](https://bisabaik.org/flagship): Exit Forward, PasarBaik, circular economy.
+- [Updates](https://bisabaik.org/updates): dated, located field reports on programs in delivery.
 - [Insights](https://bisabaik.org/insights): frameworks and field notes.
 - [Contact](https://bisabaik.org/contact): inquiry form and direct details.
 

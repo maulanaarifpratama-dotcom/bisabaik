@@ -1,0 +1,41 @@
+meta:
+  title: "Kabar Lapangan: Program yang Sedang Berjalan"
+  description: >-
+    Laporan singkat bertanggal dan berlokasi dari program yang dijalankan Bisa
+    Baik Bersama, lengkap dengan penerima manfaat dan mitra bila sudah terverifikasi.
+
+header:
+  title: Kabar lapangan
+  intro: >-
+    Laporan singkat bertanggal dari program yang sedang atau telah berjalan:
+    apa yang dikerjakan, di mana, dan menjangkau siapa. Ini bukti aktivitas,
+    bukan pengganti laporan monitoring dan evaluasi yang diterima mitra secara langsung.
+  imageAlt: >-
+    Sekelompok warga desa berkumpul bersama di luar ruangan.
+
+intro:
+  heading: Apa isi halaman ini, dan apa yang bukan.
+  body: >-
+    Entri di halaman ini diambil dari kanal publik kami sendiri dan diperiksa
+    ulang terhadapnya. Kalau sebuah angka, tanggal, atau lokasi tidak bisa
+    dipastikan, kami membiarkannya kosong, bukan menebaknya. Halaman ini bukan
+    laporan dampak kami; untuk hasil dan metodologi per mitra, lihat Impact dan Projects.
+
+labels:
+  location: Lokasi
+  beneficiaries: Penerima manfaat
+  partner: Mitra
+  source: Sumber
+  detail:
+    report: Laporan lapangan
+    ongoing: Area program, angka menyusul
+  pillars:
+    education: Pendidikan
+    humanity: Kemanusiaan
+    empowerment: Pemberdayaan
+  programTypes:
+    humanitarian-relief: Bantuan kemanusiaan
+    food-security: Ketahanan pangan
+    orphan-care: Pendampingan yatim
+    community-infrastructure: Infrastruktur komunitas
+    csr-advisory: Konsultasi CSR & ESG

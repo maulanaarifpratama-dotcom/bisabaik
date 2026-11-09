@@ -1,0 +1,115 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/components/site/PageHeader.astro";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const entry = await getEntry("updatesPage", locale);
+if (!entry) throw new Error(`Missing updates copy for locale "${locale}"`);
+const t = entry.data;
+
+const updates = (await getCollection("updates")).sort((a, b) => {
+  if (a.data.detail !== b.data.detail) return a.data.detail === "report" ? -1 : 1;
+  return a.data.date < b.data.date ? 1 : a.data.date > b.data.date ? -1 : 0;
+});
+---
+
+<Base
+  locale={locale}
+  path="/updates"
+  title={t.meta.title}
+  description={t.meta.description}
+  pageType="CollectionPage"
+  heroTone="ink"
+  breadcrumbs={[{ name: t.header.title, path: "/updates" }]}
+>
+  <PageHeader
+    title={t.header.title}
+    intro={t.header.intro}
+    imageKey="village-gathering"
+    imageAlt={t.header.imageAlt}
+  />
+
+  <section class="edge border-b border-line pt-16 pb-12 md:pt-20 md:pb-14">
+    <div data-reveal class="max-w-3xl">
+      <h2 class="display-2">{t.intro.heading}</h2>
+      <p class="prose-measure mt-5 text-[15.5px] leading-relaxed text-ink-soft">
+        {t.intro.body}
+      </p>
+    </div>
+  </section>
+
+  <section class="edge pt-16 pb-20 md:pt-20 md:pb-24">
+    <ul class="border-t border-hairline">
+      {
+        updates.map((entry, i) => {
+          const c = entry.data[locale];
+          return (
+            <li data-reveal style={`--reveal-delay:${i * 50}ms`}>
+              <article class="grid grid-cols-12 gap-x-6 gap-y-3 border-b border-hairline py-9">
+                <div class="col-span-12 flex flex-wrap items-center gap-x-3 gap-y-1 md:col-span-3">
+                  <span class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
+                    {entry.data.date}
+                  </span>
+                  <span class="label rounded-[2px] border border-line px-1.5 py-0.5">
+                    {t.labels.pillars[entry.data.pillar]}
+                  </span>
+                </div>
+                <div class="col-span-12 md:col-span-7">
+                  <h2 class="display-3">{c.title}</h2>
+                  <p class="mt-3 max-w-[60ch] text-[14.5px] leading-relaxed text-ink-soft">
+                    {c.body}
+                  </p>
+                  <dl class="mt-4 flex flex-wrap gap-x-6 gap-y-1.5 text-[12.5px] text-ink-soft">
+                    <div class="flex gap-1.5">
+                      <dt class="font-medium text-ink">{t.labels.location}:</dt>
+                      <dd>{entry.data.location}</dd>
+                    </div>
+                    {entry.data.beneficiaries && (
+                      <div class="flex gap-1.5">
+                        <dt class="font-medium text-ink">
+                          {t.labels.beneficiaries}:
+                        </dt>
+                        <dd>{entry.data.beneficiaries}</dd>
+                      </div>
+                    )}
+                    {entry.data.partner && (
+                      <div class="flex gap-1.5">
+                        <dt class="font-medium text-ink">{t.labels.partner}:</dt>
+                        <dd>{entry.data.partner}</dd>
+                      </div>
+                    )}
+                  </dl>
+                </div>
+                <div class="col-span-12 flex flex-col items-start gap-2 md:col-span-2 md:items-end md:text-right">
+                  <span class="text-[11px] tracking-[0.08em] text-ink-soft uppercase">
+                    {t.labels.programTypes[entry.data.programType]}
+                  </span>
+                  <span
+                    class:list={[
+                      "text-[11px] tracking-[0.08em] uppercase",
+                      entry.data.detail === "ongoing"
+                        ? "text-ink-soft"
+                        : "text-bronze-strong",
+                    ]}
+                  >
+                    {t.labels.detail[entry.data.detail]}
+                  </span>
+                </div>
+                <p class="col-span-12 text-[11.5px] text-ink-soft/80">
+                  {t.labels.source}: {entry.data.source}
+                </p>
+              </article>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</Base>

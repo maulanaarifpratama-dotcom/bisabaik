@@ -94,6 +94,15 @@ principles:
   imageAlt: >-
     Two older village women laughing together, one with a towel over her head.
 
+updates:
+  heading: Field updates, with dates and places attached.
+  body: >-
+    What we report here is checked against our own public channels before it
+    goes up. Where a number could not be confirmed, we left it out.
+  cta:
+    label: All field updates
+    href: /updates
+
 partners:
   heading: Institutions choosing accountable delivery.
   cta:

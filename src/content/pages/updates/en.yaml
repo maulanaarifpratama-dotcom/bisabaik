@@ -1,0 +1,41 @@
+meta:
+  title: "Field Updates: Programs in Delivery"
+  description: >-
+    Dated, located reports from programs Bisa Baik Bersama is running or has
+    run in the field, with the beneficiaries and partners named where confirmed.
+
+header:
+  title: Field updates
+  intro: >-
+    Short, dated reports from programs in delivery: what ran, where, and who
+    it reached. This is evidence of activity, not a substitute for the
+    monitoring and evaluation reporting partners receive directly.
+  imageAlt: >-
+    A group of villagers gathered together outdoors.
+
+intro:
+  heading: What this page is, and is not.
+  body: >-
+    Entries here are drawn from our own public channels and verified against
+    them. Where a figure, date or location could not be confirmed, we left it
+    out rather than estimate it. This page is not our impact reporting; for
+    partner-specific results and methodology, see Impact and Projects.
+
+labels:
+  location: Location
+  beneficiaries: Beneficiaries
+  partner: Partner
+  source: Source
+  detail:
+    report: Field report
+    ongoing: Programme area, figures pending
+  pillars:
+    education: Education
+    humanity: Humanity
+    empowerment: Empowerment
+  programTypes:
+    humanitarian-relief: Humanitarian relief
+    food-security: Food security
+    orphan-care: Orphan care
+    community-infrastructure: Community infrastructure
+    csr-advisory: CSR & ESG advisory
