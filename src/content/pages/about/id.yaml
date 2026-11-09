@@ -61,12 +61,10 @@ team:
     perancangan intervensi sosial lintas sektor, dijalankan dengan pendekatan
     kolaboratif dan reflektif.
   members:
-    - { name: Dasril Guntara, role: Managing Partner }
-    - { name: Wiwip Wilevy, role: Direktur Eksekutif }
-    - { name: Fariz Adlan S., role: Direktur Program }
-    - { name: Maulana Arif, role: Direktur Pemasaran }
-    - { name: Handriyana, role: Direktur Keuangan }
-    - { name: Raisa Annisa, role: Manajer Program }
+    - { name: Hari Din Nugraha, role: Direktur Eksekutif }
+    - { name: Vesitara, role: Direktur Program }
+    - { name: Maulana Arif Pratama, role: Direktur Penggalangan Dana }
+    - { name: Rani Dina Maulina, role: Direktur Keuangan }
 
 network:
   heading: Jejaring ahli asosiat, diaktifkan sesuai kebutuhan program.
