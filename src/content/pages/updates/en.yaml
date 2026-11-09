@@ -26,6 +26,7 @@ labels:
   beneficiaries: Beneficiaries
   partner: Partner
   source: Source
+  viewSource: View original post
   detail:
     report: Field report
     ongoing: Programme area, figures pending

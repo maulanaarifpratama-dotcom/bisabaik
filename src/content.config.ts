@@ -474,6 +474,7 @@ const updatesPage = defineCollection({
       beneficiaries: z.string(),
       partner: z.string(),
       source: z.string(),
+      viewSource: z.string(),
       detail: z.object({ report: z.string(), ongoing: z.string() }),
       pillars: z.object({
         education: z.string(),
@@ -512,6 +513,7 @@ const updates = defineCollection({
     beneficiaries: z.string().optional(),
     partner: z.string().optional(),
     source: z.string(),
+    sourceUrl: z.string().url().optional(),
     /** "report": a dated, figured field report. "ongoing": a named programme
      * area we can confirm exists but cannot yet report dates or reach for. */
     detail: z.enum(["report", "ongoing"]).default("report"),
