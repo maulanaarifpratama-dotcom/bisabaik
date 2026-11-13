@@ -9,7 +9,7 @@ description: >-
 intro: >-
   Kami menerbitkan penjelasan tentang program, kemitraan, dan hasil kerja.
   Halaman ini menjelaskan bagaimana penjelasan itu sebaiknya dibaca.
-updated: 30 Oktober 2026
+updated: 13 November 2026
 updatedLabel: Terakhir diperbarui
 ---
 
@@ -51,12 +51,17 @@ Rencana bisa berubah.
 
 ## Fotografi
 
-Foto di situs ini adalah foto stok berlisensi dari Unsplash dan Pexels, dipilih
-karena diambil di Indonesia. Foto-foto itu bukan dokumentasi program kami, dan orang
-di dalamnya bukan staf, mitra, atau penerima manfaat kami. Foto-foto itu hanya
-menggambarkan suasana dan jenis pekerjaan yang dibahas di dekatnya. Kalau kami
-sudah memegang dokumentasi sendiri beserta persetujuan pemakaiannya, foto-foto
-itu akan menggantikan yang ini.
+Foto di halaman Kabar Lapangan dan pratinjaunya di beranda adalah dokumentasi
+program kami sendiri, diambil oleh tim dan relawan kami di lapangan. Tiap foto
+diletakkan di samping laporan yang didokumentasikannya, dan deskripsinya hanya
+menyebut apa yang terlihat. Data lokasi dibuang dari file sebelum dipublikasikan.
+
+Foto lain di situs ini adalah foto stok berlisensi dari Unsplash dan Pexels,
+dipilih karena diambil di Indonesia. Foto-foto itu bukan dokumentasi program
+kami, dan orang di dalamnya bukan staf, mitra, atau penerima manfaat kami.
+Foto-foto itu hanya menggambarkan suasana dan jenis pekerjaan yang dibahas di
+dekatnya. Kalau kami sudah memegang dokumentasi sendiri beserta persetujuan
+pemakaiannya, foto-foto itu akan menggantikan yang ini.
 
 Kredit, dengan terima kasih kepada para fotografer:
 

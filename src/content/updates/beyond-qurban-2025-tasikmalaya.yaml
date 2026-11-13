@@ -5,7 +5,9 @@ programType: food-security
 beneficiaries: "50 households"
 source: "Instagram @bisabaik.or.id, 13 June 2025"
 sourceUrl: "https://www.instagram.com/bisabaik.or.id/p/DK1gZesB6k6/"
+photo: "beyond-qurban-tasikmalaya-2025.jpg"
 en:
+  photoAlt: "Three sheep standing along a wall beneath a banner reading Implementasi Qurban Tasikmalaya 2025."
   title: "Beyond Qurban 2025: three sacrificial animals, 50 households reached"
   body: >-
     Qurban distribution ran in two villages of Pagerageung sub-district,
@@ -13,6 +15,7 @@ en:
     across 50 recipient households. The programme paired the religious
     observance with a food-security objective for the receiving villages.
 id:
+  photoAlt: "Tiga ekor domba berdiri di sepanjang dinding di bawah spanduk bertuliskan Implementasi Qurban Tasikmalaya 2025."
   title: "Beyond Qurban 2025: tiga ekor domba, menjangkau 50 kepala keluarga"
   body: >-
     Penyaluran qurban berlangsung di dua desa Kecamatan Pagerageung,

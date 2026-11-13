@@ -97,7 +97,7 @@ principles:
 updates:
   heading: Field updates, with dates and places attached.
   body: >-
-    What we report here is checked against our own public channels before it
+    What we report here is checked against our own documentation before it
     goes up. Where a number could not be confirmed, we left it out.
   cta:
     label: All field updates

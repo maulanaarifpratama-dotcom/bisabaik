@@ -5,6 +5,7 @@ import { getCollection, getEntry } from "astro:content";
 import Base from "@/layouts/Base.astro";
 import { localizePath, type Locale } from "@/i18n";
 import { image } from "@/lib/images";
+import { updatePhoto } from "@/lib/updatePhotos";
 
 interface Props {
   locale: Locale;
@@ -33,7 +34,7 @@ const latestUpdates = (await getCollection("updates"))
     if (a.data.detail !== b.data.detail) return a.data.detail === "report" ? -1 : 1;
     return a.data.date < b.data.date ? 1 : a.data.date > b.data.date ? -1 : 0;
   })
-  .slice(0, 3);
+  .slice(0, 4);
 
 const href = (path: string) =>
   path.startsWith("http") ? path : localizePath(path, locale);
@@ -338,6 +339,17 @@ const [lead, ...rest] = flagships;
                 class="group grid grid-cols-12 items-baseline gap-x-6 gap-y-2 border-t border-hairline py-8 transition-colors duration-300 hover:bg-surface/70"
               >
                 <div class="col-span-12 flex flex-wrap items-center gap-x-3 gap-y-1 md:col-span-3">
+                  {updatePhoto(entry.data.photo) && (
+                    <Image
+                      src={updatePhoto(entry.data.photo)!}
+                      alt={c.photoAlt ?? ""}
+                      widths={[320, 480]}
+                      sizes="(min-width: 768px) 24vw, 100vw"
+                      loading="lazy"
+                      quality={68}
+                      class="mb-2 aspect-4/3 w-full rounded-[2px] object-cover object-[50%_30%]"
+                    />
+                  )}
                   <span class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
                     {entry.data.date}
                   </span>

@@ -8,7 +8,7 @@ description: >-
 intro: >-
   We publish descriptions of programs, partnerships and results. This page sets
   out how those descriptions should be read.
-updated: 30 October 2026
+updated: 13 November 2026
 updatedLabel: Last updated
 ---
 
@@ -48,12 +48,17 @@ publications reflect our intentions at the time of writing. Plans change.
 
 ## Photography
 
-The photographs on this site are licensed stock photographs from Unsplash and
-Pexels, chosen because they were taken in Indonesia. They are not documentation of our
-programs, and the people in them are not our staff, partners or beneficiaries.
-They show the settings and the kind of work described nearby, nothing more.
-Where we hold our own documentation and the consent to use it, it will replace
-these.
+Photographs on the Field Updates page and its homepage preview are our own
+programme documentation, taken by our teams and volunteers in the field. Each
+sits beside the report it documents, and its description says only what is
+visible. Location data is removed from the files before publication.
+
+All other photographs on this site are licensed stock photographs from
+Unsplash and Pexels, chosen because they were taken in Indonesia. They are not
+documentation of our programs, and the people in them are not our staff,
+partners or beneficiaries. They show the settings and the kind of work
+described nearby, nothing more. Where we hold our own documentation and the
+consent to use it, it will replace these.
 
 Credits, with thanks to the photographers:
 

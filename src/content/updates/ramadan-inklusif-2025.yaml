@@ -5,7 +5,9 @@ programType: humanitarian-relief
 beneficiaries: "Elderly and informal-sector residents"
 source: "Instagram @bisabaik.or.id, 30 March 2025"
 sourceUrl: "https://www.instagram.com/bisabaik.or.id/p/DH0lkZGB-_s/"
+photo: "ramadan-inklusif-2025.jpg"
 en:
+  photoAlt: "A volunteer in a black shirt holding two bags of food in front of rows of green and yellow aid packages stacked on the floor."
   title: "Ramadan Inklusif: essential-goods packages for elderly residents"
   body: >-
     Under the Ramadan Inklusif initiative, basic-needs packages were delivered
@@ -14,6 +16,7 @@ en:
     recipients' circumstances — among them an elderly street vendor still
     trading in her eighties — to show who assistance reaches, not only how many.
 id:
+  photoAlt: "Seorang relawan berkaus hitam memegang dua tas berisi bahan pangan di depan tumpukan paket bantuan hijau dan kuning di lantai."
   title: "Ramadan Inklusif: paket kebutuhan pokok untuk warga lanjut usia"
   body: >-
     Melalui inisiatif Ramadan Inklusif, paket kebutuhan pokok disalurkan
