@@ -21,7 +21,9 @@ const t = entry.data;
 
 const updates = (await getCollection("updates")).sort((a, b) => {
   if (a.data.detail !== b.data.detail) return a.data.detail === "report" ? -1 : 1;
-  return a.data.date < b.data.date ? 1 : a.data.date > b.data.date ? -1 : 0;
+  const key = (d: string) => (/^\d{4}/.test(d) ? d : "0");
+  const [ka, kb] = [key(a.data.date), key(b.data.date)];
+  return ka < kb ? 1 : ka > kb ? -1 : 0;
 });
 
 /* A plain ItemList: each entry as a dated CreativeWork, linked to its public
@@ -81,9 +83,11 @@ const itemList = {
             <li id={entry.id} data-reveal style={`--reveal-delay:${i * 50}ms`}>
               <article class="grid grid-cols-12 gap-x-6 gap-y-3 border-b border-hairline py-9">
                 <div class="col-span-12 flex flex-wrap items-center gap-x-3 gap-y-1 md:col-span-3">
-                  <span class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
-                    {entry.data.date}
-                  </span>
+                  {entry.data.date && (
+                    <span class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
+                      {entry.data.date}
+                    </span>
+                  )}
                   <span class="label rounded-[2px] border border-line px-1.5 py-0.5">
                     {t.labels.pillars[entry.data.pillar]}
                   </span>
