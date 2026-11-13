@@ -161,7 +161,7 @@ const itemList = {
                     {t.labels.detail[entry.data.detail]}
                   </span>
                 </div>
-                <p class="col-span-12 text-[11.5px] text-ink-soft/80">
+                <p class="col-span-12 text-[11.5px] text-ink-soft">
                   {t.labels.source}: {entry.data.source}
                   {entry.data.sourceUrl && (
                     <>
@@ -171,7 +171,7 @@ const itemList = {
                         href={entry.data.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="link-rule text-ink"
+                        class="link-rule inline-block py-1.5 text-ink"
                       >
                         {t.labels.viewSource}
                       </a>

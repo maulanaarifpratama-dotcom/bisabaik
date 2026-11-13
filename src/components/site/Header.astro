@@ -94,7 +94,7 @@ const isActive = (href: string) =>
       <button
         type="button"
         data-theme-toggle
-        class="header-chip inline-flex h-9 w-9 items-center justify-center rounded-[2px] border border-line text-ink-soft transition-colors duration-200 hover:border-ink hover:text-ink"
+        class="header-chip inline-flex h-11 w-11 items-center lg:h-9 lg:w-9 justify-center rounded-[2px] border border-line text-ink-soft transition-colors duration-200 hover:border-ink hover:text-ink"
         aria-label={t.theme.label}
         data-label-light={t.theme.light}
         data-label-dark={t.theme.dark}
@@ -121,7 +121,7 @@ const isActive = (href: string) =>
         aria-label={t.menu.open}
         data-label-open={t.menu.open}
         data-label-close={t.menu.close}
-        class="header-burger -mr-1.5 inline-flex h-9 w-9 items-center justify-center rounded-[2px] text-ink lg:hidden"
+        class="header-burger -mr-2.5 inline-flex h-11 w-11 items-center justify-center rounded-[2px] text-ink lg:hidden"
       >
         <Icon name="ph:list" class="h-5 w-5" data-menu-icon="open" />
         <Icon name="ph:x" class="hidden h-5 w-5" data-menu-icon="close" />

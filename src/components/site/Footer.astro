@@ -50,13 +50,13 @@ const heading =
 
       <nav class="md:col-span-2" aria-labelledby="footer-nav">
         <h2 id="footer-nav" class={heading}>{f.navHeading}</h2>
-        <ul class="mt-5 space-y-2.5 text-[14px]">
+        <ul class="mt-4 text-[14px]">
           {
             t.nav.map((item) => (
               <li>
                 <a
                   href={localizePath(item.href, locale)}
-                  class="text-ink-soft transition-colors duration-200 hover:text-ink"
+                  class="inline-block py-1.5 text-ink-soft transition-colors duration-200 hover:text-ink"
                 >
                   {item.label}
                 </a>
@@ -70,15 +70,15 @@ const heading =
         <h2 class={heading}>{f.contactHeading}</h2>
         <ul class="mt-5 space-y-2.5 text-[14px] text-ink-soft">
           <li>
-            <a href={`mailto:${f.email}`} class="link-rule text-ink">{f.email}</a>
+            <a href={`mailto:${f.email}`} class="link-rule inline-block py-1 text-ink">{f.email}</a>
           </li>
-          <li><a href={f.phoneHref} class="hover:text-ink">{f.phone}</a></li>
+          <li><a href={f.phoneHref} class="inline-block py-1 hover:text-ink">{f.phone}</a></li>
           <li>
             <a
               href={f.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center gap-1.5 text-ink"
+              class="group inline-flex items-center gap-1.5 py-1 text-ink"
             >
               <Icon name="ph:whatsapp-logo" class="h-3.5 w-3.5 shrink-0" />
               <span class="link-rule">{f.whatsapp}</span>
@@ -100,7 +100,7 @@ const heading =
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="group inline-flex items-baseline gap-1.5 text-[14.5px] text-ink"
+                  class="group inline-flex items-baseline gap-1.5 py-1 text-[14.5px] text-ink"
                 >
                   <span class="link-rule">{item.label}</span>
                   <Icon
@@ -115,13 +115,13 @@ const heading =
         </ul>
 
         <h2 class={`${heading} mt-9`}>{f.legalHeading}</h2>
-        <ul class="mt-5 space-y-2.5 text-[14px]">
+        <ul class="mt-4 text-[14px]">
           {
             f.legal.map((item) => (
               <li>
                 <a
                   href={localizePath(item.href, locale)}
-                  class="text-ink-soft transition-colors duration-200 hover:text-ink"
+                  class="inline-block py-1.5 text-ink-soft transition-colors duration-200 hover:text-ink"
                 >
                   {item.label}
                 </a>
