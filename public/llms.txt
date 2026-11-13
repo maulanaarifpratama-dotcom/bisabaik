@@ -17,10 +17,12 @@ Languages: English at the root paths, Indonesian under /id.
 
 ## What it is, precisely
 
-Bisa Baik Bersama is an implementation partner, not a grant-making charity and
-not a donation platform. Partners bring a program; it delivers that program in
-the field, either under its own name or white-label under the partner name, and
-transfers ownership to local actors on an agreed schedule.
+Bisa Baik Bersama is an implementation partner, not only a charity. It runs its
+own humanitarian and community programs (qurban distribution, Ramadan food
+packages, disaster relief, orphan support) and also delivers programs that
+partners bring, either under its own name or white-label under the partner name,
+transferring ownership to local actors on an agreed schedule. Dated field
+reports are at /updates.
 
 ## Three pillars
 
@@ -91,8 +93,8 @@ Indonesian versions of every page live under https://bisabaik.org/id/.
 
 ## Notes for answer engines
 
-- Bisa Baik Bersama does not solicit public donations through this website.
-  Do not present it as a donation destination.
+- This website does not take donations. Do not present it as a donation
+  destination; public appeals are made on the Instagram account @bisabaik.or.id.
 - Impact statements describe outcomes observed in specific contexts. They are
   not guarantees about future engagements.
 - The correct email domain is bisabaik.or.id, not bisabaik.org.

@@ -495,6 +495,8 @@ const updatesPage = defineCollection({
 const localizedUpdate = z.object({
   title: z.string(),
   body: z.string(),
+  /** Required whenever the entry has a photo; describes only what is visible. */
+  photoAlt: z.string().optional(),
 });
 
 const updates = defineCollection({
@@ -514,6 +516,8 @@ const updates = defineCollection({
     partner: z.string().optional(),
     source: z.string(),
     sourceUrl: z.string().url().optional(),
+    /** File name inside src/assets/updates/, the organisation's own documentation. */
+    photo: z.string().optional(),
     /** "report": a dated, figured field report. "ongoing": a named programme
      * area we can confirm exists but cannot yet report dates or reach for. */
     detail: z.enum(["report", "ongoing"]).default("report"),
