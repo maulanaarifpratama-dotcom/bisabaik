@@ -66,6 +66,19 @@ team:
     - { name: Maulana Arif Pratama, role: Direktur Penggalangan Dana }
     - { name: Rani Dina Maulina, role: Direktur Keuangan }
 
+legal:
+  heading: Landasan hukum
+  body: >-
+    Bisa Baik Bersama adalah nama kerja sebuah yayasan Indonesia yang
+    terdaftar. Data berikut sesuai dengan keputusan Menteri Hukum dan Hak Asasi
+    Manusia dan dapat diperiksa pada daftar yayasan kementerian.
+  items:
+    - { label: Nama badan hukum, value: Yayasan Rumah Pembangunan Berkelanjutan }
+    - { label: Keputusan menteri, value: "AHU-0013708.AH.01.04.Tahun 2022" }
+    - { label: Daftar yayasan, value: "AHU-0020668.AH.01.12.Tahun 2022" }
+    - { label: Disahkan, value: "29 Juni 2022 (akta notaris Nomor 31, 24 Juni 2022)" }
+    - { label: Berkedudukan di, value: Depok, Jawa Barat }
+
 network:
   heading: Jejaring ahli asosiat, diaktifkan sesuai kebutuhan program.
   body: >-

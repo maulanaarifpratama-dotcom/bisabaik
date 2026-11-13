@@ -63,6 +63,19 @@ team:
     - { name: Maulana Arif Pratama, role: Fundraising Director }
     - { name: Rani Dina Maulina, role: Finance Director }
 
+legal:
+  heading: Legal standing
+  body: >-
+    Bisa Baik Bersama is the working name of a registered Indonesian
+    foundation. These details match the Ministry of Law and Human Rights
+    decree and can be checked against the ministry's foundation register.
+  items:
+    - { label: Legal name, value: Yayasan Rumah Pembangunan Berkelanjutan }
+    - { label: Ministry decree, value: "AHU-0013708.AH.01.04.Tahun 2022" }
+    - { label: Foundation register, value: "AHU-0020668.AH.01.12.Tahun 2022" }
+    - { label: Established, value: "29 June 2022 (notarial deed No. 31, 24 June 2022)" }
+    - { label: Domicile, value: Depok, West Java }
+
 network:
   heading: An associate expert network, activated by program need.
   body: >-

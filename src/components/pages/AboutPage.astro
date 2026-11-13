@@ -133,6 +133,20 @@ const t = entry.data;
   </section>
 
   {/* Associate network */}
+  <section class="edge border-b border-line pt-16 pb-12 md:pt-20 md:pb-14">
+    <SectionHead heading={t.legal.heading} body={t.legal.body} />
+    <dl class="mt-10 border-t border-hairline">
+      {
+        t.legal.items.map((item) => (
+          <div class="grid grid-cols-12 gap-x-6 gap-y-1 border-b border-hairline py-4">
+            <dt class="label col-span-12 md:col-span-3">{item.label}</dt>
+            <dd class="col-span-12 text-[15px] md:col-span-9">{item.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
   <section class="bg-surface/50 pt-16 pb-12 md:pt-20 md:pb-14">
     <div class="edge grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-5">

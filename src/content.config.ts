@@ -150,6 +150,11 @@ const about = defineCollection({
       intro: z.string(),
       members: z.array(z.object({ name: z.string(), role: z.string() })),
     }),
+    legal: z.object({
+      heading: z.string(),
+      body: z.string(),
+      items: z.array(z.object({ label: z.string(), value: z.string() })),
+    }),
     network: z.object({
       heading: z.string(),
       body: z.string(),

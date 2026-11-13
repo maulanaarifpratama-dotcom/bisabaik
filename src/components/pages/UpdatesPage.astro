@@ -78,7 +78,7 @@ const itemList = {
         updates.map((entry, i) => {
           const c = entry.data[locale];
           return (
-            <li data-reveal style={`--reveal-delay:${i * 50}ms`}>
+            <li id={entry.id} data-reveal style={`--reveal-delay:${i * 50}ms`}>
               <article class="grid grid-cols-12 gap-x-6 gap-y-3 border-b border-hairline py-9">
                 <div class="col-span-12 flex flex-wrap items-center gap-x-3 gap-y-1 md:col-span-3">
                   <span class="text-[11.5px] tracking-[0.1em] text-ink-soft uppercase">
