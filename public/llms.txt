@@ -54,14 +54,21 @@ Principles: community-centered, data-driven, risk-aware.
 
 ## Partners
 
-Philanthropic: BAZNAS, YBM BRI, Human Initiative.
-Corporate: Bank BRI, BRI Life.
+Philanthropic: BAZNAS, YBM BRI, Human Initiative, UPZ Bank DKI, BSI Maslahat.
+Corporate: Bank BRI, BRI Life, Bank DKI.
 Development: Save the Children (New Future Disaster Management Center),
 Yayasan Edu Farmers International, AKSATA.
 Government: Kementerian Perdagangan Republik Indonesia, Dispora Kabupaten Bogor.
 
 Naming a partner means Bisa Baik worked with them in a stated role. It does not
 mean that partner endorses the organisation more broadly.
+
+## Facilitated community projects
+
+- Masjid Jami Ar-Rustendi, Rumpin, Kabupaten Bogor: a community mosque under
+  construction in 2026 with a public ledger at https://www.arrustendi.org/.
+  Bisa Baik Bersama facilitates it; two of its team sit on the mosque's
+  management committee.
 
 ## Where it works
 

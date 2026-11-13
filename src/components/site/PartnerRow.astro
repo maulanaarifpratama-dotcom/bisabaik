@@ -3,9 +3,10 @@ interface Props {
   name: string;
   role: string;
   context: string;
+  logo?: string;
 }
 
-const { name, role, context } = Astro.props;
+const { name, role, context, logo } = Astro.props;
 ---
 
 <article
@@ -17,6 +18,20 @@ const { name, role, context } = Astro.props;
   ></span>
 
   <div class="col-span-12 md:col-span-5">
+    {
+      logo && (
+        <span class="mb-4 inline-flex h-14 items-center rounded-[2px] bg-white px-3 ring-1 ring-line">
+          <img
+            src={`/partners/${logo}`}
+            alt=""
+            height="40"
+            loading="lazy"
+            decoding="async"
+            class="h-10 w-auto max-w-[11rem] object-contain"
+          />
+        </span>
+      )
+    }
     <h3 class="display-3">{name}</h3>
     <p
       class="mt-2 text-[11.5px] tracking-[0.1em] text-ink-soft uppercase transition-colors duration-500 group-hover:text-bronze-strong"

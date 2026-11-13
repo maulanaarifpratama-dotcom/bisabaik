@@ -426,6 +426,8 @@ const partners = defineCollection({
       "government",
     ]),
     stage: z.enum(["co-design", "co-create", "co-sustain"]).optional(),
+    /** File name inside public/partners/. Used with the partner's permission. */
+    logo: z.string().optional(),
     en: localizedPartner,
     id: localizedPartner,
   }),

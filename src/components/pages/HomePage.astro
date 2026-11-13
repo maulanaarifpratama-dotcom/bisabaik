@@ -430,6 +430,28 @@ const [lead, ...rest] = flagships;
       </a>
     </div>
 
+    <ul
+      class="flex flex-wrap items-center gap-4 border-b border-hairline py-8"
+      aria-label={t.partners.heading}
+    >
+      {
+        partners
+          .filter((p) => p.data.logo)
+          .map((p) => (
+            <li class="inline-flex h-16 items-center rounded-[2px] bg-white px-4 ring-1 ring-line">
+              <img
+                src={`/partners/${p.data.logo}`}
+                alt={p.data[locale].name}
+                height="44"
+                loading="lazy"
+                decoding="async"
+                class="h-11 w-auto max-w-[12rem] object-contain"
+              />
+            </li>
+          ))
+      }
+    </ul>
+
     <ul class="grid gap-x-14 md:grid-cols-2">
       {
         partners.map((partner) => (

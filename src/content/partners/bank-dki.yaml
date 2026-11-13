@@ -1,0 +1,17 @@
+order: 12
+category: corporate
+logo: bank-dki.svg
+
+en:
+  name: "Bank DKI"
+  role: "Corporate giving"
+  context: >-
+    A corporate donation of Rp7,500,000 towards the construction of Masjid
+    Jami Ar-Rustendi in Rumpin, Bogor.
+
+id:
+  name: "Bank DKI"
+  role: "Donasi korporasi"
+  context: >-
+    Donasi korporasi sebesar Rp7.500.000 untuk pembangunan Masjid Jami
+    Ar-Rustendi di Rumpin, Bogor.
