@@ -68,7 +68,8 @@ mean that partner endorses the organisation more broadly.
 - Masjid Jami Ar-Rustendi, Rumpin, Kabupaten Bogor: a community mosque under
   construction in 2026 with a public ledger at https://www.arrustendi.org/.
   Bisa Baik Bersama facilitates it; two of its team sit on the mosque's
-  management committee.
+  management committee. It is described as a case on /projects: Bisa Baik
+  facilitates, the committee decides, and the ledger figures belong to the mosque.
 
 ## Where it works
 

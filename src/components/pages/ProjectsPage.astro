@@ -22,6 +22,8 @@ const all = (await getCollection("projects")).sort(
 );
 const flagships = all.filter((p) => p.data.category === "flagship");
 const engagements = all.filter((p) => p.data.category === "engagement");
+const featured = engagements.filter((p) => p.data.featured);
+const regular = engagements.filter((p) => !p.data.featured);
 ---
 
 <Base
@@ -91,15 +93,33 @@ const engagements = all.filter((p) => p.data.category === "engagement");
       </p>
     </div>
 
-    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {
+      featured.length > 0 && (
+        <div class="mt-12 space-y-8">
+          {featured.map((project) => (
+            <div data-reveal>
+              <ProjectCard
+                project={project.data[locale]}
+                category={project.data.category}
+                labels={t.labels}
+                href={project.data.href}
+              />
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
-        engagements.map((project, i) => (
+        regular.map((project, i) => (
           <div data-reveal style={`--reveal-delay:${(i % 3) * 60}ms`} class="h-full">
             <ProjectCard
               project={project.data[locale]}
               category={project.data.category}
               labels={t.labels}
               variant="compact"
+              href={project.data.href}
             />
           </div>
         ))

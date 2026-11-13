@@ -290,6 +290,7 @@ const projectsPage = defineCollection({
       signal: z.string(),
       flagship: z.string(),
       engagement: z.string(),
+      source: z.string().default("Check the source"),
     }),
   }),
 });
@@ -448,6 +449,10 @@ const projects = defineCollection({
   schema: z.object({
     order: z.number(),
     category: z.enum(["flagship", "engagement"]),
+    /** A public source readers can check the signal against. */
+    href: z.string().url().optional(),
+    /** Shown as a full case card above the compact engagement grid. */
+    featured: z.boolean().default(false),
     en: localizedProject,
     id: localizedProject,
   }),

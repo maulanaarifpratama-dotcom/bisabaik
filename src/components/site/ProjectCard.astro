@@ -9,6 +9,7 @@ export interface ProjectLabels {
   signal: string;
   flagship: string;
   engagement: string;
+  source?: string;
 }
 
 export interface ProjectContent {
@@ -26,9 +27,10 @@ interface Props {
   category: "flagship" | "engagement";
   labels: ProjectLabels;
   variant?: "full" | "compact";
+  href?: string;
 }
 
-const { project, category, labels, variant = "full" } = Astro.props;
+const { project, category, labels, variant = "full", href } = Astro.props;
 
 const rows = [
   { label: labels.context, value: project.context },
@@ -62,6 +64,17 @@ const rows = [
         <span class="text-ink-soft">{labels.signal}. </span>
         {project.signal}
       </p>
+      {href && (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-rule mt-3 inline-flex items-center gap-1.5 py-1 text-[13px]"
+        >
+          {labels.source}
+          <Icon name="ph:arrow-up-right" class="h-3.5 w-3.5" />
+        </a>
+      )}
     </article>
   ) : (
     <article class="rounded-[2px] border border-line bg-surface-2 p-7 md:p-10">
@@ -98,6 +111,17 @@ const rows = [
         <span class="text-ink-soft">{labels.signal}. </span>
         {project.signal}
       </p>
+      {href && (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-rule mt-4 inline-flex items-center gap-1.5 py-1 text-[13px]"
+        >
+          {labels.source}
+          <Icon name="ph:arrow-up-right" class="h-3.5 w-3.5" />
+        </a>
+      )}
     </article>
   )
 }
