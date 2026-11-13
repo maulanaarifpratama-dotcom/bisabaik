@@ -6,6 +6,8 @@ beneficiaries: "Widows and elderly residents"
 partner: "BSI Maslahat"
 source: "Bisa Baik Bersama programme documentation, April 2024 (also an Instagram highlight)"
 photo: "bsi-paket-lebaran-2024.jpg"
+logos:
+  - { file: bsi-maslahat.png, name: "BSI Maslahat" }
 detail: ongoing
 en:
   title: "Lebaran grocery packages with BSI Maslahat"
