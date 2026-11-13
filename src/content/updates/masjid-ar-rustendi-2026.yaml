@@ -6,6 +6,11 @@ beneficiaries: "Residents of Kp. Rumpin Tegal Indah"
 partner: "UPZ Bank DKI, Bank DKI, BAZNAS"
 source: "arrustendi.org, figures as of 12 November 2026"
 sourceUrl: "https://www.arrustendi.org/"
+logos:
+  - { file: masjid-ar-rustendi.png, name: "Masjid Jami Ar-Rustendi", dark: true }
+  - { file: baznas.svg, name: "BAZNAS" }
+  - { file: upz-bank-dki.png, name: "UPZ Bank DKI" }
+  - { file: bank-dki.svg, name: "Bank DKI" }
 en:
   title: "Masjid Jami Ar-Rustendi: building a mosque with transparent books"
   body: >-

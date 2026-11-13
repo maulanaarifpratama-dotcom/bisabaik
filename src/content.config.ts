@@ -525,6 +525,16 @@ const updates = defineCollection({
     sourceUrl: z.string().url().optional(),
     /** File name inside src/assets/updates/, the organisation's own documentation. */
     photo: z.string().optional(),
+    /** A wall of logos shown under the entry: files in public/partners/. */
+    logos: z
+      .array(
+        z.object({
+          file: z.string(),
+          name: z.string(),
+          dark: z.boolean().default(false),
+        }),
+      )
+      .optional(),
     /** "report": a dated, figured field report. "ongoing": a named programme
      * area we can confirm exists but cannot yet report dates or reach for. */
     detail: z.enum(["report", "ongoing"]).default("report"),
